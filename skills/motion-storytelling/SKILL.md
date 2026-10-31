@@ -1,6 +1,6 @@
 ---
 name: motion-storytelling
-description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
+description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة. إلزامي: اقرأ الملف كاملاً حتى سطر END والمصادر قبل أي تصميم.
 ---
 
 # موشن السرد القصصي — Motion Storytelling (Remotion)
@@ -15,6 +15,32 @@ story with vector characters (unDraw) that build themselves piece by piece; styl
 minimal 3D world (three.js) threaded by one hero element from the logo; style 9 walks through one feature on a
 real iPhone mockup on white. Worked examples of every style: `examples/` in the repo. First made for «المتمكن» (almutamakkin-expo-v3).
 Shared copy for other agents: GitHub repo Hadani0mar/skill (`skills/motion-storytelling/`, with `template/`).
+
+## ⛔ Step 0 — mandatory reading gate (do this before ANY question, code or design)
+This file is long (~800 lines). Partial reading is the most common failure: agents read the first screen, start
+designing, and break rules written further down (white ground, React Bits sounds, originality, real phone mockup,
+copy rule, sources). **Reading the whole file and the sources below is required, not optional.**
+1. **Read this entire SKILL.md, top to bottom, in pages until you reach the line `END OF SKILL — motion-storytelling`.**
+   If your tool truncates (e.g. "showing N of M lines"), keep reading with offset/limit until the end. Do not skim,
+   summarise from memory, or stop at the style table. If you never saw the END line, you have not read the skill.
+2. **After the style is chosen (Step 1), re-read in full:** that style's section; sections 3, 3b, 7, 8, 9, 10, 11, 13
+   (13a–13d); and for style 5 → 5a–5c, style 8 → 8a–8d with the originality rule, style 9 → 9a–9d.
+3. **Open the sources the chosen style depends on before designing** (they are inputs, not references for later):
+   - the product's code (latest active branch): labels, tokens, fonts, limits — section 1 item 2;
+   - the closest example project in `examples/` (see `examples/README.md`): read its `src/Video.tsx` and `render/`;
+   - `template/` for the shared components and render harness;
+   - the library the style names: React Bits (`public/llms.txt` + the component `.jsx`), unDraw list (3b), three.js +
+     Kenney (8d), mockup-device-frames (9a), the subject's official brand assets (5b).
+   If a source cannot be reached, say which one and why, then continue with the documented fallback — never silently skip it.
+4. **Write a reading receipt** to the user in one short message before building (and keep it in `research/receipt.md`):
+   ```
+   قرأت المهارة كاملة حتى END ✅ — كلمة التحقق: <the check word from the END line>
+   الأسلوب: <# + name> — الأقسام اللي قرأتها: <list>
+   المصادر اللي فتحتها: <code branch + files, example folder, libraries, brand assets>
+   قواعد ملزمة لهذا الفيديو: <ground colour, React Bits picks + sounds, copy rule, any style-specific rule>
+   ```
+   No receipt → no code. If you cannot give the check word, go back and read the rest of the file.
+5. **Before delivering**, walk section 11 point by point against the stills and say which points passed.
 
 ## ★ Global rule — React Bits in every video, every style
 Every video this skill makes — whatever the style — is built with React Bits (section 13):
@@ -37,7 +63,7 @@ Every video this skill makes — whatever the style — is built with React Bits
 - React Bits backgrounds on a white ground: use light variants (low opacity, multiply/soft tints of the accent) so the
   ground still reads white. Say in the delivery note which ground was used and why.
 
-## ★ Step 1 — always ask which style (every time, before anything else)
+## ★ Step 1 — always ask which style (every time, right after the reading gate in Step 0)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
 four options: offer the four that fit the request best (default: 9, 6, 8, 7 for one app feature (9 first when the user describes a flow of screens); 6, 8, 7, 1 for a product/app; 2, 4, 6, 5 for a
 brand or statement; 5, 8, 4, 2 for a story/news) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
@@ -596,7 +622,7 @@ public/brand/*          (style 5) official logo / product assets of the subject
 render/build.mjs player-entry.tsx index.html serve.py stills.py render.py sounds-entry.js getsfx.py mix.py
 research/facts.md + research/brand.md   (style 5) verified facts with sources + the subject's visual identity
 ```
-For styles 2–8 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
+For styles 2–9 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
 (rendered with `<Sequence>`) works well; reuse the render/ harness.
 
 ## 13. React Bits — components, backgrounds, text effects and sounds
@@ -755,3 +781,6 @@ crop used: x 120–572, y 124–1091). Rig coordinates in the 452×967 image spa
 - Bubble anchor: x = 0.86·w, y = 0.2·h. Head occupies roughly x 120–380, y 0–330.
 - Look: black messy hair, black T-shirt, rolled blue denim shorts, white sneakers, grey laptop in the left hand,
   thick black outlines, flat colours — keep any new poses or props in this flat outlined style.
+
+---
+END OF SKILL — motion-storytelling · check word: **سنبلة-9** (quote it in the reading receipt, Step 0.4)
