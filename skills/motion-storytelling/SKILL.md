@@ -30,13 +30,15 @@ copy rule, sources). **Reading the whole file and the sources below is required,
    - the closest example project in `examples/` (see `examples/README.md`): read its `src/Video.tsx` and `render/`;
    - `template/` for the shared components and render harness;
    - the library the style names: React Bits (`public/llms.txt` + the component `.jsx`), unDraw list (3b), three.js +
-     Kenney (8d), mockup-device-frames (9a), the subject's official brand assets (5b).
+     Kenney (8d), mockup-device-frames (9a), the subject's official brand assets (5b);
+   - the logo of every company/app/tool the script names (global rule «real logos»: Brandbase → svgl → Simple Icons → official).
    If a source cannot be reached, say which one and why, then continue with the documented fallback — never silently skip it.
 4. **Write a reading receipt** to the user in one short message before building (and keep it in `research/receipt.md`):
    ```
    قرأت المهارة كاملة حتى END ✅ — كلمة التحقق: <the check word from the END line>
    الأسلوب: <# + name> — الأقسام اللي قرأتها: <list>
    المصادر اللي فتحتها: <code branch + files, example folder, libraries, brand assets>
+   الشعارات: <brand → source library/file, or "none named">
    قواعد ملزمة لهذا الفيديو: <ground colour, React Bits picks + sounds, copy rule, any style-specific rule>
    ```
    No receipt → no code. If you cannot give the check word, go back and read the rest of the file.
@@ -62,6 +64,45 @@ Every video this skill makes — whatever the style — is built with React Bits
   to near-black `#141413`, and the accent comes from the subject's brand.
 - React Bits backgrounds on a white ground: use light variants (low opacity, multiply/soft tints of the accent) so the
   ground still reads white. Say in the delivery note which ground was used and why.
+
+## ★ Global rule — real logos for every company, app or tool the video names
+Whenever a video mentions a company, app, product, tool, service, platform or organisation — the subject itself, a
+partner, an integration («يرسل لواتساب»), a payment method, a store badge, a competitor in a comparison, a tool in a
+list — show its **real logo**, fetched with the flow below. Never draw a look-alike, never use an emoji or a generic
+icon in its place, and never invent a logo. Make a list of every named brand from the script first (`research/logos.md`:
+name → slug → source → file → colour), then fetch them all before designing.
+
+**Lookup chain (stop at the first hit; link the repos, fetch only the files you use):**
+1. **Brandbase** — https://github.com/MassiveMassimo/brandbase (MIT). Curated official SVGs **plus a `guidelines.md` per
+   brand** (colours, clear space, background rules, don'ts). Still small (apple, google, zoom at last check), so always try it first but expect misses.
+   - Slug: lowercase, hyphenated, special chars stripped («VS Code» → `visual-studio-code`, «Stack Overflow» → `stack-overflow`).
+   - Discover: `gh api repos/MassiveMassimo/brandbase/contents/brands/{slug} --jq '.[].name'` (or WebFetch
+     `https://api.github.com/repos/MassiveMassimo/brandbase/contents/brands/{slug}`); not found → list `brands/` and grep the keyword.
+   - Files: `{brand}-{size}[-{variant}].svg`; default `{brand}-24.svg`; `-light` = white version for dark grounds,
+     `-dark`, `-wordmark`, `-monochrome`. Raw: `https://raw.githubusercontent.com/MassiveMassimo/brandbase/main/brands/{brand}/{brand}-24.svg`.
+   - **Always fetch `guidelines.md` too** and follow it (allowed backgrounds, min size, no recolour/outline/glow/rotation).
+2. **svgl** — https://github.com/pheralb/svgl (~1,100 full-colour logos and wordmarks, light/dark variants, e.g.
+   `static/library/supabase.svg`, `supabase_wordmark_dark.svg`, `anthropic_white.svg`, `claude-ai-icon.svg`).
+   List: `git clone -q --depth 1 --filter=blob:none --no-checkout https://github.com/pheralb/svgl /tmp/svgl && git -C /tmp/svgl ls-tree -r --name-only HEAD static/library/ | grep -i <keyword>`,
+   then `git -C /tmp/svgl sparse-checkout set --no-cone /static/library/<file>.svg && git -C /tmp/svgl checkout -q`.
+   Metadata (category, official url, brand guidelines link) in `src/data/svgs.ts`.
+3. **Simple Icons** — https://github.com/simple-icons/simple-icons (CC0 files, ~3,500 brands, single-colour 24×24 paths).
+   Slug = title lowercased with spaces/punctuation removed, `+`→`plus`, `.`→`dot`, `&`→`and`, accents stripped
+   («Visual Studio Code» → `visualstudiocode`). File `icons/{slug}.svg`; the official brand hex is in
+   `data/simple-icons.json` (`{title, hex, source, guidelines}`) — fill the path with `#hex`, or white on the brand colour.
+   Use it when only a mark is needed (chips, integration rows, logo walls); it has no wordmarks.
+4. **The brand's own sources** — official GitHub repo (`git ls-tree -r --name-only HEAD | grep -iE "brand|logo|press"`),
+   press/brand page via WebFetch (read the SVG URL, then fetch it where the network allows). Section 5b.
+5. **Local businesses** (Libyan shops, small companies, the user's clients) are rarely in any library: ask the user to
+   attach the logo (or use the one in their app's code/assets). If nothing is available, set the **name in type** in the
+   brand colour — and say so in the delivery note.
+
+**Using logos:** use them as published — no redraw, recolour (except the brand's own approved mono/white variants), stretch,
+outline, glow, rotation or effects on the mark itself; respect clear space; on a dark ground use the light/white
+variant; size ≥ 48 px on screen so it reads on a phone. Animate the container (scale/fade/mask reveal, StarBorder ring
+around it) — not the logo's shape. Logos are shown editorially (the video talks about the brand); never imply
+endorsement or partnership that doesn't exist. Record each file's source in `research/logos.md` and list them in the
+delivery note.
 
 ## ★ Step 1 — always ask which style (every time, right after the reading gate in Step 0)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
@@ -224,6 +265,7 @@ phrases highlighted; ~0.23 s per word + 2.5 s hold), and attribute figures to th
   product look (UI colours, key screens), era cues. Read colours from the brand/press page or official repo
   (CSS variables, `tailwind.config`, design tokens, the official logo SVG) rather than guessing.
 - **Where real assets come from (in order):**
+  0. Logos first through the lookup chain in the global rule «real logos» (Brandbase → svgl → Simple Icons).
   1. The subject's own **official brand / press-kit assets** (logo SVG/PNG, product shots, wordmark). Many
      companies keep them in their public GitHub repo — fetch with a sparse/blobless clone and
      `git ls-tree -r --name-only HEAD | grep -iE "brand|logo|press"` (e.g. Supabase:
@@ -602,6 +644,8 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    palette and no colour asked for, the ground is white.
 5. React Bits used: at least one ported background/effect visible, and every sound cue is a React Bits sound.
 6. Copy: every line specific and true (copy rule in Step 1).
+6b. Every company/app/tool named on screen or in a line shows its real logo (global rule «real logos»), used as published,
+   with its source in `research/logos.md`; missing ones are set as type and listed in the delivery note.
 7. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
 
 ## 12. Project layout
@@ -746,6 +790,7 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - React Bits: https://github.com/DavidHDev/react-bits · https://reactbits.dev · agent index https://reactbits.dev/llms.txt · licence https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md
 - ogl (lightweight WebGL): https://github.com/oframe/ogl
 - three.js (style 8): https://github.com/mrdoob/three.js · Kenney CC0 kits: https://github.com/KenneyNL/Starter-Kit-City-Builder · https://github.com/KenneyNL/Starter-Kit-Racing · https://kenney.nl/assets
+- Brand logos: Brandbase https://github.com/MassiveMassimo/brandbase (SVG + guidelines.md per brand) · svgl https://github.com/pheralb/svgl · Simple Icons https://github.com/simple-icons/simple-icons (CC0, `data/simple-icons.json` for hex)
 - unDraw SVG collection (illustrations, style 7): https://github.com/balazser/undraw-svg-collection · https://undraw.co
 - Fluent UI System Icons (Color): https://github.com/microsoft/fluentui-system-icons · Iconify set: https://icon-sets.iconify.design/fluent-color/
 - Icons8 Flat Color Icons: https://icon-sets.iconify.design/flat-color-icons/ · Streamline Color: https://icon-sets.iconify.design/streamline-color/
