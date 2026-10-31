@@ -4,6 +4,7 @@ import React, {useEffect, useRef} from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 
 type U = Record<string, number | number[]>;
+const INTS = new Set(['uStopCount', 'uLayers', 'uCount', 'uType']);
 const VERT = `#version 300 es
 in vec2 aPosition; void main(){ gl_Position = vec4(aPosition,0.0,1.0); }`;
 
@@ -53,10 +54,11 @@ export const ShaderLayer: React.FC<{frag: string; uniforms: (t: number, w: numbe
     for (const [k, v] of Object.entries(u)) {
       const l = loc[k];
       if (l == null) continue;
-      if (typeof v === 'number') gl.uniform1f(l, v);
+      if (typeof v === 'number') { if (k.startsWith('i_') || INTS.has(k)) gl.uniform1i(l, v); else gl.uniform1f(l, v); }
       else if (v.length === 2) gl.uniform2fv(l, v);
       else if (v.length === 3) gl.uniform3fv(l, v);
       else if (v.length === 4) gl.uniform4fv(l, v);
+      else if (v.length % 4 !== 0 && v.length % 3 === 0) gl.uniform3fv(l, v);
       else gl.uniform4fv(l, v);
     }
     gl.drawArrays(gl.TRIANGLES, 0, 3);
