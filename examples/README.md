@@ -18,6 +18,7 @@
 | [`12-presto-product-world`](12-presto-product-world/) | 8 عالم المنتج — ⚠️ مثال مرفوض | بريستو: قلّد المرجع 100٪، لا تكرره (اقرأ قاعدة الأصالة في Style 8) | لم يكتمل |
 | [`13-remote-barcode`](13-remote-barcode/) | 9 عرض الهاتف | طباعة الباركود عن بعد على موك آب iPhone 17 Pro | almutamakkin-remote-barcode.mp4 |
 | [`14-logo-m`](14-logo-m/) | شعار | شعار «m» للمتمكن (اتجاهات، أيقونة، ألوان) — ملفات Design canvas + سكربتات التوليد | preview.png |
+| [`15-docker-product-world`](15-docker-product-world/) | 8 عالم المنتج | قصة Docker: الصورة والحاوية وCompose وMCP Toolkit | [docker-story.mp4](15-docker-product-world/docker-story.mp4) |
 
 ## ما لم يُرفع (اجلبه عند التشغيل)
 - `public/` لكل مثال: الخطوط (OFL — من google/fonts أو `skills/motion-storytelling/template/public/fonts`)، أصوات React Bits المولّدة WAV (`render/getsfx.py`)، الشعارات، النماذج والصور.
