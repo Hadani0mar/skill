@@ -1,0 +1,25 @@
+import { renderSound } from '/home/claude/reactbits/src/sounds/js/react-bits-sound.js';
+import s_swoop from '/home/claude/reactbits/src/sounds/js/swoop.js';
+import s_glide from '/home/claude/reactbits/src/sounds/js/glide.js';
+import s_sweep from '/home/claude/reactbits/src/sounds/js/sweep.js';
+import s_notch from '/home/claude/reactbits/src/sounds/js/notch.js';
+import s_dot from '/home/claude/reactbits/src/sounds/js/dot.js';
+import s_tink from '/home/claude/reactbits/src/sounds/js/tink.js';
+import s_glint from '/home/claude/reactbits/src/sounds/js/glint.js';
+import s_shimmer from '/home/claude/reactbits/src/sounds/js/shimmer.js';
+import s_check from '/home/claude/reactbits/src/sounds/js/check.js';
+import s_popover from '/home/claude/reactbits/src/sounds/js/popover.js';
+import s_snap from '/home/claude/reactbits/src/sounds/js/snap.js';
+import s_focus from '/home/claude/reactbits/src/sounds/js/focus.js';
+import s_data from '/home/claude/reactbits/src/sounds/js/data.js';
+import s_counter from '/home/claude/reactbits/src/sounds/js/counter.js';
+import s_emblem from '/home/claude/reactbits/src/sounds/js/emblem.js';
+import s_halo from '/home/claude/reactbits/src/sounds/js/halo.js';
+import s_velvet from '/home/claude/reactbits/src/sounds/js/velvet.js';
+import s_silk from '/home/claude/reactbits/src/sounds/js/silk.js';
+import s_tab from '/home/claude/reactbits/src/sounds/js/tab.js';
+import s_keycap from '/home/claude/reactbits/src/sounds/js/keycap.js';
+const R={swoop:s_swoop,glide:s_glide,sweep:s_sweep,notch:s_notch,dot:s_dot,tink:s_tink,glint:s_glint,shimmer:s_shimmer,check:s_check,popover:s_popover,snap:s_snap,focus:s_focus,data:s_data,counter:s_counter,emblem:s_emblem,halo:s_halo,velvet:s_velvet,silk:s_silk,tab:s_tab,keycap:s_keycap,};
+function wav(buf){const ch=buf.numberOfChannels,len=buf.length,sr=buf.sampleRate;const out=new DataView(new ArrayBuffer(44+len*ch*2));const w=(o,s)=>{for(let i=0;i<s.length;i++)out.setUint8(o+i,s.charCodeAt(i))};w(0,'RIFF');out.setUint32(4,36+len*ch*2,true);w(8,'WAVE');w(12,'fmt ');out.setUint32(16,16,true);out.setUint16(20,1,true);out.setUint16(22,ch,true);out.setUint32(24,sr,true);out.setUint32(28,sr*ch*2,true);out.setUint16(32,ch*2,true);out.setUint16(34,16,true);w(36,'data');out.setUint32(40,len*ch*2,true);const d=[];for(let c=0;c<ch;c++)d.push(buf.getChannelData(c));let o=44;for(let i=0;i<len;i++)for(let c=0;c<ch;c++){const v=Math.max(-1,Math.min(1,d[c][i]));out.setInt16(o,v*32767,true);o+=2}return new Uint8Array(out.buffer)}
+window.renderRB=async(name)=>{const b=await renderSound(R[name]);const u=wav(b);let s='';for(let i=0;i<u.length;i+=32768)s+=String.fromCharCode.apply(null,u.subarray(i,i+32768));return btoa(s)};
+window.RB_NAMES=Object.keys(R);

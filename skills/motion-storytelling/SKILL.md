@@ -1,6 +1,6 @@
 ---
 name: motion-storytelling
-description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بثمانية أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
+description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
 ---
 
 # موشن السرد القصصي — Motion Storytelling (Remotion)
@@ -38,7 +38,7 @@ Every video this skill makes — whatever the style — is built with React Bits
 
 ## ★ Step 1 — always ask which style (every time, before anything else)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
-four options: offer the four that fit the request best (default: 6, 8, 7, 1 for a product/app; 2, 4, 6, 5 for a
+four options: offer the four that fit the request best (default: 9, 6, 8, 7 for one app feature (9 first when the user describes a flow of screens); 6, 8, 7, 1 for a product/app; 2, 4, 6, 5 for a
 brand or statement; 5, 8, 4, 2 for a story/news) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
 can pick any unlisted style via "Other"). If the user explicitly says "you choose" or "freestyle", pick a style they
 have not used yet (or invent one, white ground) and say which one in the first sentence. If the request itself names
@@ -53,10 +53,11 @@ a story/person/company to tell about («اسرد لي قصة …»), that is sty
 | 5 | **أرشيف القصة** | Story Archive | Researched documentary reel about a person, company, tool or event, built from verified facts and the subject's real visual identity (official logo, colours, product): hook → origin → turning point → proof → lesson/CTA. 30–40 s. (Style 5 — research first) |
 | 6 | **واجهة حية** | Live UI | Modern launch film: dark stage with a dot grid and moving spotlight, the app's real UI in a 3D phone, then features fly into a bento grid and come alive one by one, pull-back, logo on Aurora. 30–40 s. (Style 6) |
 | 7 | **حكاية مصوّرة** | Illustrated Tale | Storybook chapters: unDraw characters that build themselves piece by piece, recoloured to the brand, page-turn transitions, captions on cards, app UI cut-ins. 45–60 s. (Style 7) |
-| 8 | **عالم المنتج** | Product World | "Hidden features" listicle inside a minimal 3D world (white clay blocks on dark, glowing brand-colour paths) built with three.js; one hero element from the logo threads every transition and ends as the logo. 35–45 s. (Style 8) |
+| 8 | **عالم المنتج** | Product World | "Hidden features" listicle inside a minimal 3D world designed fresh for the subject's domain (three.js), colour = information; one hero element from the logo threads every transition and ends as the logo. 35–45 s. (Style 8) |
+| 9 | **عرض الهاتف** | Phone Demo | One feature, start to finish, on a real iPhone mockup on white: the app's real screens rebuilt from code, RTL pushes, taps and sheets, one short headline above the phone per step with a highlight sweep. 20–30 s. (Style 9) |
 
 Then ask (same call, only if unknown) whether to include the narrator character: default **yes** for style 1,
-**no** for 2–8 (there it can appear small in a corner or only in the opening/closing beat).
+**no** for 2–9 (there it can appear small in a corner or only in the opening/closing beat).
 Styles share the build pipeline (sections 3, 3b, 7, 8, 9, 10, 11, 13); only the look, scene grammar and timing change.
 
 **Copy rule (all styles):** every line must say something specific and true about the subject — a real feature,
@@ -74,7 +75,7 @@ copy it into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new s
 2. **Source of truth for UI** — repo + folder. Read the latest branch with recent commits, not only `main`
    (`git ls-remote --heads origin`, then `git fetch --depth 1 origin <branch>`). Take labels, tabs, section
    titles and colour tokens from the code. Names/numbers you invent are sample data and must be called so.
-3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–8. Never a known copyrighted character.
+3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–9. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
 5. Format: 1080×1920, 30 fps; length per style
    (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s, 8: 35–45 s). Narration language/dialect (default: the user's dialect).
@@ -264,14 +265,28 @@ the screens. Headlines short (≤ 7 words), one per beat, BlurText reveals; key 
 stylised 3D world that belongs to the product's domain, with the app's real UI floating over it. Strong, clear,
 smooth. Learnt from a maps-app promo (method only — never copy its city, brand, words or shots).
 
+> **★ Originality rule (lesson from a real mistake).** Take the *method* (8a) and nothing of the reference's look.
+> A first attempt for a delivery company rebuilt the reference almost 1:1 — same night city, same route tube, same
+> location puck, same marquee bands — and the user rejected it: «قلدت المقطع 100٪». For every video, design the 3D
+> world, its shapes, the hero element, the transitions and the interstitial from the *subject* (its logo, its
+> product, its domain, its colours). Before building, write a 5-line "world brief" and check it against the reference:
+> 1. **World:** what place/objects belong to *this* product (not "a city" by default).
+> 2. **Shapes:** the 3D vocabulary derived from the logo/product (e.g. rounded tiles from an app icon, folded paper from
+>    a receipt, stacked crates from a warehouse) — at least one custom shape you model yourself.
+> 3. **Hero element:** taken from *this* logo, and how it performs each transition (its own moves, not the iris/puck/ring trio).
+> 4. **Palette & light:** from the brand (light world is fine; dark clay is only one option).
+> 5. **Interstitial & end:** a reset beat that comes from the subject (not diagonal marquee bands by default).
+> If three or more lines would describe the reference too, redesign before writing code.
+
 ### 8a. The secret (why it feels strong)
 1. **One hero element threads the whole film.** Pick one element of the brand mark (a dot, pin, route line, box,
    coin, cursor…). It appears in *every* scene and *performs every transition*: it sits on the countdown digits,
    becomes the iris the camera dives through, becomes the puck travelling the route, the centre of a spinning ring
    wipe, and at the end the scene flattens and the world's lines grow into the **logo itself** around it. The eye
    follows one thing for 40 s — that is the continuity.
-2. **A clay world: colour = information.** All geometry is matte white/off-white (`#e8e3e0`), untextured, on a
-   near-black ground (`#07090b`), with fog and soft shadows. Only product meaning is coloured: brand colour for the
+2. **A clay world: colour = information.** Geometry is matte and untextured in one neutral tone (the reference
+   used off-white on near-black; choose the neutral pair from the brand — light worlds work too), with fog and soft
+   shadows. Only product meaning is coloured: brand colour for the
    world's paths, one accent for "you/your route", red only for problems. Viewers read colour as data instantly.
 3. **A curiosity hook, then a numbered list.** Open on the white ground with a whisper word (e.g. «شششش» blurring in),
    the hero dot, a 3-2-1 countdown, then the promise «أشياء في X / يمكن ما كنت تعرف عنها». Every feature gets a
@@ -280,10 +295,10 @@ smooth. Learnt from a maps-app promo (method only — never copy its city, brand
    chase behind a vehicle, top-down pull-out), a real UI element from the app pops in (chip, card, toast, caption
    bar), and where possible a real "proof" insert (screen recording, footage, dashboard) plays for 1–2 s.
 5. **Metronome pacing.** Shots of 2–3 s, cuts land on the hero element, one kinetic interstitial at the midpoint
-   (diagonal marquee bands repeating the key phrase in brand colour + white) to reset attention, and a brand-colour
+   (a full-frame reset beat built from the subject — e.g. the key phrase on the brand colour) to reset attention, and a brand-colour
    end card (logo build, name, availability line, store badges / QR placeholders).
 
-### 8b. Scene grammar (≈40 s, adapt the count of features)
+### 8b. Scene grammar (≈40 s, adapt the count of features — the beats, not the reference's shots)
 1. *Hook* (0–4 s, white ground): whisper word blur-in → hero dot drops in → countdown digits in brand gradient with the dot riding over them.
 2. *Promise* (4–6 s): «أشياء في <المنتج>» + sub-line, the mark beside it; text scatters into particles; the dot stays.
 3. *Dive* (6–7 s): the dot grows into a circle (iris) whose inside already shows the dark 3D world; a white diagonal wedge sweeps off.
@@ -336,12 +351,71 @@ hook/promise, dark clay world for features, brand colour for the interstitial an
 (countdown), `swoop` (iris dive), `glide`/`sweep` (camera moves), `popover`/`ping` (UI overlays), `whip` (marquee),
 `halo` (ring wipe), `emblem`+`chime` (logo), `calm` or `pulse` bed.
 
+## Style 9 — عرض الهاتف (Phone Demo) — one feature on a real phone, on white
+**Purpose:** show *how* one feature works, step by step, as if the viewer were holding the phone: the app's real
+screens (rebuilt from code) inside a real iPhone frame, a finger tap on each step, and one short headline above the
+phone per step. Simple, fast, no visual noise. First made for «المتمكن» remote barcode printing (invoices → invoice →
+options → print barcodes → copies per item = quantity bought → send to the shop printer).
+
+**Feel:** Apple-style feature demo. White ground, one phone, one sentence at a time, nothing else on screen.
+**Palette:** white `#ffffff` ground (or the app's scaffold if near-white), text and accents in the **app's own tokens**
+(read `theme/tokens.ts` or equivalent); highlight = primary at ~22 % opacity.
+**Type:** the app's font (المتمكن: Cairo 800 for headlines, 400–700 inside the app UI at the app's real sizes).
+
+### 9a. The phone (real mockup, never a drawn rectangle)
+- Frames: **jamesjingyi/mockup-device-frames** on GitHub (Apple design-resource PNGs with transparent screens). Link it,
+  fetch only the frame you use: `git clone --depth 1 --filter=blob:none --sparse https://github.com/jamesjingyi/mockup-device-frames /tmp/frames && git -C /tmp/frames ls-tree -r --name-only HEAD | grep -i "iphone"`,
+  then sparse-checkout the one PNG. Default **iPhone 17 Pro, Silver** (the user asked for an iPhone, not a Pixel).
+- Measure the screen hole once with PIL (alpha = 0 region): iPhone 17 Pro PNG 1406×2822, screen at (100,100), size
+  1206×2622 = **402×874 pt @3x**, the Dynamic Island is part of the frame. Corner radius ≈ 172 px in PNG pixels.
+- Build the app screen at **402×874 pt** (real point sizes from the code), scale it by `1206/402·S` where
+  `S = PHONE_H/2822` (PHONE_H ≈ 1300 px at 1080×1920), clip with `borderRadius: 172·S`, and put the PNG on top.
+- Status bar (time, signal, battery) in SF/system font, LTR. Phone enters with a soft rise + fade (0.5 s), then stays still;
+  a slow scale 1→1.03 across the film is enough life.
+
+### 9b. Screens = the real app
+- Read the feature's code path (latest active branch): screen titles, list rows, buttons, sheet options, limits
+  (e.g. `MAX_COPIES_PER_PRODUCT = 20`, `MAX_LABELS_PER_JOB = 300`, label sizes) and empty/success messages. Use the exact labels.
+- If a step does not exist in code yet, build it in the app's design language and call it a concept in the delivery note.
+- Navigation like the platform: RTL **push** (new screen slides in from the left, old one shifts ~110 px and dims 6 %),
+  **bottom sheets** spring up with a dim scrim, steppers bump (scale 1.15 + primary colour) on each change, the primary
+  button presses (0.97 + darker shade), a success row ends the flow.
+- Sample data (supplier names, invoice numbers, prices) is labelled as sample data in the delivery note.
+
+### 9c. Taps and headline
+- **Tap:** a grey 36 px dot that appears 6 frames before the press, then a 2 px primary ring expanding to ~40 px and
+  fading. Place taps in pt coordinates of the 402×874 screen, then scale — never eyeball them on the final frame;
+  check each tap lands on its target in stills.
+- **Headline above the phone** (y ≈ 170–530, x 70–1010): one sentence per step, ≤ 7 words, 76 px Cairo 800, words
+  enter with BlurText (blur 10→0, y +20→0, 3-frame stagger); once landed, a highlighter in primary @22 % sweeps right→left
+  under the key phrase (14 frames); exit = blur + rise 10 frames before the next step. The headline names the action the
+  finger is about to do, so text leads the tap by ~0.5 s.
+- Example headlines (المتمكن): «اطبع باركودات بضاعتك… من أي مكان» · «ادخل للفواتير، واختار فاتورة المورد الجديدة» ·
+  «من الخيارات: طباعة باركودات الفاتورة» · «كل صنف ياخذ ملصقات… قد اللي اشتريته» · «اضغط طباعة… والملصقات تطلع في المحل».
+
+### 9d. Timeline (≈28 s at 30 fps — one step every 3–4 s)
+| beat | frames | on the phone | headline |
+|---|---|---|---|
+| Hook | 0–80 | phone rises, list screen | the promise (feature in 5 words) |
+| Step 1 | 80–205 | tap a row → push to the detail screen | where to go |
+| Step 2 | 205–335 | tap the menu → sheet → tap the option → push | which option |
+| Step 3 | 335–525 | values fill/count up one by one, pick a size | the clever part (the "why") |
+| Step 4 | 525–700 | press the primary button → send sheet → progress → success | the result |
+| Outro | 700–840 | phone falls away; app mark + name + one line | — |
+Keep one focal motion at a time: while the finger moves, the headline holds; while the headline changes, the phone holds.
+
+**React Bits:** BlurText (headline), CountUp (copy counters), StarBorder/ShinyText only on the outro line; no
+background effect (white is the point). **Sounds:** `swoop` (phone in), `glimmer` (each headline), `tink` (taps),
+`swish` (pushes), `popover` (sheets), `notch`+`counter` (steppers), `dot` (sending), `ding`+`check` (done),
+`emblem` (outro), `calm` bed at −11 dB.
+**Example project:** `examples/13-remote-barcode/` in the shared repo.
+
 ## Adding a new style from a reference video
 When the user sends a reference clip for a new style:
 1. Probe it (`ffprobe` duration/size/audio), then contact sheets: whole clip at 1 fps (`fps=1,scale=180:400,tile=10x4`)
    and dense sheets (2.5–4 fps, cropped to the content area) for the busy parts. Sample the palette with PIL
    (quantize a crop of key frames). Identify fonts by rendering candidates next to a crop.
-2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–8: **Feel / Palette / Type /
+2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–9: **Feel / Palette / Type /
    Scene grammar with timings / Motion rules / React Bits picks (visuals + sounds)** — the idea and method, never a
    frame-by-frame copy, and no copying of the reference's brand, logo or text.
 3. Add it to the Step 1 table (only four can be options; list the rest in the question text), to 13c and 13d, and to
@@ -399,7 +473,7 @@ project or skill: list names, fetch only the files you use.
    springs from scale 0.55 / +26 px with opacity, `start + i*min(1.6, 34/kids)` frames — the picture builds itself.
    Then float it ±6 px on a slow sine. Characters' ink is `#2f2e41`: on dark grounds place them on a light card.
 
-## 4. Story structure & timing (style 1; styles 2–8 use their own scene grammar above)
+## 4. Story structure & timing (style 1; styles 2–9 use their own scene grammar above)
 - 8–10 scenes, one idea each, 5–10 s per scene. Default arc: **Hook (cover) → Problem (text post) → How it
   works (diagram) → 4–5 feature screens → Team/support → Outro (logo + tagline)**.
 - One narration line per scene, ≤ 18 words, typed in the bubble; one highlight phrase per line.
@@ -618,7 +692,8 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
   sounds suspense, nocturne, braam, reveal, swish, thock, tickertape, coin, stamp, emblem, chime.
 - Style 6 (Live UI): DotGrid + Spotlight, BlurText, GradientText, CountUp, StarBorder beam, Aurora; sounds velvet, swoop, focus, notch, snap, check, emblem, calm.
 - Style 7 (Illustrated Tale): Silk/Aurora on the turn, BlurText, CountUp, Noise; sounds unfold, swish, glimmer, blop, popover, ding, wand, calm.
-- Style 8 (Product World): three.js world + BlurText, Counter, marquee (ScrollVelocity/TextLoop), StarBorder chips, Aurora end card; sounds swoop, glide, popover, whip, halo, emblem.
+- Style 8 (Product World): three.js world designed for the subject + BlurText, Counter, a subject-made interstitial, StarBorder chips, Aurora end card; sounds swoop, glide, popover, whip, halo, emblem.
+- Style 9 (Phone Demo): no background effect (white), BlurText headline + highlight sweep, CountUp on steppers; sounds swoop, glimmer, tink, swish, popover, notch, counter, dot, ding, check, emblem, calm.
 
 ### 13d. Quick picker — React Bits by clip type (pick 1 background + 1 text effect + 1–2 components + a sound set)
 | Clip type | Background (tested ports first) | Text effect | Components | Sounds |
@@ -630,7 +705,8 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
 | Typographic statement | Grainient/GradientBlinds (very subtle) | TextType with block cursor, Shuffle | pill reveal, mask lines | keycap/thock, stamp, snap, whip |
 | Brand reel / logo | Galaxy/Threads/Beams (harder ports), LightRays★ | GlitchText, ShinyText sheen | MagicRings/Orb, ElectricLogo | braam, reveal, emblem/herald, punchline |
 | Illustrated story | Silk★/Aurora★ on the turn, Noise | BlurText captions | AnimatedList, CountUp, toast | unfold, swish, glimmer, blop/bubble, wand, calm bed |
-| 3D product world / hidden-features list | three.js clay world★ (13a ThreeLayer), Aurora★ end card | BlurText, Counter countdown | marquee bands, StarBorder chips, numbered badge | swoop, glide, popover/ping, whip, halo, emblem |
+| 3D product world / hidden-features list | three.js world★ designed for the subject (13a ThreeLayer), Aurora★ end card | BlurText, Counter countdown | subject-made interstitial, StarBorder chips, numbered badge | swoop, glide, popover/ping, whip, halo, emblem |
+| One feature, step by step on a phone | plain white (no effect) + real iPhone frame | BlurText headline + highlighter sweep | tap ripple, push stack, bottom sheet, stepper CountUp | swoop, glimmer, tink, swish, popover, notch/counter, dot, ding/check, emblem, calm |
 ★ = already ported and tested frame-driven in this skill (Silk, Aurora, LightRays: single-pass shaders; three.js world). Prefer
 single-pass shaders (one `FRAGMENT`/`COMPOSITE`, no `createFramebuffer`) — check with
 `grep -c createFramebuffer <Name>.jsx`; multi-pass ones (Threads, Grainient, Beams, DarkVeil) need the extra pass.
@@ -662,7 +738,9 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - Style 4 reference: fontbold.top typographic reel (grey studio gradient, heavy Arabic typed with block cursor, blue card)
 - Style 5 reference: RIVINITY "positioning / Al Ries" reel (method only: research-led story, acts, editorial pacing)
 - Style 6: invented for المتمكن («واجهة حية» launch film) · Style 7: invented for the المتمكن roles video («حكاية مصوّرة»)
-- Style 8 reference: a maps-app "hidden features" promo seen on TikTok (method only: hero element, clay 3D world, numbered list, marquee interstitial, logo morph)
+- Style 8 reference: a maps-app "hidden features" promo seen on TikTok (method only: hero element, colour-as-information 3D world, numbered list, reset interstitial, logo morph — never its city/route/puck/marquee look)
+- Style 9 phone frames: https://github.com/jamesjingyi/mockup-device-frames (Apple device PNGs; iPhone 17 Pro Silver, screen 1206×2622 at 100,100)
+- Example projects from this skill (source only): https://github.com/Hadani0mar/skill/tree/main/examples
 
 ## Appendix A — default narrator (boy with laptop, user-supplied art)
 File: `public/character.png` in the template — 452×967 px, transparent background, original smile painted

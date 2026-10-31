@@ -1,0 +1,22 @@
+{
+  "name": "almutamakkin-expiry-pulse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "فيديو شرح تطبيق المتمكن (Remotion) — الشخصية تسرد والشاشات مبنية من كود almutamakkin-expo-v3",
+  "scripts": {
+    "studio": "remotion studio src/Root.tsx",
+    "render": "remotion render src/index.ts AlMutamakkinExplainer out/almutamakkin-expiry-pulse.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/player": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.4",
+    "typescript": "~5.9.0"
+  }
+}
