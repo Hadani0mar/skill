@@ -15,5 +15,5 @@ How to use them (any agent):
 
 | Skill | Use when |
 |---|---|
-| `skills/motion-storytelling/SKILL.md` | Arabic vertical motion videos in Remotion: app explainers, brand reels, logo stings, typographic reels, researched story/news reels, modern launch films, illustrated stories, 3D product worlds, phone feature demos. Real logos for every named company/app/tool (Brandbase → svgl → Simple Icons). Always ask which of the nine styles first; white ground unless the style or user sets a colour. |
+| `skills/motion-storytelling/SKILL.md` | Arabic vertical motion videos in Remotion: app explainers, brand reels, logo stings, typographic reels, researched story/news reels, modern launch films, illustrated stories, 3D product worlds, phone feature demos. Real logos and all UI icons from m0usasvg (Hadani0mar/m0usasvg); every visual component ported from React Bits first. Always ask which of the nine styles first; white ground unless the style or user sets a colour. |
 | `skills/mascot-explainer-video/SKILL.md` | A character/mascot presents a product, cutting away to animated app UI, with kinetic captions synced to a voice-over. |

@@ -17,7 +17,7 @@ npm run render     # يصدّر out/almutamakkin-explainer.mp4
 | `src/components/Frame.tsx` | الورق، الحساب فوق، وشريط «شارك المنفعة» تحت |
 | `src/components/ShaderLayer.tsx` | طبقة WebGL مقادة بالإطار لخلفيات React Bits (القسم 13a في المهارة) |
 | `src/scenes/*` | المشاهد التسعة |
-| `src/icons.json` | أيقونات Fluent UI System Icons — Color (رخصة MIT) |
+| `src/icons.json` | أيقونات واجهة من m0usasvg (شكل duotone) — https://github.com/Hadani0mar/m0usasvg |
 | `public/fonts` | IBM Plex Sans Arabic (رخصة OFL) |
 
 ## المصدر

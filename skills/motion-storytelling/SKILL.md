@@ -31,20 +31,27 @@ copy rule, sources). **Reading the whole file and the sources below is required,
    - `template/` for the shared components and render harness;
    - the library the style names: React Bits (`public/llms.txt` + the component `.jsx`), unDraw list (3b), three.js +
      Kenney (8d), mockup-device-frames (9a), the subject's official brand assets (5b);
-   - the logo of every company/app/tool the script names (global rule «real logos»: Brandbase → svgl → Simple Icons → official).
+   - m0usasvg: the registry `src/data/icons.json` for every company/app/tool the script names, and `src/data/ui/looks/*.json`
+     for the UI icons (global rule «real logos» + section 3).
    If a source cannot be reached, say which one and why, then continue with the documented fallback — never silently skip it.
 4. **Write a reading receipt** to the user in one short message before building (and keep it in `research/receipt.md`):
    ```
    قرأت المهارة كاملة حتى END ✅ — كلمة التحقق: <the check word from the END line>
    الأسلوب: <# + name> — الأقسام اللي قرأتها: <list>
    المصادر اللي فتحتها: <code branch + files, example folder, libraries, brand assets>
-   الشعارات: <brand → source library/file, or "none named">
+   الشعارات والأيقونات (m0usasvg): <brand → slug/variant; UI icons → slug + look>
+   مكونات React Bits: <each visual piece → React Bits component; hand-made only with the reason>
    قواعد ملزمة لهذا الفيديو: <ground colour, React Bits picks + sounds, copy rule, any style-specific rule>
    ```
    No receipt → no code. If you cannot give the check word, go back and read the rest of the file.
 5. **Before delivering**, walk section 11 point by point against the stills and say which points passed.
 
 ## ★ Global rule — React Bits in every video, every style
+**Designs and components come from React Bits — always.** Before you hand-build any visual piece (background, text
+reveal, counter, list, card, border, button, badge, marquee, transition, cursor, particles, logo wall), search React
+Bits for it (`public/llms.txt` → the component `.jsx`) and port that (13a). Hand-made pieces are allowed only when React
+Bits truly has no equivalent — then name what you searched for and why nothing fit, in the reading receipt and the
+delivery note. Icons and logos come from **m0usasvg** (global rule below + section 3), not from other icon libraries.
 Every video this skill makes — whatever the style — is built with React Bits (section 13):
 - **Sound:** all cues come from the React Bits sound library rendered to WAV (13b): transitions, typing, reveals,
   highlights, numbers, impacts, the ending, and a quiet bed. Synthesised numpy sound is a fallback only when the
@@ -68,41 +75,38 @@ Every video this skill makes — whatever the style — is built with React Bits
 ## ★ Global rule — real logos for every company, app or tool the video names
 Whenever a video mentions a company, app, product, tool, service, platform or organisation — the subject itself, a
 partner, an integration («يرسل لواتساب»), a payment method, a store badge, a competitor in a comparison, a tool in a
-list — show its **real logo**, fetched with the flow below. Never draw a look-alike, never use an emoji or a generic
-icon in its place, and never invent a logo. Make a list of every named brand from the script first (`research/logos.md`:
-name → slug → source → file → colour), then fetch them all before designing.
+list, a cloud service — show its **real logo** from **m0usasvg**. Never draw a look-alike, never use an emoji or a
+generic icon in its place, and never invent a logo. Make a list of every named brand from the script first
+(`research/logos.md`: name → slug → variant file → hex), then fetch them all before designing.
 
-**Lookup chain (stop at the first hit; link the repos, fetch only the files you use):**
-1. **Brandbase** — https://github.com/MassiveMassimo/brandbase (MIT). Curated official SVGs **plus a `guidelines.md` per
-   brand** (colours, clear space, background rules, don'ts). Still small (apple, google, zoom at last check), so always try it first but expect misses.
-   - Slug: lowercase, hyphenated, special chars stripped («VS Code» → `visual-studio-code`, «Stack Overflow» → `stack-overflow`).
-   - Discover: `gh api repos/MassiveMassimo/brandbase/contents/brands/{slug} --jq '.[].name'` (or WebFetch
-     `https://api.github.com/repos/MassiveMassimo/brandbase/contents/brands/{slug}`); not found → list `brands/` and grep the keyword.
-   - Files: `{brand}-{size}[-{variant}].svg`; default `{brand}-24.svg`; `-light` = white version for dark grounds,
-     `-dark`, `-wordmark`, `-monochrome`. Raw: `https://raw.githubusercontent.com/MassiveMassimo/brandbase/main/brands/{brand}/{brand}-24.svg`.
-   - **Always fetch `guidelines.md` too** and follow it (allowed backgrounds, min size, no recolour/outline/glow/rotation).
-2. **svgl** — https://github.com/pheralb/svgl (~1,100 full-colour logos and wordmarks, light/dark variants, e.g.
-   `static/library/supabase.svg`, `supabase_wordmark_dark.svg`, `anthropic_white.svg`, `claude-ai-icon.svg`).
-   List: `git clone -q --depth 1 --filter=blob:none --no-checkout https://github.com/pheralb/svgl /tmp/svgl && git -C /tmp/svgl ls-tree -r --name-only HEAD static/library/ | grep -i <keyword>`,
-   then `git -C /tmp/svgl sparse-checkout set --no-cone /static/library/<file>.svg && git -C /tmp/svgl checkout -q`.
-   Metadata (category, official url, brand guidelines link) in `src/data/svgs.ts`.
-3. **Simple Icons** — https://github.com/simple-icons/simple-icons (CC0 files, ~3,500 brands, single-colour 24×24 paths).
-   Slug = title lowercased with spaces/punctuation removed, `+`→`plus`, `.`→`dot`, `&`→`and`, accents stripped
-   («Visual Studio Code» → `visualstudiocode`). File `icons/{slug}.svg`; the official brand hex is in
-   `data/simple-icons.json` (`{title, hex, source, guidelines}`) — fill the path with `#hex`, or white on the brand colour.
-   Use it when only a mark is needed (chips, integration rows, logo walls); it has no wordmarks.
-4. **The brand's own sources** — official GitHub repo (`git ls-tree -r --name-only HEAD | grep -iE "brand|logo|press"`),
-   press/brand page via WebFetch (read the SVG URL, then fetch it where the network allows). Section 5b.
-5. **Local businesses** (Libyan shops, small companies, the user's clients) are rarely in any library: ask the user to
-   attach the logo (or use the one in their app's code/assets). If nothing is available, set the **name in type** in the
-   brand colour — and say so in the delivery note.
+**Source: https://github.com/Hadani0mar/m0usasvg** (the user's fork of theSVG; code MIT, each mark stays its owner's
+trademark; per-icon licence in the registry). ~7,600 brand logos + cloud icons (AWS/Azure/GCP) in
+`public/icons/{slug}/{file}.svg`, and ~1,190 UI icons (section 3). Its own agent guide: `skills/thesvg/SKILL.md`; docs in `docs/`.
+1. **Registry first** (cache it for the session): `src/data/icons.json` — a list of
+   `{slug, title, aliases, hex, categories, variants, license, url, guidelines, collection}`. Match the brand against
+   `title` and `aliases` (case-insensitive, then fuzzy); slugs are lowercase-hyphenated (`visual-studio-code`, `whatsapp`, `aws-lambda`).
+   ```bash
+   git clone -q --depth 1 --filter=blob:none --no-checkout https://github.com/Hadani0mar/m0usasvg /tmp/m0usasvg
+   git -C /tmp/m0usasvg sparse-checkout set --no-cone /src/data/icons.json && git -C /tmp/m0usasvg checkout -q
+   python3 -c "import json,sys;q=sys.argv[1].lower();[print(i['slug'],i['title'],i['hex'],list(i['variants'])) for i in json.load(open('/tmp/m0usasvg/src/data/icons.json')) if q in i['title'].lower() or any(q in a.lower() for a in i['aliases'])]" supabase
+   ```
+2. **Pick the variant from `variants`** (it maps variant → real path; don't guess file names): `default` (always there,
+   brand colours), `mono` (currentColor), `light` (white, for dark grounds), `dark` (black, for light grounds),
+   `wordmark` / `wordmarkLight` / `wordmarkDark` (full text logo), `color`, sizes `16/32/64`. Fall back to `default`.
+3. **Fetch only those files:** `git -C /tmp/m0usasvg sparse-checkout add /public/icons/supabase/default.svg /public/icons/supabase/wordmark-light.svg && git -C /tmp/m0usasvg checkout -q`
+   (outside the sandbox the raw URL works too: `https://raw.githubusercontent.com/Hadani0mar/m0usasvg/main/public/icons/{slug}/{file}.svg`).
+   Copy them to `public/logos/` in the video project. If `guidelines` is set, read it (WebFetch) for clear space and backgrounds.
+4. **Not in the registry** → the brand's own sources (official GitHub repo `git ls-tree -r --name-only HEAD | grep -iE "brand|logo|press"`,
+   press page; section 5b). **Local businesses** (Libyan shops, small companies, the user's clients) are rarely listed:
+   ask the user to attach the logo or take it from their app's code/assets; otherwise set the **name in type** in the
+   brand colour and say so in the delivery note.
 
-**Using logos:** use them as published — no redraw, recolour (except the brand's own approved mono/white variants), stretch,
-outline, glow, rotation or effects on the mark itself; respect clear space; on a dark ground use the light/white
-variant; size ≥ 48 px on screen so it reads on a phone. Animate the container (scale/fade/mask reveal, StarBorder ring
-around it) — not the logo's shape. Logos are shown editorially (the video talks about the brand); never imply
-endorsement or partnership that doesn't exist. Record each file's source in `research/logos.md` and list them in the
-delivery note.
+**Using logos:** use them as published — no redraw, recolour (except the brand's own `mono`/`light`/`dark` variants),
+stretch, outline, glow, rotation or effects on the mark itself; respect clear space; on a dark ground use `light` /
+`wordmarkLight`; size ≥ 48 px on screen. Animate the container with React Bits (LogoLoop for logo walls, StarBorder ring,
+BlurText-style fade/scale/mask reveal) — not the logo's shape. Logos are editorial (the video talks about the brand);
+never imply endorsement or partnership. Prefix SVG `id`s per instance (as in section 3) when inlining several. Record
+each file's slug, variant and licence in `research/logos.md` and list them in the delivery note.
 
 ## ★ Step 1 — always ask which style (every time, right after the reading gate in Step 0)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
@@ -265,7 +269,7 @@ phrases highlighted; ~0.23 s per word + 2.5 s hold), and attribute figures to th
   product look (UI colours, key screens), era cues. Read colours from the brand/press page or official repo
   (CSS variables, `tailwind.config`, design tokens, the official logo SVG) rather than guessing.
 - **Where real assets come from (in order):**
-  0. Logos first through the lookup chain in the global rule «real logos» (Brandbase → svgl → Simple Icons).
+  0. Logos first from m0usasvg (global rule «real logos»: registry → variant → sparse fetch).
   1. The subject's own **official brand / press-kit assets** (logo SVG/PNG, product shots, wordmark). Many
      companies keep them in their public GitHub repo — fetch with a sparse/blobless clone and
      `git ls-tree -r --name-only HEAD | grep -iE "brand|logo|press"` (e.g. Supabase:
@@ -492,32 +496,46 @@ When the user sends a reference clip for a new style:
 4. Propose the updated SKILL.md to the user (full file) for saving, and push the same file to the shared repo
    (Hadani0mar/skill, `skills/motion-storytelling/SKILL.md`) if it is attached to the session.
 
-## 3. Icons — real illustrated UI icons, never emoji
-- **Primary: Microsoft Fluent UI System Icons — Color** (`fluent-color`, MIT, ~199 icons: database, cloud,
-  laptop, phone, people, person-available, person-key, building, building-store, receipt, coin-multiple,
-  savings, bot-sparkle, megaphone-loud, alert, calendar-clock, search-sparkle, scan-type, shield-checkmark,
-  lock-shield, data-trending, image, pin, checkmark-circle, star, add-starburst, lightbulb-filament,
-  chat-bubbles-question …). Styles 2 and 6 use single-colour line icons instead (draw them as SVG strokes).
-- **Gap fillers:** Icons8 Flat Color (`flat-color-icons`, MIT: package, print, shop, picture, sales-performance);
-  Streamline Color / Plump Color (CC BY 4.0 — credit Streamline in the video description); Ionicons (`ion`) when
-  rebuilding an Expo/React Native UI that uses them.
-- Do **not** use Fluent Emoji / Apple / Noto emoji sets: they read as emoji, not product icons.
-- Get the JSON from Iconify without npm:
-  `git clone --depth 1 --filter=blob:none --sparse https://github.com/iconify/icon-sets && git sparse-checkout set --no-cone /json/fluent-color.json /json/flat-color-icons.json`.
-- Extract only the icons used into `src/icons.json` (try `name-48, -32, -28, -24, -20, -16`; store `{body, w, h}`),
-  render as inline SVG and **prefix gradient ids per instance** (Fluent Color gradients collide otherwise).
+## 3. Icons — m0usasvg UI icons, never emoji
+All interface/concept icons in every video (feature chips, bento cards, steps, lists, diagrams, captions) come from the
+**m0usasvg UI set** — https://github.com/Hadani0mar/m0usasvg — ~1,190 icons, each drawn in **7 looks**: `outline`,
+`fill`, `duotone`, `glass`, `glass-outline`, `offset`, `depth`. They use `currentColor`, so one CSS colour themes them
+to the brand. Do not mix in other icon libraries (Fluent, Icons8, Streamline, Lucide…) and never use emoji.
+*One exception:* inside an app screen rebuilt from code (styles 1, 6, 9), use the icon the app's code actually uses
+(e.g. Ionicons in an Expo app) so the UI stays true to the product.
+- **Manifest:** `src/data/ui-icons.json` → `icons[]` with `{slug, title, category, domain, tags, set}`; search `title`
+  + `tags` (+ `src/data/ui/synonyms.json` for synonyms; domains in `src/data/ui/taxonomy.json`: interface, arrows,
+  status, files, communication, dev, security, media, people, commerce, layout, time, tools, nature, data …).
+  Examples: `barcode`, `printer`, `invoice`, `receipt`, `box`, `boxes`, `store`, `shopping-cart`, `users`, `user-check`,
+  `shield-check`, `chart-line`, `inbox`.
+- **SVG bodies:** `src/data/ui/looks/{look}.json` = `{slug: "<svg …>"}` (full 24×24 SVG strings; the site renders
+  `public/ui/{slug}/{look}.svg` from them at build time, so read the JSON). Fetch only the looks you use:
+  ```bash
+  git -C /tmp/m0usasvg sparse-checkout add /src/data/ui-icons.json /src/data/ui/synonyms.json /src/data/ui/looks/duotone.json && git -C /tmp/m0usasvg checkout -q
+  python3 - <<'PY'
+  import json; L=json.load(open('/tmp/m0usasvg/src/data/ui/looks/duotone.json'))
+  json.dump({k:L[k] for k in ['barcode','printer','invoice','store']}, open('src/icons.json','w'), ensure_ascii=False)
+  PY
+  ```
+- **Pick one look per video** to keep it coherent: `outline` for clean/white styles (1, 4, 9), `duotone` or `fill` for
+  feature chips and bento cards (6, 7), `glass` / `glass-outline` / `depth` for dark or premium beats (2, 5, 6, 8),
+  `offset` for playful/editorial. Brand logos are never drawn with these — they come from the registry (global rule).
+- Render inline, coloured with `color:` (brand primary or the style accent), and **prefix the `id`s per instance**
+  (the SVGs contain `<mask id="…">`, which collide when the same icon appears twice):
 
 ```tsx
-// src/components/Icon.tsx
+// src/components/Icon.tsx — m0usasvg UI icon (one look per video), ids prefixed per instance
 import icons from '../icons.json';
 let n = 0;
 const prefix = (b: string, p: string) => b.replace(/id="([^"]+)"/g, (_, i) => `id="${p}${i}"`)
   .replace(/url\(#([^)]+)\)/g, (_, i) => `url(#${p}${i})`).replace(/href="#([^"]+)"/g, (_, i) => `href="#${p}${i}"`);
-export const Icon = ({name, size = 96}: {name: keyof typeof icons; size?: number}) => {
-  const ic = (icons as any)[name]; const p = React.useMemo(() => `i${(n++).toString(36)}_`, []);
-  return <svg width={size} height={size} viewBox={`0 0 ${ic.w} ${ic.h}`} dangerouslySetInnerHTML={{__html: prefix(ic.body, p)}} />;
+export const Icon = ({name, size = 96, color = 'currentColor'}: {name: keyof typeof icons; size?: number; color?: string}) => {
+  const p = React.useMemo(() => `i${(n++).toString(36)}_`, []);
+  const svg = prefix((icons as any)[name], p).replace(/width="24" height="24"/, `width="${size}" height="${size}"`);
+  return <span style={{display: 'inline-flex', color, lineHeight: 0}} dangerouslySetInnerHTML={{__html: svg}} />;
 };
 ```
+- Animate icons with React Bits motion (stagger pop, BlurText-style fade, StarBorder/ BorderGlow on the focused chip), driven by the frame.
 
 ## 3b. Illustrations — unDraw vector library (link it, never clone it whole)
 Source: **https://github.com/balazser/undraw-svg-collection** — about 1,360 unDraw SVGs in `svgs/<name>.svg`, MIT repo of
@@ -644,14 +662,17 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    palette and no colour asked for, the ground is white.
 5. React Bits used: at least one ported background/effect visible, and every sound cue is a React Bits sound.
 6. Copy: every line specific and true (copy rule in Step 1).
-6b. Every company/app/tool named on screen or in a line shows its real logo (global rule «real logos»), used as published,
-   with its source in `research/logos.md`; missing ones are set as type and listed in the delivery note.
+6b. Every company/app/tool named on screen or in a line shows its real logo from m0usasvg (global rule «real logos»), used as
+   published, with slug/variant in `research/logos.md`; missing ones are set as type and listed in the delivery note.
+6c. All UI icons are m0usasvg in one look (app-screen icons excepted); every visual component is a React Bits port, or its
+   absence from React Bits is stated.
 7. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
 
 ## 12. Project layout
 ```
 src/theme.ts            colours, SCENES, LINES, END, TRANSITION
-src/icons.json          extracted Fluent Color / Flat Color icons
+src/icons.json          extracted m0usasvg UI icons (one look)
+public/logos/*.svg      brand logos from the m0usasvg registry (+ research/logos.md)
 src/illus.json          (style 7) unDraw illustrations split into animatable parts
 src/components/Icon.tsx Text.tsx (Typewriter, WordsIn, Marker, HookLine) Frame.tsx (Paper, BrandChrome)
 src/components/Narrator.tsx  rig + bubble     src/components/Ui.tsx (SceneTitle, AppCard, Pill, pulse)
@@ -790,11 +811,8 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - React Bits: https://github.com/DavidHDev/react-bits · https://reactbits.dev · agent index https://reactbits.dev/llms.txt · licence https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md
 - ogl (lightweight WebGL): https://github.com/oframe/ogl
 - three.js (style 8): https://github.com/mrdoob/three.js · Kenney CC0 kits: https://github.com/KenneyNL/Starter-Kit-City-Builder · https://github.com/KenneyNL/Starter-Kit-Racing · https://kenney.nl/assets
-- Brand logos: Brandbase https://github.com/MassiveMassimo/brandbase (SVG + guidelines.md per brand) · svgl https://github.com/pheralb/svgl · Simple Icons https://github.com/simple-icons/simple-icons (CC0, `data/simple-icons.json` for hex)
+- Logos + UI icons: m0usasvg https://github.com/Hadani0mar/m0usasvg (fork of theSVG; registry `src/data/icons.json`, UI looks `src/data/ui/looks/*.json`, agent guide `skills/thesvg/SKILL.md`)
 - unDraw SVG collection (illustrations, style 7): https://github.com/balazser/undraw-svg-collection · https://undraw.co
-- Fluent UI System Icons (Color): https://github.com/microsoft/fluentui-system-icons · Iconify set: https://icon-sets.iconify.design/fluent-color/
-- Icons8 Flat Color Icons: https://icon-sets.iconify.design/flat-color-icons/ · Streamline Color: https://icon-sets.iconify.design/streamline-color/
-- Iconify icon-sets JSON: https://github.com/iconify/icon-sets
 - IBM Plex Sans Arabic: https://fonts.google.com/specimen/IBM+Plex+Sans+Arabic · https://github.com/google/fonts/tree/main/ofl/ibmplexsansarabic
 - Poppins: https://fonts.google.com/specimen/Poppins · Alexandria: https://fonts.google.com/specimen/Alexandria · Barlow Condensed: https://fonts.google.com/specimen/Barlow+Condensed
 - Readex Pro: https://fonts.google.com/specimen/Readex+Pro · Cairo: https://fonts.google.com/specimen/Cairo
