@@ -25,7 +25,7 @@
 - موك آب الهاتف (مثال 13): `public/device/iphone17pro-silver.png` من https://github.com/jamesjingyi/mockup-device-frames.
 - نماذج Kenney (11، 12): `public/models/*.glb` + `Textures/colormap.png` من KenneyNL/Starter-Kit-Racing (CC0).
 - three.js: استنساخ جزئي من mrdoob/three.js (القسم 8d)؛ مسارات الـalias في `render/build.mjs`.
-- الفيديوهات MP4 والإطارات ومجلدات dist.
+- الإطارات ومجلدات dist غير مرفوعة؛ مثال 15 يضم MP4 النهائي للمعاينة.
 
 ### محتوى public الأصلي لكل مثال
 
