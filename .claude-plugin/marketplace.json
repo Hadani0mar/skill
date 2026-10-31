@@ -1,0 +1,11 @@
+{
+  "name": "almutamakkin",
+  "owner": { "name": "Hadani0mar" },
+  "plugins": [
+    {
+      "name": "almutamakkin-skills",
+      "source": "./",
+      "description": "مهارات المتمكن: موشن السرد القصصي (Remotion + React Bits) وفيديو الشرح بشخصية."
+    }
+  ]
+}
