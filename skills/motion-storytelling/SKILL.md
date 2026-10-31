@@ -332,7 +332,7 @@ smooth. Learnt from a maps-app promo (method only — never copy its city, brand
 **Type & palette:** rounded geometric Arabic (Readex Pro / Alexandria 600–800) for hook and chips; white ground for
 hook/promise, dark clay world for features, brand colour for the interstitial and end card (the style's own palette).
 **React Bits:** BlurText (whisper word, promise), CountUp/Counter (countdown), ScrollVelocity/TextLoop-style marquee
-(interstitial), StarBorder on chips, Aurora/LightRays only on the end card; sounds `breeze`/`swell` (hush), `tick`/`tally`
+(interstitial), StarBorder on chips, Aurora/LightRays only on the end card; sounds `breeze`/`swell` (hush), `tink`/`tally`
 (countdown), `swoop` (iris dive), `glide`/`sweep` (camera moves), `popover`/`ping` (UI overlays), `whip` (marquee),
 `halo` (ring wipe), `emblem`+`chime` (logo), `calm` or `pulse` bed.
 
