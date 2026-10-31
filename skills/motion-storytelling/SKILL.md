@@ -6,13 +6,14 @@ description: موشن السرد القصصي: فيديوهات موشن عمو�
 # موشن السرد القصصي — Motion Storytelling (Remotion)
 
 Vertical (9:16) Arabic motion videos built in Remotion and rendered to MP4, with React Bits backgrounds, effects
-and sounds in every video. Eight house styles, defined below as written specs (not clips to copy).
+and sounds in every video. Nine house styles, defined below as written specs (not clips to copy).
 Style 1 is a narrator-led explainer where a character tells the story in a typed speech bubble beside app screens
 rebuilt from the product's source; styles 2–4 are kinetic brand / typographic formats; style 5 is a researched
 documentary reel about a person, company, tool, story or event, built from verified facts and the subject's real
 visual identity; style 6 is a modern product launch film built from the app's real UI; style 7 is an illustrated
 story with vector characters (unDraw) that build themselves piece by piece; style 8 puts the product inside a
-minimal 3D world (three.js) threaded by one hero element from the logo. First made for «المتمكن» (almutamakkin-expo-v3).
+minimal 3D world (three.js) threaded by one hero element from the logo; style 9 walks through one feature on a
+real iPhone mockup on white. Worked examples of every style: `examples/` in the repo. First made for «المتمكن» (almutamakkin-expo-v3).
 Shared copy for other agents: GitHub repo Hadani0mar/skill (`skills/motion-storytelling/`, with `template/`).
 
 ## ★ Global rule — React Bits in every video, every style
@@ -30,7 +31,7 @@ Every video this skill makes — whatever the style — is built with React Bits
 ## ★ Global rule — white ground by default
 - Every video starts on a **white ground `#ffffff`** (backgrounds, cards behind text, empty frames) unless:
   1. the user names a background colour for this clip → use it everywhere the white would have been; or
-  2. the chosen style defines its own palette (styles 1–8 below) → the style keeps its colours, grounds included.
+  2. the chosen style defines its own palette (styles 1–9 below) → the style keeps its colours, grounds included.
 - Freestyle, invented or "you choose" looks, and any new style added later, default to white too; text then defaults
   to near-black `#141413`, and the accent comes from the subject's brand.
 - React Bits backgrounds on a white ground: use light variants (low opacity, multiply/soft tints of the accent) so the
@@ -78,7 +79,7 @@ copy it into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new s
 3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–9. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
 5. Format: 1080×1920, 30 fps; length per style
-   (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s, 8: 35–45 s). Narration language/dialect (default: the user's dialect).
+   (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s, 8: 35–45 s, 9: 20–30 s). Narration language/dialect (default: the user's dialect).
 6. Styles 2/3: logo file, tagline, contact lines, 3–4 pillar words. Style 4: the question + answer text, punch words.
    Style 5: only the subject (person / company / tool / story / event) + the angle or lesson the user wants; Claude does the research.
    Background colour: only if the user wants one (otherwise white or the style's palette — see the global rule).
@@ -144,7 +145,7 @@ for the liquid wipe if it ports cleanly; sounds `braam` (title), `slam`/`stamp` 
 3. *Tagline*: one line above the logo; the first word gets a hand-drawn green ellipse drawn around it (dashoffset).
 4. *Contact lines* (2.6–4 s): 2–3 centred lines (email, site, phone) **type out** left→right in white, staggered
    0.15 s; hold ≥ 1 s at the end.
-Use it standalone (brand outro) or append to styles 1, 2, 4, 5, 6, 7 or 8. Ask for logo file + tagline + contact lines.
+Use it standalone (brand outro) or append to styles 1, 2, 4, 5, 6, 7, 8 or 9. Ask for logo file + tagline + contact lines.
 On black, recolour a dark logo to white (keep accent colours) — the user's own logo only; third-party logos stay as published.
 **React Bits:** ElectricLogo or a ShinyText-style sheen over the logo (overlay only), StarBorder around the contact block,
 a faint Orb/LightRays behind; sounds `punchline` (dot lands), `emblem`/`herald` (logo), `keycap` (contact lines), `finale`.
