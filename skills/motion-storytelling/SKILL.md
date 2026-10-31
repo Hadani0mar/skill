@@ -1,6 +1,6 @@
 ---
-name: "motion-storytelling"
-description: "موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بسبعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة) بمكونات وأصوات React Bits ورسومات unDraw، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة."
+name: motion-storytelling
+description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بسبعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة) بمكونات وأصوات React Bits ورسومات unDraw، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
 ---
 
 # موشن السرد القصصي — Motion Storytelling (Remotion)
@@ -12,6 +12,7 @@ rebuilt from the product's source; styles 2–4 are kinetic brand / typographic 
 documentary reel about a person, company, tool, story or event, built from verified facts and the subject's real
 visual identity; style 6 is a modern product launch film built from the app's real UI; style 7 is an illustrated
 story with vector characters (unDraw) that build themselves piece by piece. First made for «المتمكن» (almutamakkin-expo-v3).
+Shared copy for other agents: GitHub repo Hadani0mar/skill (`skills/motion-storytelling/`, with `template/`).
 
 ## ★ Global rule — React Bits in every video, every style
 Every video this skill makes — whatever the style — is built with React Bits (section 13):
@@ -22,7 +23,7 @@ Every video this skill makes — whatever the style — is built with React Bits
   text animations / components wherever the style has text reveals, counters, lists, cards or logos. Tint
   backgrounds to the video's palette (brand colour, style accent). Keep the style's own look on top; React Bits
   supplies motion, texture and depth, not a new identity.
-- Pick pieces from the React Bits line in each style section and 13c; read the component's `.jsx` before porting.
+- Pick pieces from the React Bits line in each style section, 13c and the quick picker 13d; read the component's `.jsx` before porting.
 - Keep `public/sfx/REACT-BITS-LICENSE.md` (copy of the repo LICENSE) in every project that uses them.
 
 ## ★ Global rule — white ground by default
@@ -38,9 +39,9 @@ Every video this skill makes — whatever the style — is built with React Bits
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
 four options: offer the four that fit the request best (default: 1, 5, 6, 7 for a product/app; 2, 4, 6, 5 for a
 brand or statement) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
-can pick any unlisted style via "Other"). If the user explicitly says "you choose", pick a style they have
-not used yet and say which one in the first sentence. If the request itself names a story/person/company to tell
-about ("اسرد لي قصة …"), that is style 5 — say so and start.
+can pick any unlisted style via "Other"). If the user explicitly says "you choose" or "freestyle", pick a style they
+have not used yet (or invent one, white ground) and say which one in the first sentence. If the request itself names
+a story/person/company to tell about («اسرد لي قصة …»), that is style 5 — say so and start.
 
 | # | الاسم | English | One line |
 |---|---|---|---|
@@ -53,25 +54,31 @@ about ("اسرد لي قصة …"), that is style 5 — say so and start.
 | 7 | **حكاية مصوّرة** | Illustrated Tale | Storybook chapters: unDraw characters that build themselves piece by piece, recoloured to the brand, page-turn transitions, captions on cards, app UI cut-ins. 45–60 s. (Style 7) |
 
 Then ask (same call, only if unknown) whether to include the narrator character: default **yes** for style 1,
-**no** for 2–5 (in 2–5 it can appear small in a corner or only in the opening/closing beat).
+**no** for 2–7 (there it can appear small in a corner or only in the opening/closing beat).
 Styles share the build pipeline (sections 3, 3b, 7, 8, 9, 10, 11, 13); only the look, scene grammar and timing change.
 
+**Copy rule (all styles):** every line must say something specific and true about the subject — a real feature,
+fact or number — in the user's dialect. No generic slogans («احفظوا الاسم», «أنا مش أداة»). For ads, one benefit
+per line, short, with a turn of phrase; never invent claims, prices or links (leave a placeholder and say so).
+
 ## 0. Template and character
-The ready project lives in **`template/`** next to this file (in the GitHub repo Hadani0mar/skill; elsewhere it may arrive as `motion-storytelling-template.zip`) (fonts, icons, narrator image, all components,
-offline renderer). If it is not in the session, ask the user to attach it (or their own character image);
-unzip into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new story.
+The ready project lives in **`template/`** next to this file (in the GitHub repo Hadani0mar/skill; elsewhere it may
+arrive as `motion-storytelling-template.zip`): fonts, icons, narrator image, all components, ShaderLayer, offline
+renderer. If it is not in the session, clone the repo or ask the user to attach it (or their own character image);
+copy it into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new story.
 
 ## 1. Inputs (ask only what is missing)
 1. **Story / product** + the one sentence the viewer must remember.
 2. **Source of truth for UI** — repo + folder. Read the latest branch with recent commits, not only `main`
    (`git ls-remote --heads origin`, then `git fetch --depth 1 origin <branch>`). Take labels, tabs, section
    titles and colour tokens from the code. Names/numbers you invent are sample data and must be called so.
-3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–5. Never a known copyrighted character.
+3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–7. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
 5. Format: 1080×1920, 30 fps (60 fps on request: twice the frames and render time; see section 10); length per style
    (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s). Narration language/dialect (default: the user's dialect).
 6. Styles 2/3: logo file, tagline, contact lines, 3–4 pillar words. Style 4: the question + answer text, punch words.
    Style 5: only the subject (person / company / tool / story / event) + the angle or lesson the user wants; Claude does the research.
+   Background colour: only if the user wants one (otherwise white or the style's palette — see the global rule).
 
 ## 2. Style 1 — منشور الورق (Paper Post): visual language
 | Element | Spec |
@@ -134,7 +141,7 @@ for the liquid wipe if it ports cleanly; sounds `braam` (title), `slam`/`stamp` 
 3. *Tagline*: one line above the logo; the first word gets a hand-drawn green ellipse drawn around it (dashoffset).
 4. *Contact lines* (2.6–4 s): 2–3 centred lines (email, site, phone) **type out** left→right in white, staggered
    0.15 s; hold ≥ 1 s at the end.
-Use it standalone (brand outro) or append to styles 1, 2, 4 or 5. Ask for logo file + tagline + contact lines.
+Use it standalone (brand outro) or append to styles 1, 2, 4, 5, 6 or 7. Ask for logo file + tagline + contact lines.
 On black, recolour a dark logo to white (keep accent colours) — the user's own logo only; third-party logos stay as published.
 **React Bits:** ElectricLogo or a ShinyText-style sheen over the logo (overlay only), StarBorder around the contact block,
 a faint Orb/LightRays behind; sounds `punchline` (dot lands), `emblem`/`herald` (logo), `keycap` (contact lines), `finale`.
@@ -170,6 +177,9 @@ grey studio, Grainient or GradientBlinds (very subtle, blue) on the blue card, S
 visual identity, and designs a 30–40 s documentary reel that tells the story and lands one lesson. The reference
 clip taught the *method* — act structure, pacing, editorial tone — not a layout to copy. Every video should look
 like the subject's own world (its colours, logo, product, era), not like the reference.
+When the user gives a full article and asks for no summarising, show the article verbatim paragraph by paragraph
+(one beat per paragraph: typed kicker + an animated number/visual + the paragraph revealed word by word with the key
+phrases highlighted; ~0.23 s per word + 2.5 s hold), and attribute figures to the article.
 
 ### 5a. Research (before any design)
 1. Clarify only if the subject is ambiguous. Otherwise start.
@@ -211,11 +221,11 @@ like the subject's own world (its colours, logo, product, era), not like the ref
 + IBM Plex Sans Arabic for Arabic; a React Bits background tinted to the brand colour behind 1–2 acts
 (section 13); film grain/Noise overlay for the archive feel when the story is historical.
 **Motion:** cinematic — slow push-ins, rack focus, light leaks, precise line drawing, clean cuts; nothing bouncy.
-**React Bits:** Silk / DarkVeil / LightRays / Topography tinted to the brand colour, Noise for archive grain, BlurText
+**React Bits:** Silk / DarkVeil / LightRays / Aurora / Topography tinted to the brand colour, Noise for archive grain, BlurText
 for headlines, Counter/CountUp/SplitFlapText for numbers and dates, ShinyText sheen over the official logo (overlay
-only), LogoLoop for partner/customer logos the subject publishes.
+only), LogoLoop for partner/customer logos the subject publishes or as a news ticker.
 **Sound:** React Bits sounds — `suspense`/`nocturne` bed, `braam`+`reveal` on the logo, `swish` on camera moves,
-`thock` when a highlight lands, `stamp` on the turning point, `tickertape`/`counter` on numbers, `emblem`+`chime` at the end.
+`thock` when a highlight lands, `stamp` on the turning point, `tickertape`/`counter`/`coin` on numbers, `emblem`+`chime` at the end.
 **Documents & newspapers:** when dates/events are shown as a page (newspaper, report, blog), set them as real
 paragraphs (Amiri/serif, justified, kicker + headline + body per item), let the camera travel down the page and
 stop on each item, then sweep a highlighter (brand colour at ~55% or `#f6e94b`) over the date/event phrase with
@@ -252,21 +262,23 @@ When the user sends a reference clip for a new style:
 1. Probe it (`ffprobe` duration/size/audio), then contact sheets: whole clip at 1 fps (`fps=1,scale=180:400,tile=10x4`)
    and dense sheets (2.5–4 fps, cropped to the content area) for the busy parts. Sample the palette with PIL
    (quantize a crop of key frames). Identify fonts by rendering candidates next to a crop.
-2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–5: **Feel / Palette / Type /
+2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–7: **Feel / Palette / Type /
    Scene grammar with timings / Motion rules / React Bits picks (visuals + sounds)** — the idea and method, never a
    frame-by-frame copy, and no copying of the reference's brand, logo or text.
 3. Add it to the Step 1 table (only four can be options; list the rest in the question text), to 13c and 13d, and to
    Sources (as "Style N reference"). A new style defaults to the white ground unless its spec says otherwise.
-4. Propose the updated SKILL.md to the user (full file) for saving.
+4. Propose the updated SKILL.md to the user (full file) for saving, and push the same file to the shared repo
+   (Hadani0mar/skill, `skills/motion-storytelling/SKILL.md`) if it is attached to the session.
 
 ## 3. Icons — real illustrated UI icons, never emoji
 - **Primary: Microsoft Fluent UI System Icons — Color** (`fluent-color`, MIT, ~199 icons: database, cloud,
   laptop, phone, people, person-available, person-key, building, building-store, receipt, coin-multiple,
   savings, bot-sparkle, megaphone-loud, alert, calendar-clock, search-sparkle, scan-type, shield-checkmark,
   lock-shield, data-trending, image, pin, checkmark-circle, star, add-starburst, lightbulb-filament,
-  chat-bubbles-question …). Style 2 uses single-colour green line icons instead (draw them as SVG strokes).
+  chat-bubbles-question …). Styles 2 and 6 use single-colour line icons instead (draw them as SVG strokes).
 - **Gap fillers:** Icons8 Flat Color (`flat-color-icons`, MIT: package, print, shop, picture, sales-performance);
-  Streamline Color / Plump Color (CC BY 4.0 — credit Streamline in the video description).
+  Streamline Color / Plump Color (CC BY 4.0 — credit Streamline in the video description); Ionicons (`ion`) when
+  rebuilding an Expo/React Native UI that uses them.
 - Do **not** use Fluent Emoji / Apple / Noto emoji sets: they read as emoji, not product icons.
 - Get the JSON from Iconify without npm:
   `git clone --depth 1 --filter=blob:none --sparse https://github.com/iconify/icon-sets && git sparse-checkout set --no-cone /json/fluent-color.json /json/flat-color-icons.json`.
@@ -356,6 +368,8 @@ export const graphemes = (t: string) => { const g: string[] = []; for (const c o
 - **HookLine**: SVG path with `strokeDasharray=len`, `strokeDashoffset=len·(1−p)`.
 - **Mask slide-up** (styles 2–5): each line inside `overflow:hidden`, text translates from 110% to 0 with Easing.out(cubic).
 - **Vertical words** (style 2 pillars): `rotate(-90deg)` inside a zero-size anchor; keep them clear of orbit lines.
+- **Line breaks:** in word-by-word components support a `|` token that forces a new line, to avoid a lone last word.
+- Mixed Arabic/Latin labels (e.g. «تعهد الـ80%») can flip under bidi: reword or isolate the Latin/number part.
 - More effects: port React Bits text animations (section 13a) — BlurText is a good default reveal for any style.
 
 ## 8. Transitions (vary them; RTL → new content enters from the left)
@@ -363,12 +377,13 @@ export const graphemes = (t: string) => { const g: string[] = []; for (const c o
 `iris({width,height})`, `clockWipe({width,height})`, `fade()`; alternate `springTiming({config:{damping:200}})`
 and `linearTiming`, 18 frames. Every scene paints its own background so wipes/iris don't show both scenes.
 Chrome and Narrator live **outside** the TransitionSeries so they stay continuous across cuts.
-Style 2: hard cuts + a custom gooey wipe presentation; style 4: hard cuts only; style 5: fades, light leaks, glitch bars.
-Every transition gets a React Bits sound (`sweep`, `swish`, `whip`, `swoop`, `wipe`).
+Style 2: hard cuts + a custom gooey wipe presentation; style 4: hard cuts only; style 5: fades, light leaks, glitch bars,
+skewed brand-colour wipe; style 6: camera moves only; style 7: rising pages.
+Every transition gets a React Bits sound (`sweep`, `swish`, `whip`, `swoop`, `wipe`, `unfold`).
 
 ## 9. Sound bed
 Always React Bits sounds rendered to WAV (section 13b), placed on the cut frames and mixed with numpy
-(`render/mix.py`: load WAV, add at `frame/30*SR` with a per-sound gain, loop a bed with 0.6 s crossfades, normalise
+(`render/mix.py`: load WAV, add at `frame/fps*SR` with a per-sound gain, loop a bed with 0.6–0.8 s crossfades, normalise
 to −1 dBFS). Fallback only if React Bits is unavailable — synthesise with numpy:
 a 12 ms click (noise burst + 1.8–2.6 kHz ping) on every 2nd typed grapheme of the bubble and titles (amp .05–.09);
 a 0.45 s lowpass-swept noise whoosh at each scene start; small pitch-drop pops on marker swipes; a very quiet
@@ -403,21 +418,23 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    they show, render a 10-frame test before the full run; with the real Remotion CLI use `--concurrency` = cores.
 
 ## 11. Check before delivering
-1. Contact sheet of 8–10 stills (one per scene at its busiest moment) + 3 mid-transition frames; look at them:
-   overlaps with the narrator/bubble, text wrapping (orphans like a lone «اليوم،» → smaller size), safe area,
-   clipped Arabic dots/descenders, text running off the edges.
+1. Contact sheet of 8–12 stills (one per scene at its busiest moment) + 3 mid-transition frames; look at them:
+   overlaps with the narrator/bubble, text wrapping (orphans like a lone «اليوم،» → shorter line, smaller size or `|`),
+   safe area, clipped Arabic dots/descenders, text running off the edges, content overflowing its card.
 2. Highlights land when typed; bubble never on screen without a line; mouth closed when not typing.
 3. UI labels match the source code; sample data named as such in the delivery note. Style 5: every fact traced to a source,
    official assets used as published (no recolour/distortion), no web photos of real people.
 4. The chosen style's palette, type and scene grammar are respected (compare against its section); with no style
    palette and no colour asked for, the ground is white.
 5. React Bits used: at least one ported background/effect visible, and every sound cue is a React Bits sound.
-6. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
+6. Copy: every line specific and true (copy rule in Step 1).
+7. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
 
 ## 12. Project layout
 ```
 src/theme.ts            colours, SCENES, LINES, END, TRANSITION
 src/icons.json          extracted Fluent Color / Flat Color icons
+src/illus.json          (style 7) unDraw illustrations split into animatable parts
 src/components/Icon.tsx Text.tsx (Typewriter, WordsIn, Marker, HookLine) Frame.tsx (Paper, BrandChrome)
 src/components/Narrator.tsx  rig + bubble     src/components/Ui.tsx (SceneTitle, AppCard, Pill, pulse)
 src/components/ShaderLayer.tsx   React Bits shader backgrounds, frame-driven
@@ -426,10 +443,10 @@ src/Video.tsx (FontFaces + TransitionSeries + chrome + narrator)  src/Root.tsx  
 public/fonts/*.ttf  public/character.png  public/character-original.jpg  public/brand-mark.png
 public/sfx/*.wav + REACT-BITS-LICENSE.md   React Bits sounds used by this video
 public/brand/*          (style 5) official logo / product assets of the subject
-render/build.mjs player-entry.tsx index.html serve.py stills.py render.py sounds-entry.js mix.py
+render/build.mjs player-entry.tsx index.html serve.py stills.py render.py sounds-entry.js getsfx.py mix.py
 research/facts.md + research/brand.md   (style 5) verified facts with sources + the subject's visual identity
 ```
-For styles 2–5 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
+For styles 2–7 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
 (rendered with `<Sequence>`) works well; reuse the render/ harness.
 
 ## 13. React Bits — components, backgrounds, text effects and sounds
@@ -440,7 +457,8 @@ Code lives in `src/content/<Category>/<Name>/<Name>.jsx` (JS+CSS; TS and Tailwin
 `src/tailwind`, `src/ts-tailwind`). Sounds: `src/sounds/js/<name>.js` (≈200 recipes) + the engine
 `src/sounds/js/react-bits-sound.js`.
 **Licence:** MIT + Commons Clause — free to use inside videos, apps and client work; do not sell or
-redistribute the components or sounds themselves (keep only what the project uses; keep the licence notice).
+redistribute the components or sounds themselves (keep only what the project uses; keep the licence notice;
+never commit ported shader code or rendered WAVs to a shared/public repo).
 
 ### 13a. Porting rule: everything must be driven by the frame
 React Bits components animate with requestAnimationFrame, CSS animations, GSAP, Motion or pointer input.
@@ -448,8 +466,10 @@ In Remotion none of that renders deterministically, so port each piece:
 - **Shader backgrounds (most of the 63 are raw WebGL with no dependencies):** copy the fragment shader
   string(s) from the `.jsx` and run them in a frame-driven `ShaderLayer` (below). Replace the component's
   time accumulator with `uTime = frame / fps * speed`, set pointer/drag/wave uniforms to rest values, intro
-  progress = `min(1, t / INTRO_SECONDS)`. Multi-pass shaders (bloom etc.): start with the glow pass off
-  (`uGlow = 0`), add the extra pass only if needed. Tint them with the brand colour uniforms.
+  progress = `min(1, t / INTRO_SECONDS)` (or fully open: e.g. LightRays `uIntro [2.6, 1]`). Substitute template
+  constants (`${MAX_STOPS}`, `${MAX_LAYERS}`, `${MAX_PULSES}`) before compiling. Multi-pass shaders (bloom etc.):
+  start with the glow pass off (`uGlow = 0`), add the extra pass only if needed. Tint them with the brand colour uniforms.
+  Aurora takes its colour stops in OKLCH: copy its `toOklch` + `unwrapHues` helpers to build the `uStops` array.
 - **ogl / three components** (EvilEye, MicroSlats, PatternWaves, ColorBends, Hyperspeed…): extract the GLSL and
   use ShaderLayer, or bundle `ogl` from GitHub (`oframe/ogl`, no deps) and call `renderer.render` inside a
   `useEffect` keyed on the frame. Avoid three.js unless `@remotion/three` is installable.
@@ -463,7 +483,8 @@ In Remotion none of that renders deterministically, so port each piece:
 - Canvas/WebGL capture: create contexts with `preserveDrawingBuffer: true`.
 
 ```tsx
-// src/components/ShaderLayer.tsx — frame-driven full-screen WebGL2 shader (tested with React Bits Silk)
+// src/components/ShaderLayer.tsx — frame-driven full-screen WebGL2 shader (tested with React Bits Silk, Aurora, LightRays)
+const INTS = new Set(['uStopCount', 'uLayers', 'uCount', 'uType']);
 const VERT = `#version 300 es
 in vec2 aPosition; void main(){ gl_Position = vec4(aPosition,0.0,1.0); }`;
 export const ShaderLayer: React.FC<{frag: string; uniforms: (t: number, w: number, h: number) => Record<string, number | number[]>}> = ({frag, uniforms}) => {
@@ -483,14 +504,18 @@ export const ShaderLayer: React.FC<{frag: string; uniforms: (t: number, w: numbe
   useEffect(() => { // draw this frame
     const {gl, p, loc} = st.current; const c = ref.current!; gl.viewport(0, 0, c.width, c.height); gl.useProgram(p);
     for (const [k, v] of Object.entries(uniforms(frame / fps, c.width, c.height))) { const l = loc[k]; if (l == null) continue;
-      if (typeof v === 'number') gl.uniform1f(l, v); else if (v.length === 2) gl.uniform2fv(l, v); else if (v.length === 3) gl.uniform3fv(l, v); else gl.uniform4fv(l, v); }
+      if (typeof v === 'number') { if (INTS.has(k)) gl.uniform1i(l, v); else gl.uniform1f(l, v); }
+      else if (v.length === 2) gl.uniform2fv(l, v); else if (v.length === 3) gl.uniform3fv(l, v); else if (v.length === 4) gl.uniform4fv(l, v);
+      else if (v.length % 4 !== 0 && v.length % 3 === 0) gl.uniform3fv(l, v); else gl.uniform4fv(l, v); }
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   });
   return <AbsoluteFill><canvas ref={ref} width={width} height={height} style={{width: '100%', height: '100%'}} /></AbsoluteFill>;
 };
-// Extract a shader: python re.search(r"const COMPOSITE = `(.*?)`;", src, re.S), then substitute ${SILK}-style includes.
+// Extract a shader: python re.search(r"const COMPOSITE = `(.*?)`;", src, re.S) (or FRAGMENT), then substitute ${...} includes/constants.
 // Silk example uniforms: uView [w,h], uTime t*0.5, uScale 1, uWave 1, uRipple 1, uFold 1, uColor brand rgb, uSheen .5,
 // uDepth .5, uGlow 0, uNoiseIntensity 1.2, uLight [.3,.5,0], uStep [1/w,1/h], uPresence 1, uWaves 16 zeros, uPointer [0,0,0,.32].
+// LightRays: uSource [0.5w, -0.2h], uAim [0,1], uReach max(w,h), uColor, uSpread .6, uLength 3, uDensity 1.4, uSharpness .65,
+// uGlow .9, uHaze .2, uIntensity 1.6, uPulses 16 zeros, uIntro [2.6,1], uOpacity 1.
 ```
 
 ### 13b. Sounds → WAV (offline, in Chromium)
@@ -498,31 +523,31 @@ export const ShaderLayer: React.FC<{frag: string; uniforms: (t: number, w: numbe
 1. Write `render/sounds-entry.js` that imports `renderSound` and the chosen recipes
    (`import sweep from '<repo>/src/sounds/js/sweep.js'`), converts the returned AudioBuffer to 16-bit PCM WAV
    (RIFF header + interleaved samples), and exposes `window.renderRB(name)` returning base64.
-2. Bundle with esbuild (`--bundle --format=iife --alias:react=<global react>`), open it in Playwright, decode
-   and save each WAV to `public/sfx/`.
+2. Bundle with esbuild (`--bundle --format=iife --alias:react=<global react>`), open it in Playwright (over the
+   project's HTTP server, not file://), decode and save each WAV to `public/sfx/` (`render/getsfx.py`).
 3. Place them on the timeline: in Remotion `<Sequence from={f}><Audio src={staticFile('sfx/reveal.wav')} /></Sequence>`;
-   offline, mix with numpy (read WAV, add at `frame/30*SR`, scale per sound) or ffmpeg (`adelay` + `amix`).
+   offline, mix with numpy (read WAV, add at `frame/fps*SR`, scale per sound) or ffmpeg (`adelay` + `amix`).
    Keep the peak ≤ −1 dBFS.
-Good picks: transitions `sweep` `swish` `whip` `swoop` `wipe`; typing `keycap` `thock` `tab`; reveals `reveal`
-`glimmer` `shimmer` `bloom` `appear`; impact `braam` `stamp` `slam` `thunder`; numbers `counter` `tickertape` `tally`;
-success `chime` `ping` `finale` `emblem` `herald`; tension/beds `suspense` `nocturne` `dread` `nebula` `drift`;
-UI `check` `popover` `notch` `dot` `snap`.
+Good picks: transitions `sweep` `swish` `whip` `swoop` `wipe` `unfold` `glide`; typing `keycap` `thock` `tab`; reveals `reveal`
+`glimmer` `shimmer` `glint` `bloom` `appear`; impact `braam` `stamp` `slam` `thunder` `zap`; numbers `counter` `tickertape` `tally` `coin` `data`;
+success `chime` `ping` `ding` `finale` `emblem` `herald` `halo`; tension/beds `suspense` `nocturne` `calm` `velvet` `dread` `nebula` `drift` `heartbeat`;
+UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
 
 ### 13c. Which pieces fit which style
 - Style 1 (Paper Post): Noise (paper grain), GradualBlur, Counter/CountUp, SpringCheck, AnimatedList, StarBorder; sounds keycap, thock, sweep, glimmer, chime.
 - Style 2 (Brand Pulse): Galaxy, Threads, Beams, MagicRings, Orb, LightRays, GlitchText, ElectricBorder, LogoLoop; sounds braam, whip, zap, reveal, nebula.
 - Style 3 (Logo Sting): ElectricLogo / MetallicPaint-style sheen on the logo, ShinyText, StarBorder; sounds punchline, emblem, herald, finale.
 - Style 4 (Bold Typer): TextType, Shuffle/DecryptedText, Noise, Grainient or GradientBlinds very subtle; sounds keycap, thock, stamp, snap, whip.
-- Style 5 (Story Archive): DarkVeil, LightRays, Silk, Dither, Noise, Topography (tinted to the brand colour); text BlurText,
+- Style 5 (Story Archive): Aurora, DarkVeil, LightRays, Silk, Dither, Noise, Topography (tinted to the brand colour); text BlurText,
   TrueFocus, SplitFlapText, CountUp, StrokeText; components Counter, LogoLoop, CardSwap/Stack for photos the user supplies;
-  sounds suspense, braam, reveal, swish, thock, tickertape, stamp, emblem, chime.
+  sounds suspense, nocturne, braam, reveal, swish, thock, tickertape, coin, stamp, emblem, chime.
 - Style 6 (Live UI): DotGrid + Spotlight, BlurText, GradientText, CountUp, StarBorder beam, Aurora; sounds velvet, swoop, focus, notch, snap, check, emblem, calm.
 - Style 7 (Illustrated Tale): Silk/Aurora on the turn, BlurText, CountUp, Noise; sounds unfold, swish, glimmer, blop, popover, ding, wand, calm.
 
 ### 13d. Quick picker — React Bits by clip type (pick 1 background + 1 text effect + 1–2 components + a sound set)
 | Clip type | Background (tested ports first) | Text effect | Components | Sounds |
 |---|---|---|---|---|
-| App explainer / feature walkthrough | Noise grain on white; Silk (light tint) for a turn | BlurText, TextType | Counter/CountUp, AnimatedList, StarBorder on the focused card | keycap, swish/sweep, glimmer, popover/tab, ding, chime |
+| App explainer / feature walkthrough | Noise grain on white; Silk★ (light tint) for a turn | BlurText, TextType | Counter/CountUp, AnimatedList, StarBorder on the focused card | keycap, swish/sweep, glimmer, popover/tab, ding, chime |
 | Ad / promo (short, punchy) | LightRays★ behind the hero and finale | DecryptedText (Latin), GlitchText, Slam-in | Counter, ElectricBorder chips | braam, slam/stamp, whip, thunder, zap, finale |
 | Launch film / UI showcase | DotGrid + Spotlight, Aurora★ finale | BlurText + GradientText | StarBorder/BorderGlow, CountUp, skeleton shimmer | velvet, swoop/glide, focus, notch/dot, snap/check, emblem, calm bed |
 | News / documentary / story | Aurora★ or Silk★ on dark beats, Noise | BlurText per word, highlighter | CountUp, LogoLoop ticker, progress bar | whip, keycap, coin/treasure, counter, unease, nocturne bed |
@@ -546,6 +571,7 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - Iconify icon-sets JSON: https://github.com/iconify/icon-sets
 - IBM Plex Sans Arabic: https://fonts.google.com/specimen/IBM+Plex+Sans+Arabic · https://github.com/google/fonts/tree/main/ofl/ibmplexsansarabic
 - Poppins: https://fonts.google.com/specimen/Poppins · Alexandria: https://fonts.google.com/specimen/Alexandria · Barlow Condensed: https://fonts.google.com/specimen/Barlow+Condensed
+- Readex Pro: https://fonts.google.com/specimen/Readex+Pro · Cairo: https://fonts.google.com/specimen/Cairo
 - Amiri: https://fonts.google.com/specimen/Amiri · Noto Naskh Arabic: https://fonts.google.com/noto/specimen/Noto+Naskh+Arabic · Playfair Display: https://fonts.google.com/specimen/Playfair+Display
 - Gooey / metaball effect (style 2 liquid wipe): https://css-tricks.com/gooey-effect/
 - Kinetic typography: https://brush.ninja/glossary/animation/kinetic-typography · https://wyzowl.com/kinetic-typography/
