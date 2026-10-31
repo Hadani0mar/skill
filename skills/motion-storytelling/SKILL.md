@@ -74,7 +74,7 @@ copy it into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new s
    titles and colour tokens from the code. Names/numbers you invent are sample data and must be called so.
 3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–7. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
-5. Format: 1080×1920, 30 fps (60 fps on request: twice the frames and render time; see section 10); length per style
+5. Format: 1080×1920, 30 fps; length per style
    (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s). Narration language/dialect (default: the user's dialect).
 6. Styles 2/3: logo file, tagline, contact lines, 3–4 pillar words. Style 4: the question + answer text, punch words.
    Style 5: only the subject (person / company / tool / story / event) + the angle or lesson the user wants; Claude does the research.
@@ -325,8 +325,6 @@ project or skill: list names, fetch only the files you use.
   works (diagram) → 4–5 feature screens → Team/support → Outro (logo + tagline)**.
 - One narration line per scene, ≤ 18 words, typed in the bubble; one highlight phrase per line.
 - Everything in `src/theme.ts`: `SCENES=[{id,start}]`, `END`, `TRANSITION=18`, `LINES=[{t0,t1,text,hl}]`.
-- Write every time in **seconds** through one helper (`const s = (sec: number) => Math.round(sec * fps)`), never as raw
-  frame numbers, so the same video renders at 30 or 60 fps without retiming.
 - Typing speed per line: `cps = graphemes / max(1.5, t1 − t0 − 1.1)` so the line finishes ~1 s before it ends.
 - TransitionSeries durations: `dur_i = (start_{i+1} − start_i)·fps + TRANSITION` (last: to END), so scene i+1
   still starts exactly at its `start`.
@@ -412,10 +410,6 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    `-framerate 30 -i f%05d.jpg -i sfx.wav -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p -c:a aac`.
    ~2100 frames ≈ 3 min with 6 pages. The same `src/` renders unchanged with the real Remotion CLI.
    WebGL (ShaderLayer) works in headless Chromium's software GL; it is slower (≈ 5 min for 1000 frames), so budget time.
-6. **Frame rate & speed.** Default 30 fps. 60 fps on request (smoother motion, 2× frames → about 2× render time).
-   Above 60 brings nothing: phone players and Reels/TikTok/Shorts play 30–60 fps and drop the extra frames. Speed:
-   more Playwright pages (one per CPU core), JPEG frames (q90–93), `-preset veryfast`, keep WebGL layers only where
-   they show, render a 10-frame test before the full run; with the real Remotion CLI use `--concurrency` = cores.
 
 ## 11. Check before delivering
 1. Contact sheet of 8–12 stills (one per scene at its busiest moment) + 3 mid-transition frames; look at them:
