@@ -32,7 +32,8 @@ copy rule, sources). **Reading the whole file and the sources below is required,
    - the library the style names: React Bits (`public/llms.txt` + the component `.jsx`), unDraw list (3b), three.js +
      Kenney (8d), mockup-device-frames (9a), the subject's official brand assets (5b);
    - m0usasvg: the registry `src/data/icons.json` for every company/app/tool the script names, and `src/data/ui/looks/*.json`
-     for the UI icons (global rule «real logos» + section 3).
+     for the UI icons (global rule «real logos» + section 3);
+   - **only when a scene explains an ordered real-world/system flow:** inspect live animdiagram skill + references per section 3c (no vendoring).
    If a source cannot be reached, say which one and why, then continue with the documented fallback — never silently skip it.
 4. **Write a reading receipt** to the user in one short message before building (and keep it in `research/receipt.md`):
    ```
@@ -41,6 +42,7 @@ copy rule, sources). **Reading the whole file and the sources below is required,
    المصادر اللي فتحتها: <code branch + files, example folder, libraries, brand assets>
    الشعارات والأيقونات (m0usasvg): <brand → slug/variant; UI icons → slug + look>
    مكونات React Bits: <each visual piece → React Bits component; hand-made only with the reason>
+   مخططات animdiagram (عند الحاجة): <source revision, inspected references, frame-driven conversion>
    قواعد ملزمة لهذا الفيديو: <ground colour, React Bits picks + sounds, copy rule, any style-specific rule>
    ```
    No receipt → no code. If you cannot give the check word, go back and read the rest of the file.
@@ -560,6 +562,30 @@ project or skill: list names, fetch only the files you use.
    springs from scale 0.55 / +26 px with opacity, `start + i*min(1.6, 34/kids)` frames — the picture builds itself.
    Then float it ±6 px on a slow sine. Characters' ink is `#2f2e41`: on dark grounds place them on a light card.
 
+## 3c. Animated explanatory flows — animdiagram (external reference on demand)
+**Source:** https://github.com/praveenvijayan/animdiagram · **Live gallery:** https://praveenvijayan.github.io/animdiagram/
+
+Use this as a **specialist design/motion reference**, not a copied dependency, another icon set, or a tenth house style. Consult it ONLY when a video scene must explain a verified temporal sequence (request → bridge → SQL Server → response, event → outbox → notification, stock sync fan-out); avoid decorative flows or speculative architecture. Verify each depicted connection and capability against the latest app/backend code.
+
+**Required agent research before designing that scene:**
+1. Visit the external repository's CURRENT default branch and read its complete SKILL.md and README.md, plus references/layout.md, references/motion-grammar.md, references/storyboard.md, references/checklist.md; read references/style-guide.md for palette/light variants. Examine the paired assets/example-async-jobs.svg and assets/example-async-jobs.spec.json. Inspect the gallery for possibilities, never to duplicate a specific diagram.
+2. Use the connected GitHub reader, GitHub API or individual raw URLs; DO NOT clone or install the complete animdiagram repository, DO NOT copy its SKILL.md, references, gallery, examples or scripts into Hadani0mar/skill. Fetch only specifically required individual source files. If a standalone SVG validation script is genuinely needed, download only that single upstream script into the VIDEO PROJECT'S temporary working area, not the skills repo. Observe the upstream MIT license for any reused code.
+3. Record what was actually read in the Step 0 receipt and the video project's research/diagram.md: upstream revision (SHA/date), exact reference links, flow claim and supporting product files, static layout, timed events, any cuts and palette. If source access fails, report the limitation and fall back to a small frame-driven diagram designed from verified flow; never pretend to have consulted the upstream guide.
+
+**Visual grammar (adapt, do not copy the upstream skin):**
+- Start with a legible static frame: <=9 nodes, <=12 orthogonal connectors, arrows/chevrons showing direction, clear captions, and a meaningful legend. Use a 4px layout grid where practical. At the last frame, the system should still make sense without moving dots.
+- One ordered story, usually <=8 events and 6–12 seconds as an initial pacing guideline; packet travels from node to node, ring at arrival, destination glow, optional continuous stream, phase captions and state/bar changes. Overlap events only for real concurrency. Leave an intentional quiet/rest beat after the last event.
+- Adapt signal/accent and up to two additional semantic lanes to the VIDEO'S existing background and brand colours (white by default unless its style requires otherwise). Use the film's Arabic font and RTL text, not the upstream tiny monospace labels. Do not invent details about connections, data security or synchronization.
+- React Bits retains FIRST priority for VIDEO backgrounds, visual effects, text animations, transitions and ALL SFX; m0usasvg retains exclusive icon/logo sourcing, except genuine app-screen icons. animdiagram contributes the time-based network/flow layout grammar only, not replacements for those libraries.
+
+**Remotion integration — deterministic per-frame, not CSS animation:**
+- The upstream standalone SVG's CSS @keyframes / animation-delay are suitable for the author's standalone looping image but DO NOT render reliably when imported as an animated img into Remotion and frame-seeked. Never rely on free-running CSS, SMIL, requestAnimationFrame or clock time in a video.
+- Treat animdiagram's storyboard event spec (at, travel, after/with, from, via, to, ring, glow, phase, stream) as REFERENCE DATA. Rebuild the diagram as inline React SVG whose positions, path progress, opacity and scale are derived from Remotion useCurrentFrame() and useVideoConfig().fps, using interpolate/spring and scene-relative frame offsets. Move packets by length along each orthogonal connector segment (including via waypoints), time the ring/glow from the SAME arrival frame, and freeze/exit at beat boundaries to avoid unplanned infinite looping.
+- Standalone SVG export (only if expressly asked) may use the current upstream workflow timeline.py → check.py → preview.py, fetching those individual files temporarily and checking their documented CLI first. Video MP4 remains in the existing Remotion + React Bits sound pipeline; do not replace it with upstream export.py without explicit technical justification.
+- QA: seek to stills before/at/after arrivals, verify each packet lands at the intended port, text is readable without clipped Arabic letters, static frame is meaningful, motion is accurate and repeatable, and SFX land on the correct frames. Cite upstream references in the handover and confirm no dependency repository was copied.
+
+**Where useful:** style 1 How-it-works scene; style 5 verified process/history, style 6 actual integrations/data flows, style 8 a flow inside the original product world. Style 9 remains the real on-phone walkthrough and must not be displaced by an abstract diagram.
+
 ## 4. Story structure & timing (style 1; styles 2–9 use their own scene grammar above)
 - 8–10 scenes, one idea each, 5–10 s per scene. Default arc: **Hook (cover) → Problem (text post) → How it
   works (diagram) → 4–5 feature screens → Team/support → Outro (logo + tagline)**.
@@ -666,6 +692,7 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    published, with slug/variant in `research/logos.md`; missing ones are set as type and listed in the delivery note.
 6c. All UI icons are m0usasvg in one look (app-screen icons excepted); every visual component is a React Bits port, or its
    absence from React Bits is stated.
+6d. If a time-based flow scene was used: live animdiagram references/commit consulted, no repo vendored, factual sources and frame timing logged in research/diagram.md; Remotion seek tests at packet arrivals passed.
 7. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
 
 ## 12. Project layout
@@ -686,6 +713,7 @@ public/sfx/*.wav + REACT-BITS-LICENSE.md   React Bits sounds used by this video
 public/brand/*          (style 5) official logo / product assets of the subject
 render/build.mjs player-entry.tsx index.html serve.py stills.py render.py sounds-entry.js getsfx.py mix.py
 research/facts.md + research/brand.md   (style 5) verified facts with sources + the subject's visual identity
+research/diagram.md   (conditional) upstream animdiagram references/revision + verified diagram sequence
 ```
 For styles 2–9 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
 (rendered with `<Sequence>`) works well; reuse the render/ harness.
@@ -786,6 +814,7 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
 - Style 7 (Illustrated Tale): Silk/Aurora on the turn, BlurText, CountUp, Noise; sounds unfold, swish, glimmer, blop, popover, ding, wand, calm.
 - Style 8 (Product World): three.js world designed for the subject + BlurText, Counter, a subject-made interstitial, StarBorder chips, Aurora end card; sounds swoop, glide, popover, whip, halo, emblem.
 - Style 9 (Phone Demo): no background effect (white), BlurText headline + highlight sweep, CountUp on steppers; sounds swoop, glimmer, tink, swish, popover, notch, counter, dot, ding, check, emblem, calm.
+- **Optional ordered data-flow sequence:** read upstream animdiagram live as specified in 3c for packets, phases, rings, glows; drive all SVG elements from Remotion frame, with React Bits text/background/SFX unchanged.
 
 ### 13d. Quick picker — React Bits by clip type (pick 1 background + 1 text effect + 1–2 components + a sound set)
 | Clip type | Background (tested ports first) | Text effect | Components | Sounds |
@@ -799,6 +828,7 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
 | Illustrated story | Silk★/Aurora★ on the turn, Noise | BlurText captions | AnimatedList, CountUp, toast | unfold, swish, glimmer, blop/bubble, wand, calm bed |
 | 3D product world / hidden-features list | three.js world★ designed for the subject (13a ThreeLayer), Aurora★ end card | BlurText, Counter countdown | subject-made interstitial, StarBorder chips, numbered badge | swoop, glide, popover/ping, whip, halo, emblem |
 | One feature, step by step on a phone | plain white (no effect) + real iPhone frame | BlurText headline + highlighter sweep | tap ripple, push stack, bottom sheet, stepper CountUp | swoop, glimmer, tink, swish, popover, notch/counter, dot, ding/check, emblem, calm |
+| Verified system flow / animated diagram (conditional) | React Bits Noise/Silk over current film palette | BlurText phase headline | animdiagram layout grammar → inline Remotion-frame SVG packets/rings/glows | sweep, data, ping, check, chime |
 ★ = already ported and tested frame-driven in this skill (Silk, Aurora, LightRays: single-pass shaders; three.js world). Prefer
 single-pass shaders (one `FRAGMENT`/`COMPOSITE`, no `createFramebuffer`) — check with
 `grep -c createFramebuffer <Name>.jsx`; multi-pass ones (Threads, Grainient, Beams, DarkVeil) need the extra pass.
@@ -813,6 +843,7 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - three.js (style 8): https://github.com/mrdoob/three.js · Kenney CC0 kits: https://github.com/KenneyNL/Starter-Kit-City-Builder · https://github.com/KenneyNL/Starter-Kit-Racing · https://kenney.nl/assets
 - Logos + UI icons: m0usasvg https://github.com/Hadani0mar/m0usasvg (fork of theSVG; registry `src/data/icons.json`, UI looks `src/data/ui/looks/*.json`, agent guide `skills/thesvg/SKILL.md`)
 - unDraw SVG collection (illustrations, style 7): https://github.com/balazser/undraw-svg-collection · https://undraw.co
+- animdiagram, external on-demand agent reference only (NOT vendored): https://github.com/praveenvijayan/animdiagram · https://praveenvijayan.github.io/animdiagram/ · upstream SKILL.md + references/layout.md, motion-grammar.md, storyboard.md, checklist.md
 - IBM Plex Sans Arabic: https://fonts.google.com/specimen/IBM+Plex+Sans+Arabic · https://github.com/google/fonts/tree/main/ofl/ibmplexsansarabic
 - Poppins: https://fonts.google.com/specimen/Poppins · Alexandria: https://fonts.google.com/specimen/Alexandria · Barlow Condensed: https://fonts.google.com/specimen/Barlow+Condensed
 - Readex Pro: https://fonts.google.com/specimen/Readex+Pro · Cairo: https://fonts.google.com/specimen/Cairo
