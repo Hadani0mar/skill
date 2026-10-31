@@ -6,7 +6,7 @@ npm install
 npm run studio     # معاينة وتعديل حي
 npm run render     # يصدّر out/almutamakkin-explainer.mp4
 ```
-الصوت يُولَّد بـ `python3 render/sfx.py` إلى `out/sfx.wav` (أو بأصوات React Bits حسب المهارة، القسم 13b)، ثم أضف ادمجه مع الفيديو بـ ffmpeg (أو انسخه إلى `public/` وأضف `<Audio src={staticFile('sfx.wav')} />`).
+الصوت يُولَّد بـ `python3 render/sfx.py` إلى `out/sfx.wav` (أو بأصوات React Bits حسب المهارة، القسم 13b)، ثم ادمجه مع الفيديو بـ ffmpeg (أو انسخه إلى `public/` وأضف `<Audio src={staticFile('sfx.wav')} />`).
 
 ## الملفات
 | الملف | الدور |
