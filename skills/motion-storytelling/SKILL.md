@@ -1,16 +1,17 @@
 ---
 name: "motion-storytelling"
-description: "موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بخمسة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة البحثي) ومكونات وأصوات React Bits، ويسأل عن الأسلوب في كل مرة."
+description: "موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بسبعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة) بمكونات وأصوات React Bits ورسومات unDraw، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة."
 ---
 
 # موشن السرد القصصي — Motion Storytelling (Remotion)
 
 Vertical (9:16) Arabic motion videos built in Remotion and rendered to MP4, with React Bits backgrounds, effects
-and sounds in every video. Five house styles, defined below as written specs (not clips to copy).
+and sounds in every video. Seven house styles, defined below as written specs (not clips to copy).
 Style 1 is a narrator-led explainer where a character tells the story in a typed speech bubble beside app screens
 rebuilt from the product's source; styles 2–4 are kinetic brand / typographic formats; style 5 is a researched
 documentary reel about a person, company, tool, story or event, built from verified facts and the subject's real
-visual identity. First made for «المتمكن» (almutamakkin-expo-v3).
+visual identity; style 6 is a modern product launch film built from the app's real UI; style 7 is an illustrated
+story with vector characters (unDraw) that build themselves piece by piece. First made for «المتمكن» (almutamakkin-expo-v3).
 
 ## ★ Global rule — React Bits in every video, every style
 Every video this skill makes — whatever the style — is built with React Bits (section 13):
@@ -24,10 +25,20 @@ Every video this skill makes — whatever the style — is built with React Bits
 - Pick pieces from the React Bits line in each style section and 13c; read the component's `.jsx` before porting.
 - Keep `public/sfx/REACT-BITS-LICENSE.md` (copy of the repo LICENSE) in every project that uses them.
 
+## ★ Global rule — white ground by default
+- Every video starts on a **white ground `#ffffff`** (backgrounds, cards behind text, empty frames) unless:
+  1. the user names a background colour for this clip → use it everywhere the white would have been; or
+  2. the chosen style defines its own palette (styles 1–7 below) → the style keeps its colours, grounds included.
+- Freestyle, invented or "you choose" looks, and any new style added later, default to white too; text then defaults
+  to near-black `#141413`, and the accent comes from the subject's brand.
+- React Bits backgrounds on a white ground: use light variants (low opacity, multiply/soft tints of the accent) so the
+  ground still reads white. Say in the delivery note which ground was used and why.
+
 ## ★ Step 1 — always ask which style (every time, before anything else)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
-four options, so list styles 1, 2, 4 and 5 as options and mention style 3 (Logo Sting) in the question text as an
-add-on ending (or the user picks it via "Other"). If the user explicitly says "you choose", pick a style they have
+four options: offer the four that fit the request best (default: 1, 5, 6, 7 for a product/app; 2, 4, 6, 5 for a
+brand or statement) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
+can pick any unlisted style via "Other"). If the user explicitly says "you choose", pick a style they have
 not used yet and say which one in the first sentence. If the request itself names a story/person/company to tell
 about ("اسرد لي قصة …"), that is style 5 — say so and start.
 
@@ -38,10 +49,12 @@ about ("اسرد لي قصة …"), that is style 5 — say so and start.
 | 3 | **ختم الشعار** | Logo Sting | 3–5 s end card: two-tone punch word with a bouncing dot, then logo build + tagline + contact lines typing. Standalone or appended to any style. (Style 3) |
 | 4 | **الكاتب الجريء** | Bold Typer | Grey studio gradient, huge black Arabic typed with a block cursor, paragraph fade-in/out, lime pill "punch" word, full-screen blue card. 8–15 s. (Style 4) |
 | 5 | **أرشيف القصة** | Story Archive | Researched documentary reel about a person, company, tool or event, built from verified facts and the subject's real visual identity (official logo, colours, product): hook → origin → turning point → proof → lesson/CTA. 30–40 s. (Style 5 — research first) |
+| 6 | **واجهة حية** | Live UI | Modern launch film: dark stage with a dot grid and moving spotlight, the app's real UI in a 3D phone, then features fly into a bento grid and come alive one by one, pull-back, logo on Aurora. 30–40 s. (Style 6) |
+| 7 | **حكاية مصوّرة** | Illustrated Tale | Storybook chapters: unDraw characters that build themselves piece by piece, recoloured to the brand, page-turn transitions, captions on cards, app UI cut-ins. 45–60 s. (Style 7) |
 
 Then ask (same call, only if unknown) whether to include the narrator character: default **yes** for style 1,
 **no** for 2–5 (in 2–5 it can appear small in a corner or only in the opening/closing beat).
-Styles share the build pipeline (sections 3, 7, 8, 9, 10, 11, 13); only the look, scene grammar and timing change.
+Styles share the build pipeline (sections 3, 3b, 7, 8, 9, 10, 11, 13); only the look, scene grammar and timing change.
 
 ## 0. Template and character
 The ready project lives in **`template/`** next to this file (in the GitHub repo Hadani0mar/skill; elsewhere it may arrive as `motion-storytelling-template.zip`) (fonts, icons, narrator image, all components,
@@ -55,7 +68,8 @@ unzip into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new sto
    titles and colour tokens from the code. Names/numbers you invent are sample data and must be called so.
 3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–5. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
-5. Format: 1080×1920, 30 fps; length per style (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s). Narration language/dialect (default: the user's dialect).
+5. Format: 1080×1920, 30 fps (60 fps on request: twice the frames and render time; see section 10); length per style
+   (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s). Narration language/dialect (default: the user's dialect).
 6. Styles 2/3: logo file, tagline, contact lines, 3–4 pillar words. Style 4: the question + answer text, punch words.
    Style 5: only the subject (person / company / tool / story / event) + the angle or lesson the user wants; Claude does the research.
 
@@ -209,6 +223,30 @@ stop on each item, then sweep a highlighter (brand colour at ~55% or `#f6e94b`) 
 line wraps. Give each item its own height so asides (screenshots, before/after boxes) never overlap the next item.
 Use an invented masthead name — never imitate a real newspaper's name or design.
 
+## Style 6 — واجهة حية (Live UI) — modern launch film
+**Feel:** a premium tech launch; calm, precise, the product is the hero. No shakes, no flashes, no shouting type.
+**Palette:** the app's own **dark theme tokens** (read them from the code) on a deeper stage (`#0c0b0a`-ish); one accent
+(brand primary) plus a soft gradient of it for key words; status colours only inside the UI.
+**Type:** a modern geometric Arabic for headlines (Readex Pro 500–700, tight tracking) and the app's own UI font inside
+the screens. Headlines short (≤ 7 words), one per beat, BlurText reveals; key word in GradientText.
+**Scene grammar (≈35 s):**
+1. *Intro* (0–2.3 s): dot-grid field fades in under a spotlight; two-line promise («إدارة محلك، / بشكل جديد.»), second line gradient; a thin light line draws under it.
+2. *Phone* (2.3–8.3 s): a phone (rounded 72 px, island) turns in from rotateY 38° to −8°; its screen is the app home rebuilt from the code (search, 4 stat cards, a short list, tab bar), items stagger in. Headline: one line about "all of it on one screen".
+3. *Bento* (8.3–24 s): cards fly out of the phone into a 2-column bento grid (varied heights, 24 px gaps, radius 34, gradient surface). Each card first shows the app's **skeleton** state with a moving shimmer; then the spotlight moves to it, a rotating conic-gradient border lights it (StarBorder), the others dim to ~40 %, the headline swaps, and the card plays its feature (chips pop, bars drain, counters count, barcode draws and prints, a switch toggles, a chat question types and the answer streams). ~2 s per card.
+4. *Pull-back* (24–29 s): the whole grid tilts back (rotateX ~32°, scale ~0.64) with a light sweep across it; «كل شي. / في تطبيق واحد.»
+5. *Finale* (29–35 s): Aurora in brand colours rises, the logo mark draws, wordmark resolves from blur, tagline, a status pill (e.g. "connected to your system").
+**Motion rules:** springs with no overshoot beyond 3 %, camera moves by easing (inOut cubic), everything staggers 4–6 frames; one focal animation at a time.
+**React Bits:** DotGrid-style field + Spotlight, BlurText, GradientText, CountUp, StarBorder/BorderGlow beam on the focused card, Aurora for the finale; sounds `velvet` (intro), `swoop`/`sweep`/`glide` (camera), `notch`/`dot` (items), `focus` (card focus), `tink`/`snap`/`check`/`popover` (UI), `counter`/`data` (numbers), `keycap`/`tab` (chat typing), `halo`+`emblem` (logo), `calm` bed.
+
+## Style 7 — حكاية مصوّرة (Illustrated Tale) — storybook chapters
+**Feel:** a friendly picture book that explains a feature; warm, clear, human.
+**Palette:** the brand palette on light grounds (white by default, a cream or blush tint per chapter), dark chapters in the brand ink for contrast; illustrations recoloured to the brand primary.
+**Type:** Readex Pro (or the brand font) 700 headlines, 400 captions; the app font inside UI cards.
+**Scene grammar (≈60 s):** 7–9 chapters, ~6–9 s each: hook (characters + role chips) → problem (illustration in a cream "page frame" on a dark chapter, warning chips fly out) → turn (big word on a React Bits background) → 4–5 how-it-works chapters (headline + real UI card from the code + illustration + caption card + toast) → outro (team illustration + logo + tagline). Chapter tag pill with number at the top, progress dots, caption card at the bottom.
+**Transitions:** each chapter is a page that rises from the bottom with rounded top corners while the previous one shrinks and darkens.
+**Illustrations:** unDraw (section 3b), built piece by piece (each top-level SVG element pops with a spring, 1–1.6 frames apart), then a slow float. On dark chapters put them on a cream card: unDraw's ink `#2f2e41` disappears on dark.
+**React Bits:** Silk/Aurora on the turn chapter, BlurText captions, CountUp, Noise grain; sounds `unfold`+`swish` (page turns), `glimmer` (illustration builds), `blop`/`bubble` (chips), `keycap` (typing), `popover`/`tab`/`ding`/`ping` (UI), `stamp` (turn), `wand`+`emblem` (outro), `calm` bed.
+
 ## Adding a new style from a reference video
 When the user sends a reference clip for a new style:
 1. Probe it (`ffprobe` duration/size/audio), then contact sheets: whole clip at 1 fps (`fps=1,scale=180:400,tile=10x4`)
@@ -217,8 +255,8 @@ When the user sends a reference clip for a new style:
 2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–5: **Feel / Palette / Type /
    Scene grammar with timings / Motion rules / React Bits picks (visuals + sounds)** — the idea and method, never a
    frame-by-frame copy, and no copying of the reference's brand, logo or text.
-3. Add it to the Step 1 table (if more than four styles exist, put the most recent/likely four as options and list
-   the rest in the question text), to 13c, and to Sources (as "Style N reference").
+3. Add it to the Step 1 table (only four can be options; list the rest in the question text), to 13c and 13d, and to
+   Sources (as "Style N reference"). A new style defaults to the white ground unless its spec says otherwise.
 4. Propose the updated SKILL.md to the user (full file) for saving.
 
 ## 3. Icons — real illustrated UI icons, never emoji
@@ -247,11 +285,36 @@ export const Icon = ({name, size = 96}: {name: keyof typeof icons; size?: number
 };
 ```
 
-## 4. Story structure & timing (style 1; styles 2–5 use their own scene grammar above)
+## 3b. Illustrations — unDraw vector library (link it, never clone it whole)
+Source: **https://github.com/balazser/undraw-svg-collection** — about 1,360 unDraw SVGs in `svgs/<name>.svg`, MIT repo of
+unDraw art (free, no attribution required). Flat characters in the Storyset family; the primary colour is
+`var(--primary-svg-color)`, so one replace recolours a whole illustration to the brand. Do not vendor the repo into a
+project or skill: list names, fetch only the files you use.
+1. **List the names** (no file contents downloaded):
+   `git clone -q --depth 1 --filter=blob:none --no-checkout https://github.com/balazser/undraw-svg-collection /tmp/undraw && git -C /tmp/undraw ls-tree --name-only HEAD svgs/ | sed 's#svgs/##; s#\.svg$##' > /tmp/undraw-names.txt`
+   (GitHub API alternative: `gh api "repos/balazser/undraw-svg-collection/git/trees/HEAD?recursive=1" --jq '.tree[].path'`.)
+2. **Search** with English keywords and synonyms; names are kebab-case scenes:
+   `grep -iE "team|people|co-work|meet" /tmp/undraw-names.txt`. Useful families: people/teams (`people`, `team`, `team-spirit`,
+   `co-workers`, `selecting-team`, `meet-the-team`), access (`login`, `mobile-login`, `secure-login`, `access-denied`, `unlock`,
+   `two-factor-authentication`, `switches`, `settings`), sharing (`share-link`, `message-sent`, `inbox`), money/shop
+   (`finance`, `wallet`, `business-shop`, `online-shopping`, `successful-purchase`, `printing-invoices`), stock/logistics
+   (`heavy-box`, `deliveries`, `delivery-truck`, `order-delivered`, `checklist`), success (`done`, `verified`, `well-done`).
+3. **Fetch only the chosen files:** `git -C /tmp/undraw sparse-checkout set --no-cone svgs/team.svg svgs/login.svg && git -C /tmp/undraw checkout -q`
+   (or `curl -sL https://raw.githubusercontent.com/balazser/undraw-svg-collection/HEAD/svgs/team.svg` where raw GitHub is reachable).
+4. **Preview before choosing:** recolour (`s.replace('var(--primary-svg-color)', BRAND)`) and screenshot a contact sheet of
+   12–24 candidates (Playwright, 6 per row, cream background); pick by pose and story fit, not by name.
+5. **Animate:** split the SVG into its top-level elements (unDraw files are flat lists) and store `{vb, kids[]}` in
+   `src/illus.json`; render each kid in its own `<g style={{transformBox:'fill-box', transformOrigin:'50% 100%'}}>` that
+   springs from scale 0.55 / +26 px with opacity, `start + i*min(1.6, 34/kids)` frames — the picture builds itself.
+   Then float it ±6 px on a slow sine. Characters' ink is `#2f2e41`: on dark grounds place them on a light card.
+
+## 4. Story structure & timing (style 1; styles 2–7 use their own scene grammar above)
 - 8–10 scenes, one idea each, 5–10 s per scene. Default arc: **Hook (cover) → Problem (text post) → How it
   works (diagram) → 4–5 feature screens → Team/support → Outro (logo + tagline)**.
 - One narration line per scene, ≤ 18 words, typed in the bubble; one highlight phrase per line.
 - Everything in `src/theme.ts`: `SCENES=[{id,start}]`, `END`, `TRANSITION=18`, `LINES=[{t0,t1,text,hl}]`.
+- Write every time in **seconds** through one helper (`const s = (sec: number) => Math.round(sec * fps)`), never as raw
+  frame numbers, so the same video renders at 30 or 60 fps without retiming.
 - Typing speed per line: `cps = graphemes / max(1.5, t1 − t0 − 1.1)` so the line finishes ~1 s before it ends.
 - TransitionSeries durations: `dur_i = (start_{i+1} − start_i)·fps + TRANSITION` (last: to END), so scene i+1
   still starts exactly at its `start`.
@@ -334,6 +397,10 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
    `-framerate 30 -i f%05d.jpg -i sfx.wav -c:v libx264 -preset veryfast -crf 18 -pix_fmt yuv420p -c:a aac`.
    ~2100 frames ≈ 3 min with 6 pages. The same `src/` renders unchanged with the real Remotion CLI.
    WebGL (ShaderLayer) works in headless Chromium's software GL; it is slower (≈ 5 min for 1000 frames), so budget time.
+6. **Frame rate & speed.** Default 30 fps. 60 fps on request (smoother motion, 2× frames → about 2× render time).
+   Above 60 brings nothing: phone players and Reels/TikTok/Shorts play 30–60 fps and drop the extra frames. Speed:
+   more Playwright pages (one per CPU core), JPEG frames (q90–93), `-preset veryfast`, keep WebGL layers only where
+   they show, render a 10-frame test before the full run; with the real Remotion CLI use `--concurrency` = cores.
 
 ## 11. Check before delivering
 1. Contact sheet of 8–10 stills (one per scene at its busiest moment) + 3 mid-transition frames; look at them:
@@ -342,7 +409,8 @@ Fonts: local `@font-face` with `staticFile('fonts/…ttf')`, `font-display:block
 2. Highlights land when typed; bubble never on screen without a line; mouth closed when not typing.
 3. UI labels match the source code; sample data named as such in the delivery note. Style 5: every fact traced to a source,
    official assets used as published (no recolour/distortion), no web photos of real people.
-4. The chosen style's palette, type and scene grammar are respected (compare against its section).
+4. The chosen style's palette, type and scene grammar are respected (compare against its section); with no style
+   palette and no colour asked for, the ground is white.
 5. React Bits used: at least one ported background/effect visible, and every sound cue is a React Bits sound.
 6. Duration matches the style; audio peak ≤ −1 dBFS. Deliver the MP4 + a zip of the project (without frames).
 
@@ -448,6 +516,23 @@ UI `check` `popover` `notch` `dot` `snap`.
 - Style 5 (Story Archive): DarkVeil, LightRays, Silk, Dither, Noise, Topography (tinted to the brand colour); text BlurText,
   TrueFocus, SplitFlapText, CountUp, StrokeText; components Counter, LogoLoop, CardSwap/Stack for photos the user supplies;
   sounds suspense, braam, reveal, swish, thock, tickertape, stamp, emblem, chime.
+- Style 6 (Live UI): DotGrid + Spotlight, BlurText, GradientText, CountUp, StarBorder beam, Aurora; sounds velvet, swoop, focus, notch, snap, check, emblem, calm.
+- Style 7 (Illustrated Tale): Silk/Aurora on the turn, BlurText, CountUp, Noise; sounds unfold, swish, glimmer, blop, popover, ding, wand, calm.
+
+### 13d. Quick picker — React Bits by clip type (pick 1 background + 1 text effect + 1–2 components + a sound set)
+| Clip type | Background (tested ports first) | Text effect | Components | Sounds |
+|---|---|---|---|---|
+| App explainer / feature walkthrough | Noise grain on white; Silk (light tint) for a turn | BlurText, TextType | Counter/CountUp, AnimatedList, StarBorder on the focused card | keycap, swish/sweep, glimmer, popover/tab, ding, chime |
+| Ad / promo (short, punchy) | LightRays★ behind the hero and finale | DecryptedText (Latin), GlitchText, Slam-in | Counter, ElectricBorder chips | braam, slam/stamp, whip, thunder, zap, finale |
+| Launch film / UI showcase | DotGrid + Spotlight, Aurora★ finale | BlurText + GradientText | StarBorder/BorderGlow, CountUp, skeleton shimmer | velvet, swoop/glide, focus, notch/dot, snap/check, emblem, calm bed |
+| News / documentary / story | Aurora★ or Silk★ on dark beats, Noise | BlurText per word, highlighter | CountUp, LogoLoop ticker, progress bar | whip, keycap, coin/treasure, counter, unease, nocturne bed |
+| Typographic statement | Grainient/GradientBlinds (very subtle) | TextType with block cursor, Shuffle | pill reveal, mask lines | keycap/thock, stamp, snap, whip |
+| Brand reel / logo | Galaxy/Threads/Beams (harder ports), LightRays★ | GlitchText, ShinyText sheen | MagicRings/Orb, ElectricLogo | braam, reveal, emblem/herald, punchline |
+| Illustrated story | Silk★/Aurora★ on the turn, Noise | BlurText captions | AnimatedList, CountUp, toast | unfold, swish, glimmer, blop/bubble, wand, calm bed |
+★ = already ported and tested frame-driven in this skill (Silk, Aurora, LightRays: single-pass shaders). Prefer
+single-pass shaders (one `FRAGMENT`/`COMPOSITE`, no `createFramebuffer`) — check with
+`grep -c createFramebuffer <Name>.jsx`; multi-pass ones (Threads, Grainient, Beams, DarkVeil) need the extra pass.
+On a white ground use backgrounds at low opacity or as tints; keep strong shaders for dark styles.
 
 ## Sources
 - Remotion docs & API: https://www.remotion.dev/docs/ · https://www.remotion.dev/llms.txt · transitions: https://www.remotion.dev/docs/transitions
@@ -455,6 +540,7 @@ UI `check` `popover` `notch` `dot` `snap`.
 - Remotion source (offline build): https://github.com/remotion-dev/remotion
 - React Bits: https://github.com/DavidHDev/react-bits · https://reactbits.dev · agent index https://reactbits.dev/llms.txt · licence https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md
 - ogl (lightweight WebGL): https://github.com/oframe/ogl
+- unDraw SVG collection (illustrations, style 7): https://github.com/balazser/undraw-svg-collection · https://undraw.co
 - Fluent UI System Icons (Color): https://github.com/microsoft/fluentui-system-icons · Iconify set: https://icon-sets.iconify.design/fluent-color/
 - Icons8 Flat Color Icons: https://icon-sets.iconify.design/flat-color-icons/ · Streamline Color: https://icon-sets.iconify.design/streamline-color/
 - Iconify icon-sets JSON: https://github.com/iconify/icon-sets
@@ -471,6 +557,7 @@ UI `check` `popover` `notch` `dot` `snap`.
 - Style 2 & 3 reference: "Branding Reel" by Coozmoo Digital Solutions (dark grid, orbit rings, neon-green, logo sting)
 - Style 4 reference: fontbold.top typographic reel (grey studio gradient, heavy Arabic typed with block cursor, blue card)
 - Style 5 reference: RIVINITY "positioning / Al Ries" reel (method only: research-led story, acts, editorial pacing)
+- Style 6: invented for المتمكن («واجهة حية» launch film) · Style 7: invented for the المتمكن roles video («حكاية مصوّرة»)
 
 ## Appendix A — default narrator (boy with laptop, user-supplied art)
 File: `public/character.png` in the template — 452×967 px, transparent background, original smile painted
