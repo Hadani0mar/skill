@@ -18,7 +18,7 @@
 | [`12-presto-product-world`](12-presto-product-world/) | 8 عالم المنتج — ⚠️ مثال مرفوض | بريستو: قلّد المرجع 100٪، لا تكرره (اقرأ قاعدة الأصالة في Style 8) | لم يكتمل |
 | [`13-remote-barcode`](13-remote-barcode/) | 9 عرض الهاتف | طباعة الباركود عن بعد على موك آب iPhone 17 Pro | almutamakkin-remote-barcode.mp4 |
 | [`14-logo-m`](14-logo-m/) | شعار | شعار «m» للمتمكن (اتجاهات، أيقونة، ألوان) — ملفات Design canvas + سكربتات التوليد | preview.png |
-| [`15-docker-product-world`](15-docker-product-world/) | 8 عالم المنتج | قصة Docker: الصورة والحاوية وCompose وMCP Toolkit | [docker-story.mp4](15-docker-product-world/docker-story.mp4) |
+| [`15-docker-white-interface`](15-docker-product-world/) | חדש — ממשק לבן عريض | حكاية Docker: Image، Compose، Volumes، Registry، وMCP | [docker-story.mp4](15-docker-product-world/docker-story.mp4) |
 
 ## ما لم يُرفع (اجلبه عند التشغيل)
 - `public/` لكل مثال: الخطوط (OFL — من google/fonts أو `skills/motion-storytelling/template/public/fonts`)، أصوات React Bits المولّدة WAV (`render/getsfx.py`)، الشعارات، النماذج والصور.
@@ -26,7 +26,7 @@
 - موك آب الهاتف (مثال 13): `public/device/iphone17pro-silver.png` من https://github.com/jamesjingyi/mockup-device-frames.
 - نماذج Kenney (11، 12): `public/models/*.glb` + `Textures/colormap.png` من KenneyNL/Starter-Kit-Racing (CC0).
 - three.js: استنساخ جزئي من mrdoob/three.js (القسم 8d)؛ مسارات الـalias في `render/build.mjs`.
-- الإطارات ومجلدات dist غير مرفوعة؛ مثال 15 يضم MP4 النهائي للمعاينة.
+- الإطارات ومجلدات dist غير مرفوعة؛ مثال 15 يضم MP4 النهائي بنسبة 16:9 لمراجعته في GitHub.
 
 ### محتوى public الأصلي لكل مثال
 
