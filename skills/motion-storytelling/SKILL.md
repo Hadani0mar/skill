@@ -344,7 +344,7 @@ project or skill: list names, fetch only the files you use.
 ## 7. Text effects
 ```tsx
 // graphemes keep harakat with their letter; Arabic reshapes naturally as the string grows (typewriter look)
-const MARK = /[ً-ٰٟۖ-ۭ]/;
+const MARK = /[\u064B-\u065F\u0670\u06D6-\u06ED]/;
 export const graphemes = (t: string) => { const g: string[] = []; for (const c of t) { if (MARK.test(c) && g.length) g[g.length-1] += c; else g.push(c); } return g; };
 ```
 - **Typewriter** (`text, start, cps, hl, caret`): show `graphemes.slice(0, n)`; caret 0.08 em that blinks every
