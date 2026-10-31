@@ -11,5 +11,5 @@ How to use them (any agent):
 
 | Skill | Use when |
 |---|---|
-| `skills/motion-storytelling/SKILL.md` | Arabic vertical motion videos in Remotion: app explainers, brand reels, logo stings, typographic reels, researched story/news reels, modern launch films, illustrated stories. Always ask which of the seven styles first; white ground unless the style or user sets a colour. |
+| `skills/motion-storytelling/SKILL.md` | Arabic vertical motion videos in Remotion: app explainers, brand reels, logo stings, typographic reels, researched story/news reels, modern launch films, illustrated stories, 3D product worlds. Always ask which of the eight styles first; white ground unless the style or user sets a colour. |
 | `skills/mascot-explainer-video/SKILL.md` | A character/mascot presents a product, cutting away to animated app UI, with kinetic captions synced to a voice-over. |

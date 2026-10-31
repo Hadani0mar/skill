@@ -1,17 +1,18 @@
 ---
 name: motion-storytelling
-description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بسبعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة) بمكونات وأصوات React Bits ورسومات unDraw، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
+description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بثمانية أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة.
 ---
 
 # موشن السرد القصصي — Motion Storytelling (Remotion)
 
 Vertical (9:16) Arabic motion videos built in Remotion and rendered to MP4, with React Bits backgrounds, effects
-and sounds in every video. Seven house styles, defined below as written specs (not clips to copy).
+and sounds in every video. Eight house styles, defined below as written specs (not clips to copy).
 Style 1 is a narrator-led explainer where a character tells the story in a typed speech bubble beside app screens
 rebuilt from the product's source; styles 2–4 are kinetic brand / typographic formats; style 5 is a researched
 documentary reel about a person, company, tool, story or event, built from verified facts and the subject's real
 visual identity; style 6 is a modern product launch film built from the app's real UI; style 7 is an illustrated
-story with vector characters (unDraw) that build themselves piece by piece. First made for «المتمكن» (almutamakkin-expo-v3).
+story with vector characters (unDraw) that build themselves piece by piece; style 8 puts the product inside a
+minimal 3D world (three.js) threaded by one hero element from the logo. First made for «المتمكن» (almutamakkin-expo-v3).
 Shared copy for other agents: GitHub repo Hadani0mar/skill (`skills/motion-storytelling/`, with `template/`).
 
 ## ★ Global rule — React Bits in every video, every style
@@ -29,7 +30,7 @@ Every video this skill makes — whatever the style — is built with React Bits
 ## ★ Global rule — white ground by default
 - Every video starts on a **white ground `#ffffff`** (backgrounds, cards behind text, empty frames) unless:
   1. the user names a background colour for this clip → use it everywhere the white would have been; or
-  2. the chosen style defines its own palette (styles 1–7 below) → the style keeps its colours, grounds included.
+  2. the chosen style defines its own palette (styles 1–8 below) → the style keeps its colours, grounds included.
 - Freestyle, invented or "you choose" looks, and any new style added later, default to white too; text then defaults
   to near-black `#141413`, and the accent comes from the subject's brand.
 - React Bits backgrounds on a white ground: use light variants (low opacity, multiply/soft tints of the accent) so the
@@ -37,8 +38,8 @@ Every video this skill makes — whatever the style — is built with React Bits
 
 ## ★ Step 1 — always ask which style (every time, before anything else)
 Ask with AskUserQuestion (header «الأسلوب»), even if the user used a style last time. AskUserQuestion takes at most
-four options: offer the four that fit the request best (default: 1, 5, 6, 7 for a product/app; 2, 4, 6, 5 for a
-brand or statement) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
+four options: offer the four that fit the request best (default: 6, 8, 7, 1 for a product/app; 2, 4, 6, 5 for a
+brand or statement; 5, 8, 4, 2 for a story/news) and name the others in the question text (style 3, Logo Sting, is an add-on ending; the user
 can pick any unlisted style via "Other"). If the user explicitly says "you choose" or "freestyle", pick a style they
 have not used yet (or invent one, white ground) and say which one in the first sentence. If the request itself names
 a story/person/company to tell about («اسرد لي قصة …»), that is style 5 — say so and start.
@@ -52,9 +53,10 @@ a story/person/company to tell about («اسرد لي قصة …»), that is sty
 | 5 | **أرشيف القصة** | Story Archive | Researched documentary reel about a person, company, tool or event, built from verified facts and the subject's real visual identity (official logo, colours, product): hook → origin → turning point → proof → lesson/CTA. 30–40 s. (Style 5 — research first) |
 | 6 | **واجهة حية** | Live UI | Modern launch film: dark stage with a dot grid and moving spotlight, the app's real UI in a 3D phone, then features fly into a bento grid and come alive one by one, pull-back, logo on Aurora. 30–40 s. (Style 6) |
 | 7 | **حكاية مصوّرة** | Illustrated Tale | Storybook chapters: unDraw characters that build themselves piece by piece, recoloured to the brand, page-turn transitions, captions on cards, app UI cut-ins. 45–60 s. (Style 7) |
+| 8 | **عالم المنتج** | Product World | "Hidden features" listicle inside a minimal 3D world (white clay blocks on dark, glowing brand-colour paths) built with three.js; one hero element from the logo threads every transition and ends as the logo. 35–45 s. (Style 8) |
 
 Then ask (same call, only if unknown) whether to include the narrator character: default **yes** for style 1,
-**no** for 2–7 (there it can appear small in a corner or only in the opening/closing beat).
+**no** for 2–8 (there it can appear small in a corner or only in the opening/closing beat).
 Styles share the build pipeline (sections 3, 3b, 7, 8, 9, 10, 11, 13); only the look, scene grammar and timing change.
 
 **Copy rule (all styles):** every line must say something specific and true about the subject — a real feature,
@@ -72,10 +74,10 @@ copy it into a new folder and edit `src/theme.ts` + `src/scenes/*` for the new s
 2. **Source of truth for UI** — repo + folder. Read the latest branch with recent commits, not only `main`
    (`git ls-remote --heads origin`, then `git fetch --depth 1 origin <branch>`). Take labels, tabs, section
    titles and colour tokens from the code. Names/numbers you invent are sample data and must be called so.
-3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–7. Never a known copyrighted character.
+3. **Character** — the user's own image, or the default narrator (appendix A); optional in styles 2–8. Never a known copyrighted character.
 4. **Reference posts** (optional) — match their font, palette and chrome; otherwise use the chosen style's defaults.
 5. Format: 1080×1920, 30 fps; length per style
-   (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s). Narration language/dialect (default: the user's dialect).
+   (1: 60–75 s, 2: 15–25 s, 3: 3–5 s, 4: 8–15 s, 5: 30–40 s, 6: 30–40 s, 7: 45–60 s, 8: 35–45 s). Narration language/dialect (default: the user's dialect).
 6. Styles 2/3: logo file, tagline, contact lines, 3–4 pillar words. Style 4: the question + answer text, punch words.
    Style 5: only the subject (person / company / tool / story / event) + the angle or lesson the user wants; Claude does the research.
    Background colour: only if the user wants one (otherwise white or the style's palette — see the global rule).
@@ -141,7 +143,7 @@ for the liquid wipe if it ports cleanly; sounds `braam` (title), `slam`/`stamp` 
 3. *Tagline*: one line above the logo; the first word gets a hand-drawn green ellipse drawn around it (dashoffset).
 4. *Contact lines* (2.6–4 s): 2–3 centred lines (email, site, phone) **type out** left→right in white, staggered
    0.15 s; hold ≥ 1 s at the end.
-Use it standalone (brand outro) or append to styles 1, 2, 4, 5, 6 or 7. Ask for logo file + tagline + contact lines.
+Use it standalone (brand outro) or append to styles 1, 2, 4, 5, 6, 7 or 8. Ask for logo file + tagline + contact lines.
 On black, recolour a dark logo to white (keep accent colours) — the user's own logo only; third-party logos stay as published.
 **React Bits:** ElectricLogo or a ShinyText-style sheen over the logo (overlay only), StarBorder around the contact block,
 a faint Orb/LightRays behind; sounds `punchline` (dot lands), `emblem`/`herald` (logo), `keycap` (contact lines), `finale`.
@@ -257,12 +259,89 @@ the screens. Headlines short (≤ 7 words), one per beat, BlurText reveals; key 
 **Illustrations:** unDraw (section 3b), built piece by piece (each top-level SVG element pops with a spring, 1–1.6 frames apart), then a slow float. On dark chapters put them on a cream card: unDraw's ink `#2f2e41` disappears on dark.
 **React Bits:** Silk/Aurora on the turn chapter, BlurText captions, CountUp, Noise grain; sounds `unfold`+`swish` (page turns), `glimmer` (illustration builds), `blop`/`bubble` (chips), `keycap` (typing), `popover`/`tab`/`ding`/`ping` (UI), `stamp` (turn), `wand`+`emblem` (outro), `calm` bed.
 
+## Style 8 — عالم المنتج (Product World) — the product inside a minimal 3D world
+**Purpose:** a fast "things you didn't know about X" reel: 3–5 real features of a product, each shown inside a
+stylised 3D world that belongs to the product's domain, with the app's real UI floating over it. Strong, clear,
+smooth. Learnt from a maps-app promo (method only — never copy its city, brand, words or shots).
+
+### 8a. The secret (why it feels strong)
+1. **One hero element threads the whole film.** Pick one element of the brand mark (a dot, pin, route line, box,
+   coin, cursor…). It appears in *every* scene and *performs every transition*: it sits on the countdown digits,
+   becomes the iris the camera dives through, becomes the puck travelling the route, the centre of a spinning ring
+   wipe, and at the end the scene flattens and the world's lines grow into the **logo itself** around it. The eye
+   follows one thing for 40 s — that is the continuity.
+2. **A clay world: colour = information.** All geometry is matte white/off-white (`#e8e3e0`), untextured, on a
+   near-black ground (`#07090b`), with fog and soft shadows. Only product meaning is coloured: brand colour for the
+   world's paths, one accent for "you/your route", red only for problems. Viewers read colour as data instantly.
+3. **A curiosity hook, then a numbered list.** Open on the white ground with a whisper word (e.g. «شششش» blurring in),
+   the hero dot, a 3-2-1 countdown, then the promise «أشياء في X / يمكن ما كنت تعرف عنها». Every feature gets a
+   numbered badge (1, 2, 3 …) top corner — a listicle keeps people watching to the end.
+4. **One feature = one camera move + one UI overlay + one proof.** The camera demonstrates (dolly along a path,
+   chase behind a vehicle, top-down pull-out), a real UI element from the app pops in (chip, card, toast, caption
+   bar), and where possible a real "proof" insert (screen recording, footage, dashboard) plays for 1–2 s.
+5. **Metronome pacing.** Shots of 2–3 s, cuts land on the hero element, one kinetic interstitial at the midpoint
+   (diagonal marquee bands repeating the key phrase in brand colour + white) to reset attention, and a brand-colour
+   end card (logo build, name, availability line, store badges / QR placeholders).
+
+### 8b. Scene grammar (≈40 s, adapt the count of features)
+1. *Hook* (0–4 s, white ground): whisper word blur-in → hero dot drops in → countdown digits in brand gradient with the dot riding over them.
+2. *Promise* (4–6 s): «أشياء في <المنتج>» + sub-line, the mark beside it; text scatters into particles; the dot stays.
+3. *Dive* (6–7 s): the dot grows into a circle (iris) whose inside already shows the dark 3D world; a white diagonal wedge sweeps off.
+4. *Feature 1–N* (7–33 s, 5–7 s each): badge number, camera move in the world, the feature's real UI overlay, caption bar for the benefit (one line, the user's dialect), optional proof insert. Alternate camera types between features.
+5. *Interstitial* (one, mid-film, 1 s): tilted (~12°) full-screen bands sliding in opposite directions, repeating «<key phrase> ✦» in brand colour / white / dark text.
+6. *Ring wipe* (before the last feature or the end): a white ring spins around the hero element and the next shot opens inside it.
+7. *Logo morph + end card* (last 5 s): the world flattens to a top-down tinted map, paths grow around the hero dot into the logo shape, the frame floods with the brand colour, logo + name + availability line + store badges/QR placeholders (never invent links).
+
+### 8c. Choosing the world and the visuals
+| Product domain | World (three.js) | Hero element | Proof inserts |
+|---|---|---|---|
+| Maps / delivery / transport | procedural city blocks, roads, route tube, vehicles (Kenney Car/Racing kits) | location puck / route line | navigation screen, dashboard |
+| Inventory / retail / POS | warehouse: shelf rows (instanced boxes), pallets, forklift, barcode beams | box or barcode | app screens: stock, shortages, expiry |
+| Finance / accounting | ledger city: coin stacks as towers, flowing lines between "customer" and "supplier" blocks | coin / ledger line | statements, balances |
+| Restaurants / food | tables grid, kitchen counters, order tickets flying | order ticket / plate | order screens |
+| Team / roles / SaaS | office floor blocks, desks with avatars, permission gates | key / badge | roles screen |
+- Keep geometry abstract (boxes, cylinders, extrusions) so it reads as "the product's world", not a realistic place;
+  add 1–3 real models (vehicle, forklift, tree) for scale and life.
+- UI overlays use the app's real labels and tokens (read the code); sample data named as such.
+- Real footage: only footage the user supplies or official product footage; never people from the web.
+
+### 8d. Building it — three.js, frame-driven (tested)
+- three.js from GitHub, no npm: `git clone --depth 1 --filter=blob:none --sparse https://github.com/mrdoob/three.js` →
+  `git sparse-checkout set --no-cone /build/three.module.js /build/three.core.js /examples/jsm/loaders/GLTFLoader.js /examples/jsm/utils/BufferGeometryUtils.js /examples/jsm/utils/SkeletonUtils.js /LICENSE`;
+  esbuild aliases `three → build/three.module.js`, `three/addons/... → examples/jsm/...` (MIT).
+- **ThreeLayer pattern** (`template/src/components/ThreeCity.tsx`): build the renderer and scene once in a `useEffect`
+  (`WebGLRenderer({canvas, antialias:true, preserveDrawingBuffer:true})`, ACES tone mapping, PCF soft shadows, Fog);
+  wrap async loads in `delayRender()`/`continueRender()`; on every frame set camera, route progress
+  (`TubeGeometry` + `setDrawRange`), puck and vehicle positions from `curve.getPointAt(p)`, then `renderer.render()`.
+  Never animate with the three.js clock or requestAnimationFrame. Randomness via Remotion `random(seed)`.
+- **Procedural city:** one `InstancedMesh` of unit boxes (thousands of buildings, one draw call), 2×2 buildings per
+  block, heights `0.18 + r² · (2.6 − distance·0.12)` (taller in the centre), ~8 % blocks left as parks with emissive
+  brand-colour dots, thin dark lane lines, ground `#0b0d10`, fog 9–26 units, camera FOV ~32°, pitch 45–55°.
+- **Ready-made CC0 models (link, fetch only the files you use):** Kenney starter kits on GitHub —
+  `KenneyNL/Starter-Kit-City-Builder` (`models/building-small-a..d.glb`, `road-straight/corner/intersection/split.glb`,
+  `grass-trees.glb`, `pavement-fountain.glb`), `KenneyNL/Starter-Kit-Racing` (`vehicle-truck-*.glb`,
+  `vehicle-motorcycle.glb`, `track-*.glb`, `decoration-*.glb`), `KenneyNL/Starter-Kit-3D-Platformer`. List with
+  `git clone --depth 1 --filter=blob:none --no-checkout <repo> /tmp/k && git -C /tmp/k ls-tree -r --name-only HEAD | grep glb`,
+  then sparse-checkout the `.glb` plus `models/Textures/colormap.png` (the GLBs reference it). Licence CC0.
+  More CC0 packs on the web (kenney.nl Car Kit / City Kit, Quaternius, Poly Pizza) when the network allows.
+- Real city footprints (OpenStreetMap via MapLibre fill-extrusion / deck.gl / OSM Buildings) need tile servers —
+  use only when the network reaches them; otherwise procedural blocks.
+- Overlays (chips, cards, captions, badges, countdown, marquee, end card) are normal React/Remotion layers above the canvas.
+- Performance: software WebGL renders ~1–2 frames/s per page with shadows; keep shadow maps ≤ 2048, instanced
+  geometry, few lights, and render with 6 parallel pages.
+**Type & palette:** rounded geometric Arabic (Readex Pro / Alexandria 600–800) for hook and chips; white ground for
+hook/promise, dark clay world for features, brand colour for the interstitial and end card (the style's own palette).
+**React Bits:** BlurText (whisper word, promise), CountUp/Counter (countdown), ScrollVelocity/TextLoop-style marquee
+(interstitial), StarBorder on chips, Aurora/LightRays only on the end card; sounds `breeze`/`swell` (hush), `tick`/`tally`
+(countdown), `swoop` (iris dive), `glide`/`sweep` (camera moves), `popover`/`ping` (UI overlays), `whip` (marquee),
+`halo` (ring wipe), `emblem`+`chime` (logo), `calm` or `pulse` bed.
+
 ## Adding a new style from a reference video
 When the user sends a reference clip for a new style:
 1. Probe it (`ffprobe` duration/size/audio), then contact sheets: whole clip at 1 fps (`fps=1,scale=180:400,tile=10x4`)
    and dense sheets (2.5–4 fps, cropped to the content area) for the busy parts. Sample the palette with PIL
    (quantize a crop of key frames). Identify fonts by rendering candidates next to a crop.
-2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–7: **Feel / Palette / Type /
+2. Name it in Arabic + English, then write it as a spec in the same format as styles 2–8: **Feel / Palette / Type /
    Scene grammar with timings / Motion rules / React Bits picks (visuals + sounds)** — the idea and method, never a
    frame-by-frame copy, and no copying of the reference's brand, logo or text.
 3. Add it to the Step 1 table (only four can be options; list the rest in the question text), to 13c and 13d, and to
@@ -320,7 +399,7 @@ project or skill: list names, fetch only the files you use.
    springs from scale 0.55 / +26 px with opacity, `start + i*min(1.6, 34/kids)` frames — the picture builds itself.
    Then float it ±6 px on a slow sine. Characters' ink is `#2f2e41`: on dark grounds place them on a light card.
 
-## 4. Story structure & timing (style 1; styles 2–7 use their own scene grammar above)
+## 4. Story structure & timing (style 1; styles 2–8 use their own scene grammar above)
 - 8–10 scenes, one idea each, 5–10 s per scene. Default arc: **Hook (cover) → Problem (text post) → How it
   works (diagram) → 4–5 feature screens → Team/support → Outro (logo + tagline)**.
 - One narration line per scene, ≤ 18 words, typed in the bubble; one highlight phrase per line.
@@ -432,6 +511,8 @@ src/illus.json          (style 7) unDraw illustrations split into animatable par
 src/components/Icon.tsx Text.tsx (Typewriter, WordsIn, Marker, HookLine) Frame.tsx (Paper, BrandChrome)
 src/components/Narrator.tsx  rig + bubble     src/components/Ui.tsx (SceneTitle, AppCard, Pill, pulse)
 src/components/ShaderLayer.tsx   React Bits shader backgrounds, frame-driven
+src/components/ThreeCity.tsx     (style 8) frame-driven three.js world: procedural city, route, puck, GLB vehicle
+public/models/*.glb + Textures/  (style 8) CC0 models fetched for this video only
 src/scenes/Intro.tsx (Hook, Problem, Outro)   src/scenes/AppScenes.tsx (diagram + product screens)
 src/Video.tsx (FontFaces + TransitionSeries + chrome + narrator)  src/Root.tsx  src/index.ts
 public/fonts/*.ttf  public/character.png  public/character-original.jpg  public/brand-mark.png
@@ -440,7 +521,7 @@ public/brand/*          (style 5) official logo / product assets of the subject
 render/build.mjs player-entry.tsx index.html serve.py stills.py render.py sounds-entry.js getsfx.py mix.py
 research/facts.md + research/brand.md   (style 5) verified facts with sources + the subject's visual identity
 ```
-For styles 2–7 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
+For styles 2–8 a single `src/Video.tsx` with one component per beat and a `TIMELINE` map of `[from, to]` frames
 (rendered with `<Sequence>`) works well; reuse the render/ harness.
 
 ## 13. React Bits — components, backgrounds, text effects and sounds
@@ -537,6 +618,7 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
   sounds suspense, nocturne, braam, reveal, swish, thock, tickertape, coin, stamp, emblem, chime.
 - Style 6 (Live UI): DotGrid + Spotlight, BlurText, GradientText, CountUp, StarBorder beam, Aurora; sounds velvet, swoop, focus, notch, snap, check, emblem, calm.
 - Style 7 (Illustrated Tale): Silk/Aurora on the turn, BlurText, CountUp, Noise; sounds unfold, swish, glimmer, blop, popover, ding, wand, calm.
+- Style 8 (Product World): three.js world + BlurText, Counter, marquee (ScrollVelocity/TextLoop), StarBorder chips, Aurora end card; sounds swoop, glide, popover, whip, halo, emblem.
 
 ### 13d. Quick picker — React Bits by clip type (pick 1 background + 1 text effect + 1–2 components + a sound set)
 | Clip type | Background (tested ports first) | Text effect | Components | Sounds |
@@ -548,7 +630,8 @@ UI `check` `popover` `notch` `dot` `snap` `tink` `focus`.
 | Typographic statement | Grainient/GradientBlinds (very subtle) | TextType with block cursor, Shuffle | pill reveal, mask lines | keycap/thock, stamp, snap, whip |
 | Brand reel / logo | Galaxy/Threads/Beams (harder ports), LightRays★ | GlitchText, ShinyText sheen | MagicRings/Orb, ElectricLogo | braam, reveal, emblem/herald, punchline |
 | Illustrated story | Silk★/Aurora★ on the turn, Noise | BlurText captions | AnimatedList, CountUp, toast | unfold, swish, glimmer, blop/bubble, wand, calm bed |
-★ = already ported and tested frame-driven in this skill (Silk, Aurora, LightRays: single-pass shaders). Prefer
+| 3D product world / hidden-features list | three.js clay world★ (13a ThreeLayer), Aurora★ end card | BlurText, Counter countdown | marquee bands, StarBorder chips, numbered badge | swoop, glide, popover/ping, whip, halo, emblem |
+★ = already ported and tested frame-driven in this skill (Silk, Aurora, LightRays: single-pass shaders; three.js world). Prefer
 single-pass shaders (one `FRAGMENT`/`COMPOSITE`, no `createFramebuffer`) — check with
 `grep -c createFramebuffer <Name>.jsx`; multi-pass ones (Threads, Grainient, Beams, DarkVeil) need the extra pass.
 On a white ground use backgrounds at low opacity or as tints; keep strong shaders for dark styles.
@@ -559,6 +642,7 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - Remotion source (offline build): https://github.com/remotion-dev/remotion
 - React Bits: https://github.com/DavidHDev/react-bits · https://reactbits.dev · agent index https://reactbits.dev/llms.txt · licence https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md
 - ogl (lightweight WebGL): https://github.com/oframe/ogl
+- three.js (style 8): https://github.com/mrdoob/three.js · Kenney CC0 kits: https://github.com/KenneyNL/Starter-Kit-City-Builder · https://github.com/KenneyNL/Starter-Kit-Racing · https://kenney.nl/assets
 - unDraw SVG collection (illustrations, style 7): https://github.com/balazser/undraw-svg-collection · https://undraw.co
 - Fluent UI System Icons (Color): https://github.com/microsoft/fluentui-system-icons · Iconify set: https://icon-sets.iconify.design/fluent-color/
 - Icons8 Flat Color Icons: https://icon-sets.iconify.design/flat-color-icons/ · Streamline Color: https://icon-sets.iconify.design/streamline-color/
@@ -578,6 +662,7 @@ On a white ground use backgrounds at low opacity or as tints; keep strong shader
 - Style 4 reference: fontbold.top typographic reel (grey studio gradient, heavy Arabic typed with block cursor, blue card)
 - Style 5 reference: RIVINITY "positioning / Al Ries" reel (method only: research-led story, acts, editorial pacing)
 - Style 6: invented for المتمكن («واجهة حية» launch film) · Style 7: invented for the المتمكن roles video («حكاية مصوّرة»)
+- Style 8 reference: a maps-app "hidden features" promo seen on TikTok (method only: hero element, clay 3D world, numbered list, marquee interstitial, logo morph)
 
 ## Appendix A — default narrator (boy with laptop, user-supplied art)
 File: `public/character.png` in the template — 452×967 px, transparent background, original smile painted
