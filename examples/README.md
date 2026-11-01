@@ -20,6 +20,7 @@
 | [`14-logo-m`](14-logo-m/) | شعار | شعار «m» للمتمكن (اتجاهات، أيقونة، ألوان) — ملفات Design canvas + سكربتات التوليد | preview.png |
 | [`15-docker-white-interface`](15-docker-product-world/) | חדש — ממשק לבן عريض | حكاية Docker: Image، Compose، Volumes، Registry، وMCP | [docker-story.mp4](15-docker-product-world/docker-story.mp4) |
 | [`16-supabase-realtime-lesson`](16-supabase-realtime-lesson/) | شرح نصّي فاتح | Supabase Realtime + مهام فريق مشتركة | [supabase-realtime-lesson.mp4](16-supabase-realtime-lesson/supabase-realtime-lesson.mp4) |
+| [`17-arena-agents`](17-arena-agents/) | 7 حكاية مصوّرة — تصوّر أولي فقط | مساعد على Arena وتعدد وجهات النظر (لا يوجد MP4 نهائي) | [preview.png](17-arena-agents/preview.png) · [تنزيل الحزمة](17-arena-agents.zip) |
 
 ## ما لم يُرفع (اجلبه عند التشغيل)
 - `public/` لكل مثال: الخطوط (OFL — من google/fonts أو `skills/motion-storytelling/template/public/fonts`)، أصوات React Bits المولّدة WAV (`render/getsfx.py`)، الشعارات، النماذج والصور.
