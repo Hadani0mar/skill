@@ -4,7 +4,9 @@
 
 ## تشغيل الفيديو
 
-- [▶ مشاهدة/فتح الفيديو MP4 من GitHub](https://github.com/Hadani0mar/skill/raw/refs/heads/arena/ae396c96-skill/examples/17-arena-agents/arena-agents.mp4)
+> يتطلب فتح الرابط تسجيل الدخول إلى GitHub بحساب لديه صلاحية على المستودع، لأنه خاص حالياً.
+
+- [▶ مشاهدة/فتح الفيديو MP4 من GitHub](https://github.com/Hadani0mar/skill/blob/arena/ae396c96-skill/examples/17-arena-agents/arena-agents.mp4?raw=true)
 - [فتح ملف MP4](arena-agents.mp4)
 - [معاينة PNG ثابتة](preview.png) — صورة مرجعية فقط وليست الفيديو.
 
