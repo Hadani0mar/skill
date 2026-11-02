@@ -57,7 +57,7 @@ function parseWav(buffer){
  return {channels,rate,frames:samples.length/channels,samples};
 }
 const parsed=Object.fromEntries(Object.entries(clips).map(([n,b])=>[n,parseWav(b)]));
-const rate=48000, channels=2, duration=15, totalFrames=rate*duration, out=new Float32Array(totalFrames*channels);
+const rate=48000, channels=2, duration=45, totalFrames=rate*duration, out=new Float32Array(totalFrames*channels);
 const bed=parsed.calm; if(bed.rate!==rate) throw new Error('unexpected sound sample rate');
 const fade=Math.round(rate*0.65), stride=bed.frames-fade;
 for(let start=0,cycle=0;start<totalFrames;start+=stride,cycle++){
@@ -71,8 +71,8 @@ for(let start=0,cycle=0;start<totalFrames;start+=stride,cycle++){
  }
 }
 const events=[];
-for(const frame of [150,300]){events.push(['unfold',frame,0.50],['swish',frame+5,0.36]);}
-events.push(['glimmer',25,0.40],['blop',84,0.40],['glimmer',174,0.36],['blop',242,0.36],['stamp',316,0.48],['glimmer',355,0.38],['emblem',405,0.52]);
+for(const frame of [180,360,540,720,900,1080]){events.push(['unfold',frame,0.50],['swish',frame+5,0.36]);}
+events.push(['glimmer',28,0.40],['blop',88,0.40],['glimmer',210,0.36],['blop',385,0.32],['stamp',578,0.48],['glimmer',760,0.38],['blop',936,0.38],['glimmer',1115,0.40],['emblem',1242,0.52]);
 for(const [name,frame,gain] of events){
  const clip=parsed[name], start=Math.round(frame/30*rate);
  for(let i=0;i<clip.frames&&start+i<totalFrames;i++)for(let c=0;c<channels;c++)out[(start+i)*channels+c]+=clip.samples[i*clip.channels+Math.min(c,clip.channels-1)]*gain;

@@ -1,4 +1,6 @@
+import fs from 'node:fs';
 import path from 'node:path';
+import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {bundle} from '@remotion/bundler';
 import {getCompositions, renderMedia} from '@remotion/renderer';
@@ -9,7 +11,9 @@ const project = path.resolve(here, '..');
 const sourceRoot = path.join(here, 'src');
 const publicDir = path.join(project, 'public');
 const outputLocation = path.join(project, 'arena-agents.mp4');
-const outputScale = 0.5;
+const renderLocation = path.join(project, 'arena-agents-render.mp4');
+const renderScale = 0.6;
+const ffmpeg = path.join(project, 'node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg');
 const chromium = chromiumModule.default ?? chromiumModule;
 await chromiumModule.inflate(path.join(project, 'node_modules/@sparticuz/chromium/bin/al2023.tar.br'));
 chromiumModule.setupLambdaEnvironment('/tmp/al2023/lib');
@@ -33,19 +37,19 @@ const compositions = await getCompositions(serveUrl, {
 });
 const composition = compositions.find((item) => item.id === 'ArenaAgents');
 if (!composition) throw new Error(`ArenaAgents composition missing; found ${compositions.map((c) => c.id).join(', ')}`);
-console.log(`Rendering ${composition.durationInFrames} frames at ${composition.width*outputScale}x${composition.height*outputScale}…`);
+console.log(`Rendering ${composition.durationInFrames} frames at ${composition.width*renderScale}x${composition.height*renderScale}…`);
 await renderMedia({
   composition,
   serveUrl,
   codec: 'h264',
-  outputLocation,
+  outputLocation: renderLocation,
   browserExecutable,
   chromiumOptions,
   chromeMode: 'chrome-for-testing',
   pixelFormat: 'yuv420p',
   crf: 22,
   x264Preset: 'veryfast',
-  scale: outputScale,
+  scale: renderScale,
   concurrency: 2,
   audioCodec: 'aac',
   audioBitrate: '128k',
@@ -58,4 +62,13 @@ await renderMedia({
   },
   onBrowserLog: (log) => { if (log.type === 'error') console.error('BROWSER', log.text); },
 });
+console.log('Upscaling the vertical master to 1080x1920…');
+execFileSync(ffmpeg, [
+  '-y', '-i', renderLocation,
+  '-vf', 'scale=1080:1920:flags=lanczos',
+  '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+  '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart',
+  outputLocation,
+], {stdio: 'inherit'});
+fs.unlinkSync(renderLocation);
 console.log(`Rendered ${outputLocation}`);
