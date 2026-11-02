@@ -1,20 +1,45 @@
-# تصوّر فيديو Arena × الوكلاء
+# فيديو Arena × الوكلاء
 
-معاينة ثابتة لأول لقطة في فيديو عمودي قصير، بأسلوب **#7 حكاية مصوّرة**. الهدف تقديم الوكيل كمساعد لطيف داخل «حلبة» أفكار، مع إظهار تعدد وجهات النظر مجازياً. ليست واجهة رسمية لـArena ولا MP4 نهائياً.
+**فيديو MP4 فعلي وقابل للتشغيل** بأسلوب **#7 «حكاية مصوّرة»**. يحكي الفكرة باختصار: «عندك فكرة؟ أنا مساعدك على Arena. الفكرة منك… ونرتّبوها سوا.» تعدد الزوايا هنا معالجة بصرية مجازية، وليس وصفاً لواجهة Arena أو وعداً بميزة بعينها.
 
-- `preview.png` — الصورة الأولية للعرض.
-- `preview.svg` — ملف الصورة المتجهي القابل للتعديل.
-- `research/storyboard.md` — الفكرة والنص والمشاهد.
-- `research/receipt.md` — إيصال قراءة المهارة والمصادر.
-- `research/logos.md` — نتيجة البحث عن الشعار.
-- `research/qa.md` — مراجعة المعاينة وحدود ما لم يُنفذ بعد.
-- `assets/connecting-teams.svg` — رسم unDraw المختار بعد معاينة بدائل؛ ترخيصه في مجلد assets.
-- `assets/icons-duotone.json` — رموز m0usasvg المختارة ومرجعها، بنمط duotone واحد.
-- `assets/fonts/ReadexPro-variable.ttf` — خط Readex Pro من Google Fonts (OFL)، مع الرخصة.
-- `public/sfx/REACT-BITS-LICENSE.md` — إشعار رخصة React Bits؛ لم تُضمّن أصوات في المعاينة.
+## تشغيل الفيديو
+
+- [▶ مشاهدة/فتح الفيديو MP4 من GitHub](https://github.com/Hadani0mar/skill/raw/refs/heads/arena/ae396c96-skill/examples/17-arena-agents/arena-agents.mp4)
+- [فتح ملف MP4](arena-agents.mp4)
+- [معاينة PNG ثابتة](preview.png) — صورة مرجعية فقط وليست الفيديو.
+
+**المواصفات:** 15 ثانية · عمودي 9:16 · 540×960 · 30 إطاراً/ثانية · H.264 + AAC.
+
+## محتويات المثال
+
+- `arena-agents.mp4` — ملف الفيديو النهائي.
+- `preview.png` و`preview.svg` — معاينة ثابتة قابلة للمراجعة والتحرير.
+- `video-src/src/Video.tsx` — مشاهد Remotion وانتقالات الصفحات.
+- `video-src/render-video.mjs` — تجميع ورندر الفيديو.
+- `video-src/render-sounds.mjs` — مزج مؤثرات React Bits في ملف WAV.
+- `video-src/src/illustration.json` و`assets/connecting-teams.svg` — رسم unDraw المستخدم في المشاهد.
+- `public/fonts/ReadexPro-variable.ttf` — خط Readex Pro، ورخصته OFL في `assets/fonts/`.
+- `public/sfx/mix.wav` — المزيج الصوتي المستخدم في الفيديو.
+- `research/` — لوحة القصة، ومصادر الأصول ومراجعة المعاينة.
 
 ## الاتجاه الفني
-أرضية عاجية فاتحة، بنفسجي/ليلكي مفاهيمي، رسمة فريق متصل، عناوين Readex Pro، وتسلسل بصري من «فكرة» إلى «زاوية» إلى «خطوة». اسم Arena يظهر كتابةً فقط لأن شعار Arena.ai غير متاح في سجل الشعارات الذي راجعته.
 
-## المكونات المقترحة للفيديو الفعلي
-`BlurText`, `Noise`, `Silk`, و`CountUp` من React Bits، محوّلة إلى Remotion frame-driven. الأصوات: `calm`, `unfold`, `swish`, `glimmer`, `stamp`, `emblem`. يجب مراجعة الإطارات ومزج الصوت قبل تسليم MP4؛ المعاينة الحالية صورة واحدة فقط.
+أرضية عاجية فاتحة، بنفسجي/ليلكي مفاهيمي، خط Readex Pro، رسم فريق متصل، وعناوين عربية بحركة ظهور مستوحاة من React Bits. مؤثرات الصوت مبنية من وصفات `calm`, `unfold`, `swish`, `glimmer`, `stamp`, و`emblem`. لا يُستخدم شعار رسمي لـArena؛ يظهر الاسم كتابةً فقط.
+
+## إعادة البناء
+
+من هذا المجلد:
+
+```sh
+npm ci
+npm run video:render
+```
+
+لإعادة توليد ملف الصوت من نسخة محلية من مستودع React Bits، ثم إعادة الرندر:
+
+```sh
+REACT_BITS_ROOT=/path/to/react-bits npm run video:sounds
+npm run video:render
+```
+
+تُكتب النتيجة إلى `arena-agents.mp4`. أما `npm run preview` فيعيد إنشاء المعاينة الثابتة فقط.
