@@ -1,0 +1,11 @@
+{
+  "_note": "placeholder cue times (s) — replaced from the new voice",
+  "h2": 2.6, "h3": 4.2, "hookEnd": 6.0,
+  "w_logo": 6.3, "w_platform": 7.5, "w_pg": 8.9, "w_f1": 10.2, "w_f2": 11.0, "w_f3": 11.9, "w_f4": 12.8, "whatEnd": 15.0,
+  "r_intro": 15.2, "r_word": 16.6, "r_ins": 18.6, "r_upd": 19.2, "r_del": 19.8, "r_fly": 20.9, "r_now": 22.6, "r_norefresh": 23.3, "rtEnd": 25.0,
+  "e_pill": 25.3, "e_title": 26.8, "exEnd": 29.0,
+  "d_signup": 29.2, "d_project": 32.0, "d_sql": 35.0, "d_run": 39.0, "d_table": 41.0, "d_menu": 44.0, "d_item": 45.6, "d_confirm": 47.0, "d_done": 48.0, "dashEnd": 50.0,
+  "a_open": 50.3, "a_spec": 52.4, "a_gender": 53.8, "a_choose": 55.4, "a_ahead": 57.0, "a_book": 58.6,
+  "a_live": 60.2, "a_cancel": 62.2, "a_drop": 63.4, "a_finish": 64.8, "a_closer": 66.2, "a_mine": 67.2, "appEnd": 69.0,
+  "c_q": 69.4, "c_comment": 71.0, "c_follow": 72.2, "end": 75.5
+}
