@@ -20,6 +20,5 @@
   encode was cut, re-run only ffmpeg (frames are kept).
 - **Network:** shells often reach only GitHub; Unsplash and company sites may be blocked — ask the user for photos
   and logos (they send them), or find them in GitHub repos. Don't fake logos with text tiles.
-- **Music licence:** brag's ende.app tracks have unverified licence terms — keep a music-free copy.
 - **Design system attachments:** a design system selected in the app may belong to another product (e.g. the
   Almutamakkin platform); the channel videos keep the «تقني» identity — say so in one line.

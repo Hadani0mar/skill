@@ -1,4 +1,4 @@
-# Voice + React Bits sounds (rendered WAVs) + brag keyboard SFX + optional brag music bed, ducked under the voice.
+# Voice + React Bits sounds (rendered WAVs) + brag SFX/keyboard + brag music bed (bundled in assets/audio), ducked under the voice.
 # Edit EV (time, 'RB:<name>', gain) and TYPE (start, keys, gap) to the video's events. Set MUSIC='' to skip music.
 import subprocess, numpy as np, wave, os
 SR = 48000; END = 93.0
@@ -18,9 +18,9 @@ EV = [
   (78.6, 'RB:swish', .4), (78.7, 'RB:reveal', .45), (81.0, 'RB:stamp', .5), (83.4, 'RB:enter', .4), (87.3, 'RB:ping', .5), (87.4, 'RB:appear', .4),
   (90.0, 'RB:spark', .55), (90.05, 'RB:chime', .45), (90.8, 'RB:finale', .4),
 ]
-BRAG = os.environ.get('BRAG', '../brag')
-KB = BRAG + '/skills/brag/assets/sfx/keyboard/'
-MUSIC = os.environ.get('MUSIC', BRAG + '/skills/brag/assets/music/happy-beats-business-moves-vol-1-by-ende-dot-app.mp3')
+AUDIO = os.environ.get('AUDIO', 'assets/audio')  # brag music + SFX, bundled with the skill
+KB = AUDIO + '/sfx/keyboard/'
+MUSIC = os.environ.get('MUSIC', AUDIO + '/music/happy-beats-business-moves-vol-1-by-ende-dot-app.mp3')
 TYPE = [(25.45, 17, .038), (45.4, 30, .06), (51.6, 26, .077), (86.0, 15, .08)]
 def load(f):
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', f, '-f', 's16le', '-ac', '2', '-ar', str(SR), '-'], capture_output=True).stdout

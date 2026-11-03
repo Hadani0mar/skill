@@ -21,7 +21,11 @@ from the END line.
 - **Tone:** value first, never beg for follows. The follow reason is always "the next explainer is coming"
   and "comment the tool you want and we'll make a full video on it".
 - **Brand:** logo = the letter **ت** built geometrically: a thick black bowl (reads as a smile) + two square
-  "pixel" dots, left **black**, right **green #22c55e**, on white. Files in `examples/brand/`. It builds
+  "pixel" dots, left **black**, right **green #22c55e**, on white. Files in **`brand/`**: `taqni-mark-white.svg`
+  (main, black+green on white — the one used in videos), `taqni-mark-green.svg` (avatar: white on green),
+  `taqni-mark-black.svg`, and a 1080² PNG of each (same names). SVG geometry (viewBox 1080): bowl path
+  `M300 470 C300 700 780 700 780 440` stroke 118 round caps, dots `rect 400/568,300 112×112 rx22`, group
+  `translate(0 45)`. It builds
   (dots drop with a spring, bowl draws with stroke-dashoffset), **blinks** (green pixel squashes), sits as a
   corner **bug** (top-left, ~52 px) for the whole video.
 
@@ -36,9 +40,11 @@ from the END line.
 3. **Voice → timing.** The user sends the WAV. `scripts/silences.sh voice.wav -38 0.15` lists pauses; map each
    speech chunk to a script phrase; inside a chunk place words by letter count. Write all cue times as absolute
    seconds in one `T` object (see template). Cut scenes on pauses.
-4. **Sound.** React Bits sounds rendered to WAV (`scripts/render-rb-sounds.mjs`), brag keyboard presses for typing,
-   optional brag music bed ducked under the voice (`mix.py`; licence of the music is unverified — offer a version
-   without music). SFX peak ~10 dB under the voice.
+4. **Sound.** Always a **brag music bed** under the voice (bundled: `template/assets/audio/music/`, 5 ende.app
+   tracks + beat-cue files in `music/cues/` — put big reveals on strong beats when it doesn't hurt the story),
+   ducked ~55 % while the voice speaks, faded in/out. SFX: brag `sfx/` (interface clicks, ui switches, keyboard
+   presses for every typed character, impacts) + React Bits sounds rendered to WAV (`scripts/render-rb-sounds.mjs`).
+   SFX peak ~10 dB under the voice. All wired in `mix.py`.
 5. **Render & deliver.** `scripts/render.sh <seconds> 6 out/video.mp4` (parallel Playwright frame capture at 2×,
    1080×1920, 30 fps, blank-frame check, ffmpeg H.264 veryfast CRF 18). Send the MP4 with a short note: what's
    in it, what is sample data, the weakest shot. Then advise on posting (references/tiktok-growth.md).
@@ -103,8 +109,9 @@ In this order, each on its voice phrase:
   react-dom), `PLAYWRIGHT`.
 - Clone sources: `Hadani0mar/m0usasvg` (sparse: `src/data` + the logo folders you need) → `scripts/fetch-assets.py`
   writes `src/assets.json`; `DavidHDev/react-bits` → `scripts/render-rb-sounds.mjs` writes `out/rbs/*.wav`;
-  `Hadani0mar/brag` → music + keyboard SFX (`BRAG=../brag`); `benjitaylor/skills` (Stageshow, already in `kit/`).
-- Never commit React Bits source, rendered WAVs or brag music to a shared repo.
+  brag music + SFX are already in `template/assets/audio/` (from `Hadani0mar/brag`); `benjitaylor/skills`
+  (Stageshow, already in `kit/`).
+- Never commit React Bits source or its rendered WAVs.
 
 ## 7. Delivery checklist
 - Stills of every scene and mid-transition checked: no overflow, no clipped Arabic, no double exposure.

@@ -1,7 +1,7 @@
 # Reference videos — «تقني» (3 Nov 2026)
 
 All vertical 1080×1920, 30 fps, white house style, timed to the user's Google AI Studio voice-over.
-Videos 04 and 05 here are the **music-free** copies (the posted versions had a brag music bed).
+Videos 04 and 05 include the brag music bed (as delivered).
 `src/` folders are the exact scene code (they need the template's kit/, ui.tsx, anim.ts, assets.json to run).
 
 | # | Video | Length | Type | Watch for |
@@ -12,7 +12,7 @@ Videos 04 and 05 here are the **music-free** copies (the posted versions had a b
 | 04 | `04-store-promo/video.mp4` | 60 s | service promo | phone store grid, 24h ring, DM chaos → self-serve, feed stops on a product video, desktop store with fly-to-cart, delivery/pickup, Libyan payment logos dropdown, circular reveal, editor reveal |
 | 05 | `05-gemini-notebook/video.mp4` | 93 s | full explainer (series) | recap of video 02 in a phone, kinetic word+icon hook, name-change card flip, real-site walkthrough with measured camera and scan, citation popup, Studio, outro with comment box |
 
-`brand/` — the ت mark (SVG + PNG in three colourways).
+The channel logo is in `../brand/`.
 
 ## Scripts (as voiced)
 
