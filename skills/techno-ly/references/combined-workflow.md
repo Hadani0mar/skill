@@ -27,3 +27,9 @@ itself carries the middle (the typed question, the answer, the cited page). No c
 ## Checks before sending
 `motion_check.py` (≥ 60 % moving, no hold > 1.8 s but the end), loudness, stills of every beat, a contact sheet from
 the final file. Voice files from AI Studio are 24 kHz: read their real sample rate before mixing.
+
+## Delivery rules added 4 Nov 2026
+- When the user has no voice yet: deliver a **silent** cut first (captions carry the story, on-screen text per scene), with the
+  script alongside; the voice version follows. Say plainly if the user's audio file did not arrive — never invent timing.
+- Sound: when the user says «مؤثرات بس» → NO music bed at all (set the music gain to 0); real UI foley only.
+- Show each person with one word (role) and the real photo from the company's own page; if no licensed photo exists, say so.

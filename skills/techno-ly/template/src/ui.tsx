@@ -12,7 +12,7 @@ export function Ico({ name, size = 16, color, look = 'outline', style }: { name:
   const svg = prefix(raw, p).replace(/width="24" height="24"/, `width="${size}" height="${size}"`)
   return <span style={{ display: 'inline-flex', width: size, height: size, color, lineHeight: 0, flex: 'none', ...style }} dangerouslySetInnerHTML={{ __html: svg }} />
 }
-export function Logo({ k, h, style }: { k: 'sb' | 'sbword' | 'gh' | 'oai' | 'pg' | 'pgword' | 'tt' | 'ttword'; h: number; style?: React.CSSProperties }) {
+export function Logo({ k, h, style }: { k: string; h: number; style?: React.CSSProperties }) {
   const p = React.useMemo(() => `l${(n++).toString(36)}_`, [])
   let raw = prefix((assets.logos as any)[k], p)
   raw = raw.replace(/\.([a-zA-Z][\w-]*)(?=[\s,{])/g, (m, c) => (/^\d/.test(c) ? m : `.${p}${c}`)).replace(/class="([^"]+)"/g, (_, c) => `class="${c.split(' ').map((x: string) => p + x).join(' ')}"`)

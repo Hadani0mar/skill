@@ -22,3 +22,16 @@
   and logos (they send them), or find them in GitHub repos. Don't fake logos with text tiles.
 - **Design system attachments:** a design system selected in the app may belong to another product (e.g. the
   Almutamakkin platform); the channel videos keep the «تقني» identity — say so in one line.
+
+## Added 4 Nov 2026 (Jev video)
+- **Never encode by hand while `render.sh` is still alive.** `nohup render.sh &` can return early while the 4 `record.mjs`
+  jobs keep running; a second `ffmpeg` to the same file corrupts it («Invalid NAL unit»). Wait for `pgrep -f "record.mjs frames"`
+  to be empty, delete the old mp4, encode ONCE to a fresh name, then run `ffmpeg -i x.mp4 -f null -` to prove it decodes.
+- **Stageshow `Window` outside a `Stage` has no frame** (tokens live on `.ss-stage`): set `--ss-canvas/--ss-chrome/--ss-radius-window/
+  --ss-shadow-window` on `.ss-window` (see 06 `style.css`) or it renders as floating traffic lights.
+- **m0usasvg icon names missing from the UI looks:** wallet, bolt, building, ticket, timer, alert-triangle (use `triangle-alert`),
+  stopwatch, chart-bar, refrigerator. `arrow-right` exists but must be in the `fetch-assets.py` list or the whole frame throws.
+- `record.mjs` must serve png/jpg/webp with image MIME types (patched in the template).
+- Bidi: «70–500 ms», «68 ms», a colon before an Arabic word flip — wrap in `<bdi dir="ltr">` or reword.
+- The Wikimedia Commons API is blocked from the sandbox: no Embarcadero/SF photo; say so instead of faking one.
+- Always put the numbers' source on screen when it is the company's own claim; mark invented demo data «بيانات تجريبية».

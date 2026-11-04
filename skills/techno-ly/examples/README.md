@@ -13,6 +13,7 @@ Videos 04 and 05 include the brag music bed (as delivered).
 | 05 | `05-gemini-notebook/video.mp4` | 93 s | full explainer (series) | recap of video 02 in a phone, kinetic word+icon hook, name-change card flip, real-site walkthrough with measured camera and scan, citation popup, Studio, outro with comment box |
 
 The channel logo is in `../brand/`.
+| 06 | `06-jev-typesafe/` | 118 s | AI model explainer (silent, SFX only) | complaints inbox hook, company/people/funding cards with real logos and headshots, price bars, LLM vs Jev, ticket-routing app with confidence gate and reply writer — see its README |
 
 ## Scripts (as voiced)
 

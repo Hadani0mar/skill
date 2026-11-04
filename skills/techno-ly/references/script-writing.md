@@ -32,3 +32,10 @@
 
 ## Example (approved, Gemini Notebook explainer)
 See `examples/README.md` — every video's script is listed there.
+
+## Problem → solution structure (user's preference, 4 Nov 2026) — binding for new videos
+Open on the PROBLEM as the hook (millions of tickets, one department can't absorb them), then «كيف تخليه يعرف بروحه؟»
+(the solution: a decision model routes each ticket to the right team), then the second step (a bigger model writes the
+acknowledgement reply), and only THEN introduce the tool/company (maker, founder, price, what's new, difference).
+The voice is recorded to the script, so fix the script order BEFORE the user records; never reorder scenes after the voice exists.
+If the user records first, build the video in the order of their audio.

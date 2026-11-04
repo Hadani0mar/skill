@@ -3,7 +3,7 @@
 const {chromium} = await import(process.env.PLAYWRIGHT || 'playwright');
 import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
 const [mode, a, b] = process.argv.slice(2); const FPS = 30;
-const types = {html: 'text/html', css: 'text/css', svg: 'image/svg+xml', ttf: 'font/ttf', js: 'application/javascript'};
+const types = {html: 'text/html', css: 'text/css', svg: 'image/svg+xml', ttf: 'font/ttf', js: 'application/javascript', png: 'image/png', jpg: 'image/jpeg', webp: 'image/webp'};
 const port = 8810 + Math.floor(Math.random() * 80);
 const srv = http.createServer((q, r) => { let u = decodeURIComponent(q.url.split('?')[0]); if (u === '/') u = '/index.html'; const f = path.join(process.cwd(), u);
   fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, {'content-type': types[f.split('.').pop()] || 'application/octet-stream'}); r.end(d); }); }).listen(port);

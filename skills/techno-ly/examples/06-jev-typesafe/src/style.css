@@ -1,0 +1,53 @@
+/* «تقني» house style: white ground, faint dot grid, green accent. Real brand marks keep their own colours. */
+.stage { position: relative; width: 540px; height: 960px; overflow: hidden; background: #fff; font-family: Beiruti, Inter, sans-serif; color: #111; --g: #1f9d63; --gb: #22c55e; --mut: #6b6b6b; --line: #e6e6e6; }
+.stage * { box-sizing: border-box; }
+.bg { position: absolute; inset: 0; background:
+  radial-gradient(60% 38% at 50% 0%, rgba(34,197,94,.09), transparent 70%),
+  radial-gradient(circle, #ececec 1.2px, transparent 1.4px) 0 0 / 22px 22px; }
+.abs { position: absolute; }
+.sc { position: absolute; inset: 0; }
+.ctr { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+.hd { position: absolute; left: 24px; right: 24px; text-align: center; font-weight: 800; line-height: 1.22; font-size: 36px; letter-spacing: -.2px; word-spacing: .12em; }
+.hd.s { font-size: 30px; }
+.sub { position: absolute; left: 28px; right: 28px; text-align: center; font-size: 23px; font-weight: 600; color: #3b3b3b; line-height: 1.35; word-spacing: .12em; }
+.hl { color: var(--g); }
+.en { font-family: Inter, sans-serif; letter-spacing: -.01em; unicode-bidi: isolate; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-weight: 700; font-size: 20px; word-spacing: .12em; box-shadow: 0 4px 14px rgba(0,0,0,.05); }
+.chip.g { background: #ecfdf3; border-color: #bbf0d1; color: var(--g); }
+.chip.k { background: #111; border-color: #111; color: #fff; }
+.chip.w { background: #fff7ed; border-color: #fed7aa; color: #c2410c; }
+.tag { font-size: 15px; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 99px; padding: 3px 12px; word-spacing: .12em; }
+.mono { font-family: 'SF Mono', Menlo, Consolas, monospace; }
+.big { font-family: Inter, sans-serif; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.bug { position: absolute; left: 18px; top: 18px; }
+
+/* inbox rows */
+.row { display: flex; align-items: center; gap: 10px; height: 66px; padding: 0 16px; border-bottom: 1px solid #f0f0f0; direction: rtl; }
+.row .av { width: 36px; height: 36px; border-radius: 99px; flex: none; }
+.row b { font-size: 21px; font-weight: 700; white-space: nowrap; }
+.row i { display: block; height: 7px; width: 70px; border-radius: 4px; background: #ececec; margin-top: 5px; }
+.row .t { margin-inline-start: auto; font: 600 12px Inter; color: #aaa; }
+
+/* bars */
+.bar { position: relative; height: 12px; border-radius: 8px; background: #f0f0f0; overflow: hidden; }
+.bar > span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; }
+.dept { display: flex; align-items: center; gap: 10px; height: 44px; direction: rtl; }
+.dept .n { width: 118px; font-size: 19px; font-weight: 700; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.dept .p { width: 46px; font: 700 15px Inter; text-align: left; direction: ltr; color: #777; }
+.dept .bar { flex: 1; }
+
+/* typed code card */
+.json { direction: ltr; text-align: left; font: 600 17px/1.55 'SF Mono', Menlo, Consolas, monospace; color: #2a2a2a; white-space: pre; }
+.json .k { color: #9a9a9a; } .json .v { color: var(--g); } .json .s { color: #b45309; }
+.caret { display: inline-block; width: 2px; height: 1.05em; background: #111; vertical-align: -3px; margin-inline: 1px; }
+.tl { position: absolute; width: 3px; background: #e8e8e8; border-radius: 3px; }
+.logo-row { display: flex; align-items: center; gap: 14px; }
+.ph { position: absolute; overflow: hidden; background: #d9d4e6; box-shadow: 0 16px 40px rgba(0,0,0,.14); }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lbl { font-size: 18px; font-weight: 700; color: var(--mut); word-spacing: .12em; }
+.ss-window { width: 100%; height: 100%; }
+
+.ss-window { --ss-canvas: #fff; --ss-surface: #fff; --ss-chrome: #fff; --ss-radius-window: 20px; --ss-shadow-window: 0 20px 56px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.07); --ss-text-strong: #262628; --ss-text: #7a7a7d; --ss-ink-5: rgba(0,0,0,.15); --ss-line: rgba(0,0,0,.07); --ss-ink-1: rgba(0,0,0,.04); --ss-ink-2: rgba(0,0,0,.06); --ss-ink-3: rgba(0,0,0,.08); --ss-ink-4: rgba(0,0,0,.1); }
+.ss-window__body { font-size: 20px; }
+.dept .n { width: 150px; font-size: 21px; } .dept .p { font-size: 17px; width: 52px; }
