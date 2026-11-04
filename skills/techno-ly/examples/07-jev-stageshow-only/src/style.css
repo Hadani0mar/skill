@@ -1,0 +1,23 @@
+/* Host-level layout for the Jev film. The kit's own look is untouched; these are scene layers and headlines. */
+.ss-stage { --ss-font: Beiruti, Inter, system-ui, sans-serif; }
+.scn { position: absolute; inset: 28px 0 0 0; opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s cubic-bezier(.25,.8,.25,1), transform .45s cubic-bezier(.25,.8,.25,1); direction: rtl; }
+.scn[data-on="true"] { opacity: 1; transform: none; }
+.fx { opacity: 0; transform: translateY(10px); transition: opacity .5s cubic-bezier(.25,.8,.25,1), transform .5s cubic-bezier(.25,.8,.25,1); }
+.fx[data-on="true"] { opacity: 1; transform: none; }
+.hd { position: absolute; left: 20px; right: 20px; top: 34px; text-align: center; font-size: 25px; font-weight: 800; line-height: 1.25; color: var(--ss-text-strong); word-spacing: .1em; }
+.hd em { font-style: normal; color: var(--ss-accent-text); }
+.cap { position: absolute; left: 22px; right: 22px; text-align: center; font-size: 15px; font-weight: 600; color: var(--ss-text); line-height: 1.4; word-spacing: .1em; }
+.col { position: absolute; left: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; }
+.rowx { display: flex; align-items: center; gap: 10px; }
+.big { font-family: Inter, sans-serif; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--ss-text-strong); direction: ltr; unicode-bidi: isolate; }
+.lat { direction: ltr; unicode-bidi: isolate; font-family: Inter, sans-serif; }
+.dept { display: flex; align-items: center; gap: 10px; height: 34px; }
+.dept .nm { width: 96px; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px; color: var(--ss-text-strong); }
+.dept .pc { width: 38px; font: 700 12px Inter; direction: ltr; text-align: left; color: var(--ss-text); }
+.dept[data-win="true"] .nm { color: var(--ss-accent-text); }
+.dept .ss-meter { flex: 1; }
+.tag { font-size: 12px; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 99px; padding: 2px 9px; }
+.ph { border-radius: 16px; overflow: hidden; background: #d9d4e6; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.who { text-align: center; font-size: 13px; font-weight: 800; line-height: 1.2; color: var(--ss-text-strong); }
+.who b { display: block; font-size: 11px; font-weight: 700; color: var(--ss-text); margin-top: 2px; }
