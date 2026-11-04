@@ -1,6 +1,6 @@
 ---
 name: techno-ly
-description: Make vertical Arabic (Libyan dialect) motion-graphics videos for the TikTok channel «تقني» @techno_ly — AI-tool explainers, tool lists, service promos — with the channel's fixed intro and outro, its ت logo, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, brag rules and music, timed to the user's AI-Studio voice-over. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
+description: Make vertical Arabic (Libyan dialect) motion-graphics videos for the TikTok channel «تقني» @techno_ly — AI-tool explainers, tool lists, service promos — hook-first openings (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, brag rules and music, timed to the user's AI-Studio voice-over. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
 ---
 
 # techno-ly — فيديوهات قناة «تقني»
@@ -66,27 +66,26 @@ from the END line.
 - Icons/logos only from **m0usasvg** (duotone green icons; real brand logos). Real product photos and real payment
   logos when the user supplies them — never name-only placeholders.
 
-## 3. Fixed INTRO (start of every video)
-Pick by video type, always ≤ 8 s, hook in the first 2 s:
-- **Series episode** (a full explainer promised before): a silver Stageshow **Phone** plays real frames of the
-  previous video (`public/prev/fXXXXX.jpg`, object-fit contain) with a black pill «من الفيديو اللي فات», caption
-  «وعدناكم بشرح كامل لكل أداة» (كامل in green), then a chip «اليوم: الأداة الأولى» + the tool logo. Then zoom-blur
-  into the hook.
-- **Kinetic hook** (always, right after or as the opener): one big word at a time (≈110 px, weight 900) with a
-  matching duotone icon in a 170 px rounded green-tint tile above it, progress ticks below; the words then collapse
-  into a row of chips. Example: ارفع ↑ / محاضرتك 📄 / واسألها 💬 / تجاوبك ✦ / من الملف 📖 / بالمصدر ❝.
-- **Lists / promos:** the ت logo builds and blinks, its green pixel grows into a big green tile with a rolling
-  Counter (e.g. 0→3) while tool logos orbit it.
+## 3. Opening — hook first (replaces the old fixed intro, 4 Nov 2026)
+Day-one stats: 83–86 % of viewers left at **0:02** on both videos that opened with the ت logo building or with
+«من الفيديو اللي فات». So, from now on:
+- **Frame 0 is already the story:** the product's own screen (lightly blurred, motion-reel) or the pain itself, with
+  the hook line on it. No logo build, no recap, no title card, no empty first second.
+- The ت logo only as a small corner mark / the handle pill for the whole film, and once at the end.
+- A recap of a previous video, if any, comes after second 3 or not at all.
+- The hook line is the viewer's own problem in Libyan words (e.g. «امتحانك غدوة الصبح… والمحاضرة ميّة وعشرين
+  صفحة؟»), not the tool's name.
 
-## 4. Fixed OUTRO (end of every video, ~10–14 s)
-In this order, each on its voice phrase:
-1. ت logo (90–170 px) builds and blinks.
-2. «الجاي» card (white, green border): the next explainer's name (e.g. «شرح Perplexity»).
-3. Comment box «شن الأداة اللي تبيها؟» — a tool name types in («اشرحولنا Cursor»), send press, the comment posts.
-4. Card «فيديو كامل على طلبك» with a green play tile.
-5. Follow button «تابع تقني» inside a **StarBorder** (light travelling around the border), press → «تتابع تقني ✓» +
-   **ClickSpark** burst.
-6. TikTok logo + **@techno_ly** pill. Hold ≥ 1.5 s after the voice ends.
+## 4. Ending — no follow call
+- The closing line lands on the voice (motion-reel ending: the last screen blurred under the line), then the ت logo
+  + TikTok logo + @techno_ly.
+- Ask a question tied to the topic («شن المادة اللي تعبتك هالفصل؟ اكتبها في التعليقات… ونجربوا عليها»). Never
+  «تابع تقني», never a follow button, never «الجاي …» promises.
+
+## 4b. How the skills combine (read `references/combined-workflow.md`)
+Build every new video with **motion-reel** (beats, in-app world, foley), **stageshow** (anti-AI-look rules for the
+UI), **brag** (hook and reading time) and **m0usasvg** (real logos). The older sections below (React Bits sparkle,
+duotone icon tiles, chips, StarBorder) are kept for reference only; where they conflict, the combined workflow wins.
 
 ## 5. Scene toolkit (copy from template/ and examples/)
 - `template/` = the NotebookLM video project (best reference): `src/App.tsx` (all scenes, the T timeline, measured

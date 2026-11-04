@@ -1,0 +1,5 @@
+node_modules/
+out/
+models/
+sfx/kit/
+sfx/.raw_*
