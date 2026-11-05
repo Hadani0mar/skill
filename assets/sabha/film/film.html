@@ -1,0 +1,227 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Kufam;src:url('fonts/Kufam[wght].ttf');font-weight:100 900}
+@font-face{font-family:Alexandria;src:url('fonts/Alexandria[wght].ttf');font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0e1f;direction:rtl;font-family:Alexandria,sans-serif;color:#f1e3c4}
+#root{position:absolute;inset:0;overflow:hidden}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.abs{position:absolute}
+.k{font-family:Kufam,sans-serif;font-weight:800;line-height:1.35;white-space:nowrap}
+.a{font-family:Alexandria,sans-serif;line-height:1.6;white-space:nowrap}
+.gold{color:#e8a93a}
+img.f{position:absolute;display:block}
+.pw{opacity:0}
+#grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.10;
+ background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
+#sweep{position:absolute;top:0;width:8px;height:1920px;background:#e8a93a;box-shadow:0 0 60px 20px rgba(232,169,58,.55);opacity:0;pointer-events:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.arch{position:absolute;overflow:hidden;background:#f1e3c4}
+.arch img{width:100%;height:100%;object-fit:cover}
+svg.ic{display:inline-block;width:150px;height:150px;color:#e8a93a}
+</style></head><body><div id="root">
+
+<!-- 1 hook -->
+<div class="sc" id="s1">
+ <img class="f" id="s1bg" src="../media/01_drone_show_libya_map_sabha_airport_event.jpg" style="left:0;top:0;width:1080px;height:1920px;object-fit:cover;filter:brightness(.78) contrast(1.06)">
+ <div class="abs" style="left:0;right:0;bottom:0;height:1150px;background:linear-gradient(transparent,#0a0e1f 78%)"></div>
+ <div class="abs" id="s1bar" style="right:110px;top:1040px;width:0;height:6px;background:#e8a93a"></div>
+ <div class="abs a pw" data-t="3.0" data-t2="6.6" style="right:112px;top:960px;font-size:46px;font-weight:500;color:#e8a93a">سبها · ليبيا</div>
+ <div class="abs k pw" data-t="4.46" data-t2="6.6" style="right:110px;top:1060px;font-size:200px">بوابة</div>
+ <div class="abs k pw" data-t="4.9" data-t2="6.6" style="right:110px;top:1280px;font-size:200px">الصحراء</div>
+ <div class="abs k pw gold" data-t="5.4" data-t2="6.6" style="right:110px;top:1500px;font-size:200px">الكبرى</div>
+</div>
+
+<!-- 2 where + Fezzan -->
+<div class="sc" id="s2" style="background:#0a0e1f">
+ <svg class="abs" id="s2map" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+ <div class="abs a pw" data-t="7.4" data-t2="11.0" id="s2tr" style="font-size:40px">طرابلس</div>
+ <div class="abs k gold pw" data-t="7.8" data-t2="11.0" id="s2sb" style="font-size:80px">سبها</div>
+ <div class="abs k gold" id="s2num" style="right:110px;top:1240px;font-size:260px;line-height:1.2;opacity:0">0</div>
+ <div class="abs k pw" data-t="9.2" data-t2="11.0" style="right:110px;top:1530px;font-size:92px">كم عن طرابلس</div>
+ <div class="arch pw" id="s2arch" data-t="11.15" style="left:200px;top:330px;width:680px;height:900px;border-radius:340px 340px 28px 28px;border:5px solid #e8a93a"><img src="../media/09_char_tuareg_camel_illustration.jpg"></div>
+ <div class="abs k pw" data-t="11.3" style="right:110px;top:1300px;font-size:130px">ملتقى القوافل</div>
+ <div class="abs k gold pw" data-t="12.5" style="right:110px;top:1490px;font-size:130px">وعاصمة فزان</div>
+</div>
+
+<!-- 3 ruin -->
+<div class="sc" id="s3" style="background:linear-gradient(160deg,#2a2018,#0f0b08)">
+ <div class="abs" id="s3card" style="left:215px;top:230px;width:650px;padding:26px 26px 110px;background:#efe7d6;box-shadow:0 40px 90px rgba(0,0,0,.65)"><img id="s3img" src="../before_after/castle_sabha_before.jpg" style="display:block;width:598px;height:708px;object-fit:cover;filter:grayscale(.55) sepia(.35) contrast(1.05)"></div>
+ <div class="abs" id="s3red" style="inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(192,80,46,0),rgba(192,80,46,.45));opacity:0"></div>
+ <div class="abs k pw" data-t="14.8" data-t2="16.05" style="right:110px;top:1150px;font-size:170px">سنين صعبة</div>
+ <div class="abs k pw" data-t="16.3" id="s3sh" style="right:110px;top:1150px;font-size:190px;color:#e8a93a">القذائف</div>
+ <div class="abs a pw" data-t="16.9" style="right:114px;top:1400px;font-size:64px;font-weight:500">أصابت أسوار قلعتها</div>
+</div>
+
+<!-- 4 division -->
+<div class="sc" id="s4" style="background:radial-gradient(ellipse at 50% 30%,#1a2238,#0a0e1f 70%)">
+ <div class="abs k pw" data-t="19.15" data-t2="23.7" style="right:110px;top:190px;font-size:120px">وتفرقوا</div>
+ <div class="abs k gold pw" data-t="19.6" data-t2="23.7" style="right:110px;top:345px;font-size:120px">الناس</div>
+ <div class="abs k pw" data-t="23.85" style="right:110px;top:190px;font-size:120px">كل واحد</div>
+ <div class="abs k gold pw" data-t="24.25" style="right:110px;top:345px;font-size:120px">في ركنه</div>
+ <div id="s4a"></div>
+</div>
+
+<!-- 5 rise -->
+<div class="sc" id="s5" style="background:#0a0e1f">
+ <div id="s5night" class="abs" style="inset:0;clip-path:inset(0 0 0 100%)">
+  <img class="f" id="s5blur" style="left:-200px;top:-200px;width:1480px;height:2320px;object-fit:cover;filter:blur(40px) brightness(.5)">
+  <img class="f" id="s5img" style="left:0;top:500px;width:1080px;height:607px;object-fit:cover">
+  <div class="abs" style="left:0;right:0;top:497px;height:3px;background:#e8a93a"></div>
+  <div class="abs" style="left:0;right:0;top:1107px;height:3px;background:#e8a93a"></div>
+  <div class="abs k pw" data-t="26.7" style="right:110px;top:1230px;font-size:210px;color:#e8a93a">ناضت</div>
+  <div class="abs k pw" data-t="27.4" style="right:110px;top:1470px;font-size:110px">من جديد</div>
+  <div class="abs a pw" data-t="28.5" style="right:114px;top:1640px;font-size:58px;font-weight:500">والقلعة رجعت واقفة</div>
+ </div>
+ <div class="abs" id="s5card" style="left:215px;top:230px;width:650px;padding:26px 26px 110px;background:#efe7d6;box-shadow:0 30px 70px rgba(0,0,0,.7);transform-origin:0 0"><img src="../before_after/castle_sabha_before.jpg" style="display:block;width:598px;height:708px;object-fit:cover;filter:grayscale(.6) sepia(.3)"></div>
+ <div class="abs k pw" data-t="25.95" data-t2="26.6" style="right:110px;top:1200px;font-size:130px">بس سبها</div>
+</div>
+
+<!-- 6 bridge + health -->
+<div class="sc" id="s6" style="background:#0a0e1f">
+ <img class="f" id="s6img" style="left:0;top:0;width:1080px;height:1920px;object-fit:cover">
+ <div class="abs" style="left:0;right:0;bottom:0;height:1000px;background:linear-gradient(transparent,#0a0e1f 85%)"></div>
+ <div class="abs" style="left:0;right:0;top:0;height:420px;background:linear-gradient(#0a0e1f,transparent)"></div>
+ <div class="abs a pw" data-t="31.6" data-t2="36.4" style="right:110px;top:180px;font-size:46px;font-weight:500;color:#e8a93a">جهاز التنمية الوطنية · سبها</div>
+ <div class="abs k gold" id="s6num" style="right:110px;top:1060px;font-size:330px;line-height:1.1;opacity:0">0%</div>
+ <div class="abs" id="s6track" style="right:110px;top:1420px;width:860px;height:18px;border-radius:9px;background:rgba(241,227,196,.22);opacity:0"><div id="s6bar" style="position:absolute;right:0;top:0;height:18px;width:0;border-radius:9px;background:#e8a93a"></div></div>
+ <div class="abs k pw" data-t="31.5" data-t2="36.4" style="right:110px;top:1470px;font-size:110px">جسر بطل العبور</div>
+ <div class="abs a pw" data-t="34.3" data-t2="36.4" style="right:114px;top:1630px;font-size:46px;font-weight:300">في آخر 2025</div>
+ <div class="abs pw" id="s6card" data-t="36.6" style="left:100px;right:100px;top:1330px;height:360px;border-radius:36px;background:rgba(10,14,31,.78);border:3px solid #e8a93a;backdrop-filter:blur(8px)">
+  <div class="abs" id="s6ic" style="right:50px;top:100px"></div>
+  <div class="abs k" style="right:250px;top:80px;font-size:66px">مجمع عبد الكافي</div>
+  <div class="abs k gold" style="right:250px;top:170px;font-size:66px">الصحي</div>
+  <div class="abs a" style="right:252px;top:262px;font-size:38px;font-weight:300;opacity:.85">قيد الإنشاء</div>
+ </div>
+</div>
+
+<!-- 7 hub -->
+<div class="sc" id="s7" style="background:#0a0e1f">
+ <img class="f" id="s7img" src="../film/img/airport_crop.jpg" style="left:0;top:0;width:1080px;height:1160px;object-fit:cover;object-position:50% 35%;filter:brightness(.9)">
+ <div class="abs" style="left:0;right:0;top:920px;height:260px;background:linear-gradient(transparent,#0a0e1f)"></div>
+ <div class="abs k pw" data-t="38.7" style="right:110px;top:1000px;font-size:96px">مطار سبها الدولي</div>
+ <div class="abs" id="s7line" style="left:150px;right:150px;top:1355px;height:4px;background:rgba(241,227,196,.4)"></div>
+ <div id="s7nodes"></div>
+ <div class="abs pw" id="s7plane" data-t="42.95" style="left:100px;top:1190px;width:180px"></div>
+ <div class="abs pw" id="s7pal" data-t="43.7" style="left:0;top:1590px;width:1080px;height:330px;overflow:hidden"><img src="../film/img/fezzan_after_crop.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+ <div class="abs k gold pw" data-t="44.0" style="right:110px;top:1530px;font-size:48px">قصر فزان للمؤتمرات</div>
+</div>
+
+<!-- 8 life -->
+<div class="sc" id="s8" style="background:#0a0e1f">
+ <div class="abs" id="s8ph" style="left:0;top:0;width:1080px;height:1060px;overflow:hidden"><img src="../media/08_cafe_storefront_blue_sign.jpg" style="width:1080px;height:1440px;object-fit:cover;object-position:top"></div>
+ <div class="abs" style="left:0;right:0;top:760px;height:300px;background:linear-gradient(transparent,#0a0e1f)"></div>
+ <div class="abs k pw" data-t="45.0" data-t2="46.6" style="right:110px;top:1130px;font-size:120px">والدنيا ماشية</div>
+ <div class="abs k gold pw" data-t="46.85" style="right:110px;top:1130px;font-size:150px">قهوة</div>
+ <div class="abs k pw" data-t="47.65" style="right:110px;top:1330px;font-size:150px">وشوارع</div>
+ <div class="abs k gold pw" data-t="48.45" style="right:110px;top:1530px;font-size:150px">وإخوة</div>
+</div>
+
+<!-- 9 unity -->
+<div class="sc" id="s9" style="background:#0a0e1f">
+ <div class="abs" style="inset:0;background:radial-gradient(ellipse at 50% 38%,#3a2c12,#0a0e1f 72%)"></div>
+ <img class="f pw" id="s9bg" data-t="56.0" src="../media/01_drone_show_libya_map_sabha_airport_event.jpg" style="left:0;top:0;width:1080px;height:1920px;object-fit:cover;filter:brightness(.28) blur(3px)">
+ <div class="abs" style="left:0;right:0;bottom:0;height:760px;background:linear-gradient(transparent,#0a0e1f 70%)"></div>
+ <div class="abs k pw" data-t="49.95" data-t2="52.9" style="right:110px;top:190px;font-size:140px">مدينة وحدة</div>
+ <div class="abs k pw" data-t="53.0" data-t2="53.95" style="right:110px;top:190px;font-size:128px">رغم القيود</div>
+ <div class="abs k gold pw" data-t="53.95" style="right:110px;top:190px;font-size:150px">سبها واقفة</div>
+ <div id="s9a"></div>
+ <div class="abs a pw" data-t="51.9" data-t2="55.9" style="left:60px;right:60px;text-align:center;top:1340px;font-size:60px;font-weight:500">بكل أهلها</div>
+ <div class="abs k pw" data-t="56.6" style="left:60px;right:60px;text-align:center;top:1370px;font-size:84px;color:#e8a93a">بوابة الصحراء الكبرى</div>
+ <div class="abs a pw" data-t="57.6" style="left:60px;right:60px;text-align:center;top:1560px;font-size:48px;font-weight:500">@اسم_القناة</div>
+</div>
+
+<div id="vig"></div><div id="grain"></div><div id="sweep"></div><div id="flash"></div>
+</div>
+<script src="icons.js"></script>
+<script>
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), pr=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const $=id=>document.getElementById(id);
+const SC=[['s1',0,6.7],['s2',6.7,14.6],['s3',14.6,19.0],['s4',19.0,25.8],['s5',25.8,31.5],['s6',31.5,38.6],['s7',38.6,44.9],['s8',44.9,49.9],['s9',49.9,64.0]];
+const CUTS=[6.7,11.15,14.6,19.0,31.5,38.6,44.9,49.9];
+const END=64.0;
+
+// ---- build dynamic bits
+(function(){
+  const PTS=[[11.55,33.15],[12.1,32.85],[13.18,32.92],[14.2,32.7],[15.1,32.4],[15.9,32.0],[16.6,31.2],[17.7,30.5],[18.6,30.3],[19.2,30.3],[20.1,32.1],[21.0,32.8],[22.0,32.9],[22.64,32.77],[23.2,32.2],[24.0,32.0],[25.1,31.65],[25.0,29.2],[25.0,22.0],[25.0,20.0],[24.0,20.0],[24.0,19.5],[22.0,20.8],[19.5,21.8],[17.0,22.5],[15.0,23.4],[13.5,23.2],[11.97,23.52],[10.2,24.6],[9.5,26.0],[9.75,27.5],[9.5,29.0],[9.9,30.3],[10.3,30.9],[10.1,31.5],[10.0,32.2],[11.0,33.0]];
+  const S=50,X0=120,Y0=330,xy=(lo,la)=>[X0+(lo-9)*S,Y0+(33.5-la)*S];
+  const poly=PTS.map(p=>xy(...p).map(v=>v.toFixed(1)).join(',')).join(' ');
+  const [sx,sy]=xy(14.43,27.04),[tx,ty]=xy(13.18,32.89);
+  let dots='';for(let x=30;x<1080;x+=54)for(let y=30;y<1920;y+=54)dots+=`<circle cx="${x}" cy="${y}" r="2" fill="#fff" opacity=".07"/>`;
+  $('s2map').innerHTML=`<g id="s2g">${dots}
+  <polygon id="s2poly" points="${poly}" fill="#e8a93a" fill-opacity="0" stroke="#e8a93a" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  <line id="s2line" x1="${tx}" y1="${ty}" x2="${sx}" y2="${sy}" stroke="#f1e3c4" stroke-width="4" stroke-dasharray="4 14" stroke-linecap="round" opacity="0"/>
+  <circle id="s2t" cx="${tx}" cy="${ty}" r="12" fill="#f1e3c4" opacity="0"/>
+  <circle id="s2r1" cx="${sx}" cy="${sy}" r="58" fill="none" stroke="#e8a93a" stroke-width="4" opacity="0"/>
+  <circle id="s2r2" cx="${sx}" cy="${sy}" r="34" fill="none" stroke="#e8a93a" stroke-width="4" opacity="0"/>
+  <circle id="s2p" cx="${sx}" cy="${sy}" r="16" fill="#e8a93a" opacity="0"/></g>`;
+  $('s2tr').style.left=(tx+30)+'px';$('s2tr').style.top=(ty-34)+'px';
+  $('s2sb').style.left=(sx+78)+'px';$('s2sb').style.top=(sy-46)+'px';
+  window.MAP={sx,sy,tx,ty};
+  const defs=[[20.7,'09_char_tuareg_camel_illustration.jpg','الطوارق',70,560,410,560,''],[21.9,'10_char_seated_man_red_rugs_illustration.jpg','التبو',600,560,410,560,''],
+              [22.6,'11_char_man_curly_hair_cutout.jpg','العرب',70,1250,410,400,'object-position:50% 40%;mix-blend-mode:multiply'],[23.0,'12_char_man_dark_turban_cutout.jpg','العرب',600,1250,410,400,'object-position:50% 20%;mix-blend-mode:multiply']];
+  $('s4a').innerHTML=defs.map((d,i)=>`<div class="pw" id="a4${i}" data-t="${d[0]}"><div class="arch" style="left:${d[3]}px;top:${d[4]}px;width:${d[5]}px;height:${d[6]}px;border-radius:${d[5]/2}px ${d[5]/2}px 22px 22px;border:5px solid rgba(241,227,196,.55);filter:saturate(.55) brightness(.85)"><img src="../media/${d[1]}" style="${d[7]}"></div><div class="abs k" style="left:${d[3]}px;width:${d[5]}px;text-align:center;top:${d[4]+d[6]+18}px;font-size:56px">${d[2]}</div></div>`).join('');
+  const u=[[820,'09_char_tuareg_camel_illustration.jpg','',50.9],[560,'10_char_seated_man_red_rugs_illustration.jpg','',51.15],[300,'11_char_man_curly_hair_cutout.jpg','object-position:50% 35%;mix-blend-mode:multiply',51.4],[40,'12_char_man_dark_turban_cutout.jpg','object-position:50% 20%;mix-blend-mode:multiply',51.65]];
+  $('s9a').innerHTML=u.map((d,i)=>`<div class="pw" id="a9${i}" data-t="${d[3]}"><div class="arch" style="left:${d[0]}px;top:700px;width:228px;height:560px;border-radius:114px 114px 18px 18px;border:4px solid #e8a93a"><img src="../media/${d[1]}" style="${d[2]}"></div></div>`).join('');
+  const nodes=[[890,'يناير 2014','إغلاق المطار',40.7,0],[540,'16 أغسطس 2019','عودة الرحلات',41.8,0],[190,'16 مايو 2026','افتتاح رسمي',42.95,1]];
+  $('s7nodes').innerHTML=nodes.map(n=>{const c=n[4]?'#e8a93a':'#f1e3c4';return `<div class="pw" data-t="${n[3]}"><div class="abs" style="left:${n[0]-17}px;top:1340px;width:34px;height:34px;border-radius:50%;background:${c}"></div><div class="abs k" style="left:${n[0]-170}px;width:340px;text-align:center;top:1395px;font-size:38px;color:${c}">${n[1]}</div><div class="abs a" style="left:${n[0]-170}px;width:340px;text-align:center;top:1460px;font-size:36px;font-weight:300">${n[2]}</div></div>`}).join('');
+  $('s6ic').innerHTML=ICONS['stethoscope'].replace('width="24" height="24"','width="150" height="150" style="color:#e8a93a"');
+  $('s7plane').innerHTML=ICONS['plane-landing'].replace('width="24" height="24"','width="120" height="120" style="color:#e8a93a"');
+})();
+
+const imgState={};
+function setSrc(id,url,pend){const e=$(id);if(imgState[id]!==url){imgState[id]=url;e.src=url;pend.push(e.decode().catch(()=>{}))}}
+
+function update(t){
+  const pend=[];
+  // scene visibility + crossfade
+  for(const [id,a,b] of SC){const e=$(id);const op=pr(t,a-.15,a+.15)*(1-pr(t,b-.15,b+.15))*(id==='s9'?1:1);
+    const o=(a===0?1:pr(t,a-.15,a+.15))*(b>=END?1:1-pr(t,b-.15,b+.15));e.style.display=(o>0.001)?'block':'none';e.style.opacity=o}
+  // pop-in text/elements
+  document.querySelectorAll('.pw').forEach(e=>{const t0=+e.dataset.t;const t2=e.dataset.t2?+e.dataset.t2:null;
+    const p=pr(t,t0,t0+.34),q=eo(p);let o=p;if(t2!==null)o*=1-pr(t,t2,t2+.25);
+    e.style.opacity=o;e.style.transform=`translateY(${(1-q)*30}px) scale(${.92+.08*q})`;e.style.filter=p<1?`blur(${(1-p)*10}px)`:'none'});
+  // gold sweeps
+  let sw=0,sx=-50;for(const c of CUTS){const p=pr(t,c-.12,c+.3);if(p>0&&p<1){sw=Math.sin(Math.PI*p);sx=1130*(1-eio(p))-25}}
+  const s=$('sweep');s.style.opacity=sw;s.style.left=sx+'px';
+  // S1 push-in + bar
+  {const p=pr(t,0,6.7);$('s1bg').style.transform=`scale(${1+.13*p}) translateY(${-30*p}px)`;$('s1bar').style.width=(150*pr(t,4.3,5.0))+'px'}
+  // S2 map
+  {const poly=$('s2poly');poly.setAttribute('stroke-dashoffset',1-eo(pr(t,6.8,8.4)));poly.setAttribute('fill-opacity',.10*pr(t,7.6,8.4));
+   const ln=$('s2line');ln.setAttribute('opacity',pr(t,7.8,8.0));ln.setAttribute('stroke-dashoffset',-(t*30));
+   $('s2t').setAttribute('opacity',pr(t,7.2,7.5));
+   const pp=$('s2p');pp.setAttribute('opacity',pr(t,7.7,7.9));
+   for(const [id,d] of [['s2r1',0],['s2r2',.25]]){const c=((t-7.8-d)%1.4+1.4)%1.4/1.4,on=t>7.8;const r=$(id);r.setAttribute('opacity',on&&t<11?.8*(1-c):0);r.setAttribute('r',16+60*c)}
+   const g=$('s2g');const out=pr(t,11.0,11.5);g.style.opacity=1-.75*out;
+   const n=$('s2num');const v=Math.round(600*eo(pr(t,8.0,11.0)));n.textContent=v+'+';n.style.opacity=pr(t,8.0,8.2)*(1-pr(t,11.0,11.25));
+   const ar=$('s2arch');if(ar)ar.style.transformOrigin='50% 100%'}
+  // S3 ruin: slow push, shell impact shake/flash/red
+  {const p=pr(t,14.6,19.0);const card=$('s3card');let dx=0,dy=0;const q=t-16.3;
+   if(q>0&&q<.4){const k=(1-q/.4);dx=Math.sin(q*95)*18*k;dy=Math.cos(q*80)*14*k}
+   const enter=eo(pr(t,14.6,15.2));card.style.transform=`translate(${dx}px,${dy+(1-enter)*120}px) rotate(-2.2deg) scale(${1+.05*p})`;card.style.opacity=enter;
+   $('s3red').style.opacity=Math.max(0,.9*Math.min(pr(t,16.3,16.45),1-pr(t,16.5,18.6)));
+   const fl=$('flash');fl.style.opacity=(q>0&&q<.12)?.55*(1-q/.12):0;
+   $('s3img').style.filter=`grayscale(${.55+.35*pr(t,16.3,17.5)}) sepia(.35) contrast(1.05)`}
+  // S4 drift apart
+  {const dr=pr(t,20.5,25.8);document.querySelectorAll('#s4a > div').forEach((e,i)=>{const sx=(i%2===0?-1:1)*-1;e.style.transform+=` translateX(${(i%2===0?1:-1)*0}px)`;
+     const inner=e.firstChild;inner.style.transform=`translate(${(i%2===0?-18:18)*dr}px,${(i<2?-14:14)*dr}px)`})}
+  // S5 rise
+  {const wipe=eo(pr(t,26.5,27.1));$('s5night').style.clipPath=`inset(0 0 0 ${(1-wipe)*100}%)`;
+   const idx=clamp(Math.floor((t-26.5)*24)+1,1,125),u=`../film/seq_castle/c${String(idx).padStart(4,'0')}.jpg`;
+   if(t>=26.3){setSrc('s5img',u,pend);setSrc('s5blur',u,pend)}
+   const m=eio(pr(t,26.5,27.2));const c=$('s5card');const sc=1-.58*m;c.style.transform=`translate(${(-145)*m}px,${(-100)*m}px) scale(${sc})`;
+   c.style.opacity=1;c.style.zIndex=5;
+   const fl=$('flash');if(t>26.45&&t<26.75)fl.style.opacity=.5*(1-pr(t,26.5,26.75));else if(!(t>16.3&&t<16.42))fl.style.opacity=0}
+  // S6 bridge
+  {const idx=clamp(Math.floor((t-31.5)*30)+1,1,157);setSrc('s6img',`../film/seq_bridge/b${String(idx).padStart(4,'0')}.jpg`,pend);
+   const hold=pr(t,36.7,38.6);$('s6img').style.transform=`scale(${1+.05*pr(t,31.5,36.7)+.04*hold})`;
+   const p=eo(pr(t,32.5,35.5));const n=$('s6num');n.textContent=Math.round(71*p)+'%';n.style.opacity=pr(t,32.5,32.8)*(1-pr(t,36.3,36.55));
+   const tr=$('s6track');tr.style.opacity=pr(t,32.5,32.8)*(1-pr(t,36.3,36.55));$('s6bar').style.width=(71*p/100*100)+'%'.replace('%','')+'%'}
+  // S9 arches
+  {document.querySelectorAll('#s9a > div').forEach((e,i)=>{const bump=1+.03*Math.sin(Math.PI*pr(t,51.7,52.4))*(1);e.style.transform+=` scale(${bump})`});
+   const fade=1-pr(t,62.4,64.0);$('s9').style.opacity=Math.min($('s9').style.opacity,fade)}
+  return Promise.all(pend);
+}
+window.setT=async t=>{await update(t)};
+</script></body></html>
