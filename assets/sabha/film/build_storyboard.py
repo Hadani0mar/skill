@@ -72,7 +72,7 @@ page('s03_where', mapsvg +
      f'<div class="abs a" style="right:110px;top:170px;font-size:44px;font-weight:300;opacity:.8">خريطة تخطيطية</div>'
      f'<div class="abs k gold" style="right:110px;top:1240px;font-size:260px;line-height:1.2">+600</div>'
      f'<div class="abs k" style="right:110px;top:1530px;font-size:92px">كم عن طرابلس</div>'
-     f'<div class="abs a" style="right:112px;top:1690px;font-size:38px;font-weight:300;opacity:.75">مصدر المسافة: ويكيبيديا، الجزيرة نت</div>')
+     f'<div class="abs a" style="right:112px;top:1690px;font-size:38px;font-weight:300;opacity:.75"></div>')
 
 # ---- 04 ruin : real "before" photo as a small print (it is only 380x450) ----------------------------------
 page('s04_ruin', f'<div class="abs" style="inset:0;background:linear-gradient(160deg,#2a2018,#0f0b08)"></div>' +
@@ -81,7 +81,7 @@ page('s04_ruin', f'<div class="abs" style="inset:0;background:linear-gradient(16
      f'style="display:block;width:598px;height:708px;object-fit:cover;filter:grayscale(.55) sepia(.35) contrast(1.05)"></div>' +
      f'<div class="abs k" style="right:110px;top:1150px;font-size:170px;color:{SAND}">قلعة سبها</div>'
      f'<div class="abs a" style="right:114px;top:1400px;font-size:68px;font-weight:500;color:{GOLD}">القذائف أصابت أسوارها</div>'
-     f'<div class="abs a" style="right:114px;top:1540px;font-size:38px;font-weight:300;opacity:.7">المصدر: هيئة الآثار الليبية · Libya Observer</div>')
+     f'<div class="abs a" style="right:114px;top:1540px;font-size:38px;font-weight:300;opacity:.7"></div>')
 
 # ---- 05 division : four separate arches, wide gaps, cold grade ---------------------------------------------
 def arch(x, y, w, h, src, label, extra=''):
@@ -108,7 +108,7 @@ page('s06_rise', img('../../media/03_castle_night_still.jpg',
      f'<div class="abs k" style="right:110px;top:190px;font-size:96px;color:{GOLD}">بعد</div>'
      f'<div class="abs k" style="right:110px;top:1280px;font-size:150px">ثم عادت</div>'
      f'<div class="abs a" style="right:114px;top:1490px;font-size:62px;font-weight:500">ترميم القلعة في 2023</div>'
-     f'<div class="abs a" style="right:114px;top:1610px;font-size:38px;font-weight:300;opacity:.7">المصدر: Libya Update · رواية الجهة المنفذة</div>')
+     f'<div class="abs a" style="right:114px;top:1610px;font-size:38px;font-weight:300;opacity:.7"></div>')
 
 # ---- 07 build : the real vertical bridge footage (frame at 14 s) ------------------------------------------
 page('s07_bridge', img('../img/bridge_14s.png', 'left:0;top:0;width:1080px;height:1920px;object-fit:cover') +
@@ -120,7 +120,7 @@ page('s07_bridge', img('../img/bridge_14s.png', 'left:0;top:0;width:1080px;heigh
      f'<div style="position:absolute;right:0;top:0;height:18px;width:71%;border-radius:9px;background:{GOLD}"></div></div>'
      f'<div class="abs k" style="right:110px;top:1470px;font-size:110px">جسر بطل العبور</div>'
      f'<div class="abs a" style="right:114px;top:1630px;font-size:46px;font-weight:300">نسبة الإنجاز حتى ديسمبر 2025</div>'
-     f'<div class="abs a" style="right:114px;top:1700px;font-size:34px;font-weight:300;opacity:.65">المصدر: Libya Update (مصدر واحد)</div>')
+     f'<div class="abs a" style="right:114px;top:1700px;font-size:34px;font-weight:300;opacity:.65"></div>')
 
 # ---- 08 hub : airport timeline + Fezzan palace -------------------------------------------------------------
 def node(x, date, text, strong=False):
@@ -136,8 +136,8 @@ page('s08_hub', img('../img/airport_crop.jpg', 'left:0;top:0;width:1080px;height
      img('../img/fezzan_after_crop.jpg', 'left:0;top:1200px;width:1080px;height:690px;object-fit:cover;filter:brightness(.95)') +
      f'<div class="abs" style="left:0;right:0;top:1160px;height:140px;background:linear-gradient({NIGHT},transparent)"></div>' +
      f'<div class="abs k gold" style="right:110px;top:1200px;font-size:64px">قصر فزان للمؤتمرات</div>' +
-     f'<div class="abs a" style="right:114px;top:1085px;font-size:32px;font-weight:300;opacity:.7">المصدر: Reuters عبر Euronews · المرصد</div>'
-     f'<div class="abs a" style="right:114px;top:1125px;font-size:30px;font-weight:300;opacity:.6">تاريخ عودة الرحلات تختلف فيه المصادر</div>')
+     f'<div class="abs a" style="right:114px;top:1085px;font-size:32px;font-weight:300;opacity:.7"></div>'
+     f'<div class="abs a" style="right:114px;top:1125px;font-size:30px;font-weight:300;opacity:.6"></div>')
 
 # ---- 09 unity + end : four arches side by side, same light -----------------------------------------------
 def arch2(x, src, extra=''):
@@ -152,5 +152,5 @@ page('s09_unity', f'<div class="abs" style="inset:0;background:radial-gradient(e
      arch2(820, '../../media/09_char_tuareg_camel_illustration.jpg') +
      f'<div class="abs k" style="left:60px;right:60px;text-align:center;top:1340px;font-size:84px;color:{GOLD}">مدينة واحدة</div>'
      f'<div class="abs a" style="left:60px;right:60px;text-align:center;top:1560px;font-size:48px;font-weight:500">@اسم_القناة</div>'
-     f'<div class="abs a" style="left:60px;right:60px;text-align:center;top:1640px;font-size:34px;font-weight:300;opacity:.7">فيديو غير رسمي · المصادر في الوصف</div>')
+     f'<div class="abs a" style="left:60px;right:60px;text-align:center;top:1640px;font-size:34px;font-weight:300;opacity:.7"></div>')
 print('ok', sorted(os.listdir(OUT)))
