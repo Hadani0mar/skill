@@ -13,3 +13,9 @@
 | 10 | char_seated_man_red_rugs_illustration.jpg | 1792x2390 | رسم عالي الدقة؛ غير مسمّى |
 | 11 | char_man_curly_hair_cutout.jpg | 736x1308 | رسم مقصوص بوجه فارغ («عربي») |
 | 12 | char_man_dark_turban_cutout.jpg | 700x1050 | رسم مقصوص بوجه فارغ؛ غير مسمّى |
+
+## Added 2026-11-05 (second batch)
+- music/before_the_morning_sun.mp3 — 66.8 s, 44.1 kHz stereo, ~80 BPM, user-generated
+- before_after/castle_sabha_before.jpg — 380x450 daytime photo of the damaged castle and wall rubble (very small: show at <=~560 px wide)
+- "قصر فزان بعد" on Drive is the same size as media/07 (478,832 bytes); "قصر فزان قبل" (21,891 bytes) was not archived here
+- Characters: 09 = Tuareg, 10 = Tebu, 11 and 12 = Arab (per the user)
