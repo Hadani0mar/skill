@@ -1,6 +1,6 @@
 ---
 name: techno-ly
-description: Make vertical Arabic (Libyan dialect) motion-graphics videos for the TikTok channel «تقني» @techno_ly — AI-tool explainers, tool lists, service promos — hook-first openings (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, brag rules and music, timed to the user's AI-Studio voice-over. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
+description: Make vertical Arabic (Libyan dialect) motion-graphics videos for the TikTok channel «تقني» @techno_ly — AI-tool explainers, tool lists, service promos — benefit-first hooks with an honest reason to finish (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, brag rules and music, timed to the user's AI-Studio voice-over. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
 ---
 
 # techno-ly — فيديوهات قناة «تقني»
@@ -16,10 +16,10 @@ from the END line.
 
 ## 0. What the channel is
 - **Content:** explainers of the newest **AI tools** (lists like «3 أدوات…», then one full explainer per tool), in
-  Libyan Arabic. Secondary, mentioned indirectly only: open-source code to try, and the paid service — websites/apps
+  Libyan Arabic. Secondary: open-source code to try, and the paid service — websites/apps
   (e.g. online stores) and promo motion-graphics videos for any site/app/product.
-- **Tone:** value first, never beg for follows. The follow reason is always "the next explainer is coming"
-  and "comment the tool you want and we'll make a full video on it".
+- **Tone:** value first, with a specific, honest reason to keep watching. Deliver the promised result; never beg
+  for follows. When free code or another offer is the main verified benefit, state it in the opening.
 - **Brand:** logo = the letter **ت** built geometrically: a thick black bowl (reads as a smile) + two square
   "pixel" dots, left **black**, right **green #22c55e**, on white. Files in **`brand/`**: `taqni-mark-white.svg`
   (main, black+green on white — the one used in videos), `taqni-mark-green.svg` (avatar: white on green),
@@ -66,15 +66,19 @@ from the END line.
 - Icons/logos only from **m0usasvg** (duotone green icons; real brand logos). Real product photos and real payment
   logos when the user supplies them — never name-only placeholders.
 
-## 3. Opening — hook first (replaces the old fixed intro, 4 Nov 2026)
-Day-one stats: 83–86 % of viewers left at **0:02** on both videos that opened with the ت logo building or with
-«من الفيديو اللي فات». So, from now on:
-- **Frame 0 is already the story:** the product's own screen (lightly blurred, motion-reel) or the pain itself, with
-  the hook line on it. No logo build, no recap, no title card, no empty first second.
-- The ت logo only as a small corner mark / the handle pill for the whole film, and once at the end.
-- A recap of a previous video, if any, comes after second 3 or not at all.
-- The hook line is the viewer's own problem in Libyan words (e.g. «امتحانك غدوة الصبح… والمحاضرة ميّة وعشرين
-  صفحة؟»), not the tool's name.
+## 3. Opening — benefit first and a reason to finish (updated 6 Nov 2026)
+Read **`references/hooks-and-retention.md`** before scripting every new video; it takes precedence over older
+recap-first scripts and instructions to postpone the principal benefit.
+- **Frame 0 is already the story:** show the real result, product screen or relevant action with a readable hook.
+  No logo build, recap, title card or empty first second.
+- State the strongest verified viewer benefit in the first spoken sentence and within the first **2–3 seconds**.
+  Show useful proof within roughly **3–5 seconds**. These are editing targets to test, not algorithm guarantees.
+- Add one natural, specific reason to continue: «شوف كيف تخدم…» or «وفي الآخر نوريك [خطوة مفيدة محددة]».
+  Deliver that step or result in the same video. Keep giving useful information throughout.
+- Put the tool name and any necessary previous-video recap after the benefit. Do not hold the main useful
+  information or authorized free-code offer until the ending.
+- Keep the ت logo as a small corner mark / handle throughout. Silent videos communicate the hook visually;
+  wordless formats keep a visual setup and resolution without unsolicited speech.
 
 ## 4. Ending — no follow call
 - The closing line lands on the voice (motion-reel ending: the last screen blurred under the line), then the ت logo
@@ -117,6 +121,8 @@ duotone icon tiles, chips, StarBorder) are kept for reference only; where they c
 - Every on-screen claim is researched and true; sample data called sample data in the note.
 - Text readable ≥ 0.3 s per word after it settles; captions inside x 24–516, y 60–900.
 - Frame 0 is a strong settled frame (it becomes the TikTok cover).
+- The benefit is clear by second 3; the opening shows useful proof; every promise used to encourage viewing
+  is fulfilled before the ending. Revise the script and shot order if any check fails.
 - MP4 + one-line creative angle + weakest shot + posting advice.
 
 END OF SKILL — techno-ly · check word: «بكسل-أخضر»

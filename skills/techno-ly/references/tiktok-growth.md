@@ -14,8 +14,9 @@
   splits the small test audience of the last one.
 - A video that "slows" after 3–4 h has finished its first wave — don't delete/repost; waves come later.
 - Order: value content first; service/promo videos after a few value videos (trust first).
-- Series: every list promises full explainers; each explainer opens with the previous video and ends with the
-  next one → viewers come back.
+- Series: open each video with its own concrete benefit and early result. Put any useful previous-video recap
+  after the opening. Give a specific reason to finish and fulfil it in this video; a later episode never replaces
+  the current payoff. Follow `hooks-and-retention.md` rather than older recap-first examples.
 
 ## On each post
 - Caption: one-line benefit + the tool names + a question; 5 hashtags max (TikTok limit). Used:

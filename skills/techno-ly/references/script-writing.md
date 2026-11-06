@@ -10,22 +10,27 @@
   بربلكسيتي، أيديوقرام، بي دي إف، سوبابيز، ريل تايم). On screen they stay in Latin.
 - Length: tool list 40–50 s; full explainer 80–95 s; promo ~60 s. One idea per sentence, short sentences.
 
-## Structure that worked
-- **Tool list («3 أدوات…»)**: hook with the promise (saves hours) → each tool: name + one concrete feature the
-  viewer can try → "each one has a full explainer coming on تقني" → follow so it reaches you.
-- **Full explainer** (series): recap of the previous video + the promise → kinetic hook → what the tool is (name,
-  maker, price) → step-by-step on the real site (open → add sources → upload → summary → ask → answer with sources
-  → extra features) → next episode + "comment the tool you want, we'll make a full video" → follow.
-- **Service promo**: why it matters (benefits, no service talk yet) → why a promo video matters → "we build both"
-  → live example → "the video you're watching is our work" → comment / DM + follow.
+## Required structure for new scripts
+Read [hooks-and-retention.md](hooks-and-retention.md). Write three distinct hook candidates, choose one, and
+include an early benefit, immediate visual proof and a specific, fulfilled reason to finish.
+- **Tool list («3 أدوات…»)**: concrete benefit in the first line → show an example result early → each tool:
+  name + one useful feature → deliver the promised comparison/example and a practical takeaway.
+- **Full explainer**: benefit or problem → early result → name/context → concise, real-site steps → the specific
+  useful final detail promised in the opening → practical closing. A previous-video recap is optional and comes
+  after the opening benefit; every explainer must work for a viewer who has seen none of the series.
+- **Service promo**: main verified benefit/offer up front → real outcome → how it works → promised practical
+  payoff → a relevant question if natural. If the main offer is free code, state it at the start.
+- Motivate continued viewing with «شوف كيف تخدم…» or a named useful final step; avoid empty «استنى للنهاية»
+  reminders. Do not delay all useful content to create a cliffhanger.
 
 ## Rules from the user's feedback
-- Start with a hook, not with «هذي سوبابيز» bluntly.
+- Start with the viewer's benefit and a real visual result, before introducing the tool.
 - Never begging ("our account has zero followers") — give value; follow is a consequence.
 - Don't invent who the viewer is (no personal names like «أنا موسى» unless asked).
-- Mention services/code **indirectly** (e.g. «وساعات نعطوك الكود كامل»، «الفيديو اللي تتفرج فيه توّا تقدر يكون
-  عندك واحد زيه»).
-- Explainers must be detailed, not summaries, and tie to the previous video's promise.
+- State services/code clearly in the opening when they are the main verified benefit. Keep secondary offers
+  brief and natural; never hide the main useful information until the final third.
+- Keep explainers detailed enough to deliver the promised result, with no introductory padding. Fulfil the
+  current video's promise before mentioning another episode.
 - Research facts before writing; every claim must be supportable (e.g. NotebookLM: answers only from your
   sources with numbered citations, Audio Overview two AI hosts, up to 50 sources per notebook on the free plan,
   Studio: mind map, flashcards, quiz).

@@ -2,6 +2,8 @@
 
 All vertical 1080×1920, 30 fps, white house style, timed to the user's Google AI Studio voice-over.
 Videos 04 and 05 include the brag music bed (as delivered).
+These are historical visual/timing references. For every new opening and closing, follow
+`../references/hooks-and-retention.md` and the current SKILL.md; do not copy old recap-first openings or follow calls.
 `src/` folders are the exact scene code (they need the template's kit/, ui.tsx, anim.ts, assets.json to run).
 
 | # | Video | Length | Type | Watch for |
