@@ -1,0 +1,8 @@
+node_modules/
+build/
+browser/
+out/
+__pycache__/
+public/mix.wav
+public/mix_raw.wav
+public/voice.wav

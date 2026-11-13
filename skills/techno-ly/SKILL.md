@@ -1,22 +1,33 @@
 ---
 name: techno-ly
-description: Make vertical Arabic (Libyan dialect) motion-graphics videos for the TikTok channel «تقني» @techno_ly — AI-tool explainers, tool lists, service promos — benefit-first hooks with an honest reason to finish (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, brag rules and music, timed to the user's AI-Studio voice-over. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
+description: Make vertical Arabic motion-graphics videos for the TikTok channel «تقني» @teqani.ly — AI-tool explainers, tool lists, service promos — benefit-first hooks with an honest reason to finish (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, restrained action-timed foley and Gemini Voice narration, following the approved 13 Nov 2026 white/Kufam/60-fps reference. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
 ---
 
 # techno-ly — فيديوهات قناة «تقني»
 
-This skill reproduces, step by step, the videos made for the TikTok channel **«تقني» (@techno_ly)** on 3 Nov 2026
+This skill reproduces, step by step, the videos made for the TikTok channel **«تقني» (@teqani.ly)** on 3 Nov 2026
 (see `examples/`). Another model following it must get the same look, pacing and quality.
 
 **Reading gate (mandatory):** read this file to the END line, then `references/script-writing.md`,
 `references/pitfalls.md` and `references/tiktok-growth.md`, then open `examples/README.md` and watch/inspect at
-least `examples/05-gemini-notebook` (the latest, best video) and its `src` in `template/src/App.tsx`.
+least `examples/06-supabase-edge-functions` (current approved reference) and its `src/scenes/`.
+Keep `examples/05-gemini-notebook` and `template/src/App.tsx` as historical motion references.
 Before writing code, reply with a short receipt: the 5 workflow stages below in your own words + the check word
 from the END line.
 
+## Current approved reference — 13 Nov 2026
+
+The user approved the Edge Functions film: «ممتاز هذا الاسلوب المرغوب عندي».
+Read [the approved style](references/approved-edge-functions-style.md) and start from
+[06-supabase-edge-functions](examples/06-supabase-edge-functions/README.md) for new tool explainers.
+Its pure white ground, Kufam typography, 60 fps, phone timing, MSA Gemini Voice and channel-only follow outro
+supersede older conflicting defaults below. Current user instructions always take priority.
+Do not add on-video «فيديو غير رسمي», «محاكاة تعليمية», source URLs or production notes by default;
+keep example-data and implementation explanations in the project README.
+
 ## 0. What the channel is
 - **Content:** explainers of the newest **AI tools** (lists like «3 أدوات…», then one full explainer per tool), in
-  Libyan Arabic. Secondary: open-source code to try, and the paid service — websites/apps
+  Arabic (current approved narration: Modern Standard Arabic; use Libyan when requested). Secondary: open-source code to try, and the paid service — websites/apps
   (e.g. online stores) and promo motion-graphics videos for any site/app/product.
 - **Tone:** value first, with a specific, honest reason to keep watching. Deliver the promised result; never beg
   for follows. When free code or another offer is the main verified benefit, state it in the opening.
@@ -30,40 +41,40 @@ from the END line.
   corner **bug** (top-left, ~52 px) for the whole video.
 
 ## 1. Workflow (always in this order)
-1. **Script first** (`references/script-writing.md`). Libyan dialect, angle-bracket tone tags for Google AI
+1. **Script first** (`references/script-writing.md`). Follow the user's requested language; use clear MSA for the
+   approved 06 style. For Libyan reads, use angle-bracket tone tags for Google AI
    Studio TTS (`<curious>`, `<warm>`, `<excited>`, `<calm>`, `<amazed>`, `<breath>`, `<short pause>`, `<smile>`),
    English names transliterated (نوت بوك إل إم، بربلكسيتي…), plus an English **Scene** prompt. Research every
    product fact first (WebSearch; rename/feature checks) — e.g. NotebookLM was renamed **Gemini Notebook** on
    16 Jul 2026 (same site notebooklm.google). Never invent UI or numbers.
 2. **Shots before render.** Build the scenes with placeholder times, render 12–18 stills
    (`node record.mjs stills 2,7.6,11,...` → `scripts/contact-sheet.py`), send the sheet, fix what the user says.
-3. **Voice → timing.** The user sends the WAV. `scripts/silences.sh voice.wav -38 0.15` lists pauses; map each
+3. **Voice → timing.** Generate via the connected Gemini Voice API when requested, or use the user's WAV.
+   Preserve approved narration when revising only the picture. `scripts/silences.sh voice.wav -38 0.15` lists pauses; map each
    speech chunk to a script phrase; inside a chunk place words by letter count. Write all cue times as absolute
    seconds in one `T` object (see template). Cut scenes on pauses.
-4. **Sound.** Always a **brag music bed** under the voice (bundled: `template/assets/audio/music/`, 5 ende.app
-   tracks + beat-cue files in `music/cues/` — put big reveals on strong beats when it doesn't hurt the story),
-   ducked ~55 % while the voice speaks, faded in/out. SFX: brag `sfx/` (interface clicks, ui switches, keyboard
-   presses for every typed character, impacts) + React Bits sounds rendered to WAV (`scripts/render-rb-sounds.mjs`).
-   SFX peak ~10 dB under the voice. All wired in `mix.py`.
+4. **Sound.** Use foley only, unless the user asks for music. Reuse the repository's interface clicks,
+   keyboard presses, soft slides and impacts. Place sounds only on visible actions, about 8–10 dB below the voice;
+   aim around −14 LUFS. Keep one event list so retiming picture and effects stays synchronized.
 5. **Render & deliver.** `scripts/render.sh <seconds> 6 out/video.mp4` (parallel Playwright frame capture at 2×,
-   1080×1920, 30 fps, blank-frame check, ffmpeg H.264 veryfast CRF 18). Send the MP4 with a short note: what's
+   1080×1920, 60 fps for the approved reference, blank-frame check, ffmpeg H.264 veryfast CRF 18). Send the MP4 with a short note: what's
    in it, what is sample data, the weakest shot. Then advise on posting (references/tiktok-growth.md).
 
 ## 2. House style (fixed)
-- 1080×1920 (stage 540×960 CSS, screenshot at deviceScaleFactor 2), 30 fps. **White ground**, faint grey dot grid
-  (22 px), soft green radial glow at the top. Never dark.
+- 1080×1920, 60 fps; design at 540×960 CSS and scale 2×. **Pure white ground**. Use the approved 06 look
+  without a dot grid, gradient or glow. Keep overlays clear of TikTok controls.
 - Green: `#22c55e` / `#3ecf8e` for shapes, `#1f9d63` for text on white; ink `#111`.
-- Fonts: **Cairo** (house) or **Beiruti** (used in the store and NotebookLM videos) for Arabic, Inter for
-  Latin/UI. Add `word-spacing: .12em` with Beiruti (its space is narrow).
+- Fonts: **Kufam** for Arabic, **Inter** for Latin/UI, **JetBrains Mono** for code. Cairo and Beiruti belong to
+  older examples. Keep complete Arabic words, RTL, natural spacing and unclipped dots.
 - Motion: every frame is a pure function of `t` (no CSS transitions/animations). Word-by-word blur reveals
   (BlurText), springs with slight overshoot, scenes cut on voice pauses with **staggered** exits (old content fades
   + blurs out, then new comes in — never a muddy crossfade), varied transitions (push, slide, zoom-blur, 3D card
   flip, circular reveal from the pressed button).
-- **Visual scan** for every UI step: the rest of the screen dims (box-shadow veil), a green beam sweeps down to the
-  target, corner brackets snap on it, a short Arabic tag labels it, the camera zooms to it, the cursor clicks with
-  a ripple. Above the window: a step header (green number badge + short Arabic title). Below the window: one
-  caption line per step (BlurText, key word in green).
-- Icons/logos only from **m0usasvg** (duotone green icons; real brand logos). Real product photos and real payment
+- **UI walkthrough:** rebuild the named product from its current source and screenshots; preserve its real labels.
+  Use a restrained cursor and purposeful camera pushes to the active control or a few key code lines. Introduce
+  the tool before the phone. A phone may shrink to show a request/response beside the function, then return large
+  for the result. Keep captions outside the device and give them their own space.
+- Icons/logos only from **m0usasvg** (one restrained icon look; real brand logos). Real product photos and real payment
   logos when the user supplies them — never name-only placeholders.
 
 ## 3. Opening — benefit first and a reason to finish (updated 6 Nov 2026)
@@ -80,11 +91,13 @@ recap-first scripts and instructions to postpone the principal benefit.
 - Keep the ت logo as a small corner mark / handle throughout. Silent videos communicate the hook visually;
   wordless formats keep a visual setup and resolution without unsolicited speech.
 
-## 4. Ending — no follow call
-- The closing line lands on the voice (motion-reel ending: the last screen blurred under the line), then the ت logo
-  + TikTok logo + @techno_ly.
-- Ask a question tied to the topic («شن المادة اللي تعبتك هالفصل؟ اكتبها في التعليقات… ونجربوا عليها»). Never
-  «تابع تقني», never a follow button, never «الجاي …» promises.
+## 4. Ending — channel identity and a simple follow button (approved 13 Nov 2026)
+
+- Finish the explanation on the narration, then show the ت logo, the real TikTok light-background logo and **@teqani.ly**.
+- Add one restrained animated «متابعة» button: a short rise, one pointer press, then «تمت المتابعة» with a check.
+  Clear the old label before the new one enters; never overlap the two. Match the click to its sound.
+- Keep the outro on white. Omit extra slogans, source URLs, «فيديو غير رسمي», «محاكاة تعليمية» and production notes.
+- This explicitly replaces the older prohibition on follow buttons. Do not add repeated spoken follow requests.
 
 ## 4b. How the skills combine (read `references/combined-workflow.md`)
 Build every new video with **motion-reel** (beats, in-app world, foley), **stageshow** (anti-AI-look rules for the
@@ -92,7 +105,9 @@ UI), **brag** (hook and reading time) and **m0usasvg** (real logos). The older s
 duotone icon tiles, chips, StarBorder) are kept for reference only; where they conflict, the combined workflow wins.
 
 ## 5. Scene toolkit (copy from template/ and examples/)
-- `template/` = the NotebookLM video project (best reference): `src/App.tsx` (all scenes, the T timeline, measured
+- `examples/06-supabase-edge-functions/` is the self-contained approved reference: separate Remotion scenes,
+  full device/window kit, pinned dependencies, licensed fonts, FLAC voice/mix, cue list and runnable coupon example.
+- `template/` = the historical NotebookLM video project: `src/App.tsx` (all scenes, the T timeline, measured
   camera, scan, cursor, intro, outro), `src/rb.tsx` (frame-driven Counter, DecryptedText, ClickSpark, StarBorder —
   own re-implementations of React Bits effects), `src/ui.tsx` (Ico, Logo with id/class prefixing, BlurText, Pop),
   `src/anim.ts`, `src/style.css`, `kit/` (Stageshow, MIT), `record.mjs`, `build.mjs`, `mix.py`, `scripts/`.
@@ -126,3 +141,4 @@ duotone icon tiles, chips, StarBorder) are kept for reference only; where they c
 - MP4 + one-line creative angle + weakest shot + posting advice.
 
 END OF SKILL — techno-ly · check word: «بكسل-أخضر»
+

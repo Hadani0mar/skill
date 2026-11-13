@@ -1,9 +1,16 @@
 # Script writing for «تقني» (Google AI Studio TTS)
 
+## Current approved narration — 13 Nov 2026
+
+For the current tool-explainer look, use clear Modern Standard Arabic via the connected Gemini Voice API;
+Orus is the approved voice for example 06. Target 45–60 s for one simple demonstration. Use the requested dialect
+when the user specifies one. Reuse approved audio when only changing visuals. The older Libyan prompt below
+is a historical format, not a requirement to override the current user brief.
+
 ## Format
 - The user generates the voice in **Google AI Studio** (speech playground). Give two blocks:
-  1. **Scene** (English): who speaks, where, dialect, pacing. Always include
-     `Libyan Arabic dialect (Tripoli accent), never Modern Standard Arabic`.
+  1. **Scene** (English): who speaks, where, dialect, pacing. For a requested Libyan read, include
+     `Libyan Arabic dialect (Tripoli accent)`. For MSA, specify clear Modern Standard Arabic.
   2. **Text**: the script with **angle-bracket** tags — `<curious> <warm> <excited> <calm> <amazed> <breath>
      <short pause> <smile>`. Never square brackets. "..." gives a pause.
 - Write English product names in Arabic letters so they are pronounced right (نوت بوك إل إم، جيميناي نوت بوك،
@@ -37,3 +44,4 @@ include an early benefit, immediate visual proof and a specific, fulfilled reaso
 
 ## Example (approved, Gemini Notebook explainer)
 See `examples/README.md` — every video's script is listed there.
+

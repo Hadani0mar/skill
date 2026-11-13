@@ -1,9 +1,13 @@
-# Reference videos — «تقني» (3 Nov 2026)
+# Reference videos — «تقني»
 
-All vertical 1080×1920, 30 fps, white house style, timed to the user's Google AI Studio voice-over.
+Current approved reference: **06 — Supabase Edge Functions**, 13 Nov 2026, 53.5 s, 1080×1920, **60 fps**,
+pure white, Kufam / Inter / JetBrains Mono, Gemini Voice (Orus, MSA), action-timed foley, channel-only follow outro.
+Read [approved style](../references/approved-edge-functions-style.md) before reusing the older examples.
+
+Examples 01–05 are historical 30-fps references from 3 Nov 2026, timed to Google AI Studio narration.
 Videos 04 and 05 include the brag music bed (as delivered).
 These are historical visual/timing references. For every new opening and closing, follow
-`../references/hooks-and-retention.md` and the current SKILL.md; do not copy old recap-first openings or follow calls.
+`../references/hooks-and-retention.md` and the current SKILL.md; do not copy old recap-first openings or repeated spoken follow calls. Example 06's simple follow button is approved.
 `src/` folders are the exact scene code (they need the template's kit/, ui.tsx, anim.ts, assets.json to run).
 
 | # | Video | Length | Type | Watch for |
@@ -13,6 +17,7 @@ These are historical visual/timing references. For every new opening and closing
 | 03 | `03-channel-intro/video.mp4` | 46 s | channel intro | judged weak by the user (too generic) — shows what to avoid |
 | 04 | `04-store-promo/video.mp4` | 60 s | service promo | phone store grid, 24h ring, DM chaos → self-serve, feed stops on a product video, desktop store with fly-to-cart, delivery/pickup, Libyan payment logos dropdown, circular reveal, editor reveal |
 | 05 | `05-gemini-notebook/video.mp4` | 93 s | full explainer (series) | recap of video 02 in a phone, kinetic word+icon hook, name-change card flip, real-site walkthrough with measured camera and scan, citation popup, Studio, outro with comment box |
+| **06** | [`06-supabase-edge-functions/`](06-supabase-edge-functions/README.md) | **53.5 s** | **approved tool explainer** | pure white/Kufam/60 fps, source-based Supabase editor, native-size phone after the definition, TAQNI20 request/response, 100→80 payoff, clean channel identity and animated follow button |
 
 The channel logo is in `../brand/`.
 
@@ -66,3 +71,4 @@ Scene: `A confident Libyan tech creator explaining an AI tool on TikTok. Libyan 
 
 ### 01 — Supabase Realtime
 See `01-supabase-realtime/script.md`.
+

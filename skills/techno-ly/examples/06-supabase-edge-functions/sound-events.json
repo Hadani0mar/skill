@@ -1,0 +1,237 @@
+[
+  {
+    "time": 0.08,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 6.75,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 14.2,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 26.94,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 44.7,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 50.1,
+    "asset": "slide.ogg",
+    "gain": 0.07
+  },
+  {
+    "time": 1.05,
+    "asset": "impact.ogg",
+    "gain": 0.09
+  },
+  {
+    "time": 25.75,
+    "asset": "impact.ogg",
+    "gain": 0.09
+  },
+  {
+    "time": 38.83,
+    "asset": "impact.ogg",
+    "gain": 0.09
+  },
+  {
+    "time": 42.45,
+    "asset": "impact.ogg",
+    "gain": 0.09
+  },
+  {
+    "time": 14.95,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 16.62,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 18.13,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 25.65,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 31.24,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 41.43,
+    "asset": "click.ogg",
+    "gain": 0.16
+  },
+  {
+    "time": 19.42,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 19.544,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 19.668000000000003,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 19.792,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 19.916,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.040000000000003,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.164,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.288,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.412000000000003,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.536,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.66,
+    "asset": "key1.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 20.784000000000002,
+    "asset": "key2.wav",
+    "gain": 0.065
+  },
+  {
+    "time": 29.42,
+    "asset": "key1.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 29.585,
+    "asset": "key2.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 29.75,
+    "asset": "key1.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 29.915000000000003,
+    "asset": "key2.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 30.080000000000002,
+    "asset": "key1.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 30.245,
+    "asset": "key2.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 30.41,
+    "asset": "key1.wav",
+    "gain": 0.078
+  },
+  {
+    "time": 40.5,
+    "asset": "key1.wav",
+    "gain": 0.075
+  },
+  {
+    "time": 40.67,
+    "asset": "key2.wav",
+    "gain": 0.075
+  },
+  {
+    "time": 40.84,
+    "asset": "key1.wav",
+    "gain": 0.075
+  },
+  {
+    "time": 41.01,
+    "asset": "key2.wav",
+    "gain": 0.075
+  },
+  {
+    "time": 17.03,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 32.9,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 34.91,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 37.65,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 38.61,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 42.3,
+    "asset": "switch.ogg",
+    "gain": 0.055
+  },
+  {
+    "time": 51.95,
+    "asset": "click.ogg",
+    "gain": 0.13
+  },
+  {
+    "time": 52.12,
+    "asset": "switch.ogg",
+    "gain": 0.045
+  }
+]

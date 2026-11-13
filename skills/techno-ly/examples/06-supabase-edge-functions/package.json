@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@remotion/cli": "4.0.373",
+    "esbuild": "0.25.12",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.373"
+  },
+  "name": "taqni-edge-functions",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.tsx --no-open",
+    "render": "node --require ./network-shim.cjs render.mjs render",
+    "test": "node verify-function.mjs",
+    "mix": "python3 mix.py"
+  }
+}

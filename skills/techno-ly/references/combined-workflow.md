@@ -1,9 +1,17 @@
 # Combined workflow: motion-reel × stageshow × brag (for every «تقني» video)
 
 The user's verdict on earlier videos: «فيه نكهة تصميم AI» — sparkles, duotone icon tiles, glowing chips, captions
-on every line, a logo intro, a follow button. This file is the merge of the three skills that fix it.
+on every line, a logo intro, noisy follow prompts. This file is the merge of the three skills that fix it.
 Read the three SKILL.md files too: `skills/motion-reel/`, `skills/stageshow/` (and its `references/craft.md`,
 `references/motion.md`), and brag (`Hadani0mar/brag`, `skills/brag/SKILL.md`, creative laws).
+
+## Current approved tool-explainer override — 13 Nov 2026
+
+Use [approved-edge-functions-style.md](approved-edge-functions-style.md) and example 06 as the current reference
+for tool explainers: pure white, Kufam, 60 fps, tool definition before the phone, focused editor zooms and a visible
+request/response. Finish with channel identity and one simple animated follow button. Do not add on-video
+unofficial/simulation labels or source footers by default; document sample data in the README. This takes priority
+over older app-ad-specific layouts and ending restrictions below.
 
 ## Who owns what
 | Question | Skill | Rule |
@@ -30,3 +38,4 @@ the final file. Voice files from AI Studio are 24 kHz: read their real sample ra
 
 Before rendering, check the first 3 seconds independently: the viewer benefit must be clear and visible.
 Deliver every promised final step in this video; do not postpone the principal benefit to encourage completion.
+
