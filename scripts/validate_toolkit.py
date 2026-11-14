@@ -7,6 +7,11 @@ import re
 from pathlib import Path
 from urllib.parse import unquote
 
+try:
+    import yaml
+except ImportError:
+    raise SystemExit('Install validation dependencies: python3 -m pip install -r requirements-toolkit.txt')
+
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -37,9 +42,13 @@ def main():
     for skill in (root/'skills').glob('*/SKILL.md'):
         content=skill.read_text()
         match=re.search(r'\A---\s*\n(.*?)\n---',content,re.S)
-        if not match or not re.search(r'^name:\s*\S',match[1],re.M) or not re.search(r'^description:\s*\S',match[1],re.M):
-            failures.append(f'invalid skill metadata {skill.parent.name}');continue
-        names.append(re.search(r'^name:\s*(.+)',match[1],re.M)[1].strip('"\''))
+        try:
+            metadata=yaml.safe_load(match[1]) if match else None
+            if not isinstance(metadata,dict) or not all(isinstance(metadata.get(k),str) and metadata[k].strip() for k in ('name','description')):
+                raise ValueError('name and description must be non-empty strings')
+        except (ValueError,yaml.YAMLError) as error:
+            failures.append(f'invalid skill metadata {skill.parent.name}: {error}');continue
+        names.append(metadata['name'])
     if len(names)!=len(set(names)):failures.append('duplicate root skill names')
     # Imported documents retain their upstream link conventions; check only our new Markdown links.
     docs=[root/'README.md',root/'AGENTS.md',root/'skills/tuhfa/SKILL.md']

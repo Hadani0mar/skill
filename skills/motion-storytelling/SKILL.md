@@ -1,6 +1,6 @@
 ---
 name: motion-storytelling
-description: موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة. إلزامي: اقرأ الملف كاملاً حتى سطر END والمصادر قبل أي تصميم.
+description: "موشن السرد القصصي: فيديوهات موشن عمودية عربية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف) بمكونات وأصوات React Bits ورسومات unDraw وعوالم three.js، بخلفية بيضاء افتراضياً، ويسأل عن الأسلوب في كل مرة. إلزامي: اقرأ الملف كاملاً حتى سطر END والمصادر قبل أي تصميم."
 ---
 
 > **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.

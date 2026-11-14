@@ -1,0 +1,2 @@
+# Metadata validation only; word_clock.py uses the Python standard library.
+PyYAML>=6.0,<7

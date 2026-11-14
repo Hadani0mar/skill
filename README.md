@@ -54,6 +54,7 @@
 التجريبية غير مرفقة؛ عوّضها بأصول المشروع. حزمة مؤثرات HTML Explainer المرخصة MIT مرفقة.
 
 ```bash
+python3 -m pip install -r requirements-toolkit.txt
 python3 scripts/validate_toolkit.py
 python3 -m unittest discover -s tests
 python3 scripts/smoke_toolkit.py
