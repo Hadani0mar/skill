@@ -1,0 +1,8 @@
+{
+  "repository": "Hadani0mar/skill",
+  "ref": "main",
+  "lock_path": "toolkit-lock.json",
+  "skill_path": "skills/tuhfa",
+  "private": true,
+  "resolution": "Prefer a local authenticated checkout. Otherwise use the GitHub connector, resolve main to a commit once per job, and fetch the chosen source files at that commit."
+}

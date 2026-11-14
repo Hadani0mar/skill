@@ -1,46 +1,60 @@
-# مهارات المتمكن — Agent Skills
+# مهارات المتمكن — تحفة وتصميم الفيديو
 
-مهارات جاهزة لأي وكيل ذكاء اصطناعي (Claude Code، Codex، Cursor، Gemini CLI، وغيرها) بصيغة **Agent Skills** المفتوحة:
-كل مهارة مجلد فيه `SKILL.md` (اسم + وصف في الأعلى، ثم التعليمات) وملفاتها المساعدة.
+حزمة موحدة لـClaude Code وCodex والوكلاء الداعمة لـAgent Skills. ابدأ بـ**تحفة**؛ تختار مهاراتنا
+الحالية والتقنيات الإضافية حسب المشهد، وتحافظ على هوية «تقني» وطريقة الفيديوهات المعتمدة.
 
-> **إلزامي لكل وكيل:** اقرأ `SKILL.md` كاملاً حتى سطر `END OF SKILL` وافتح المصادر والأمثلة قبل أي تصميم، واكتب «إيصال القراءة» بكلمة التحقق (الخطوة 0 في المهارة).
-
-| المهارة | ماذا تفعل |
+| المجموعة | ما تحتويه |
 |---|---|
-| [`motion-storytelling`](skills/motion-storytelling/SKILL.md) | **موشن السرد القصصي**: فيديوهات موشن عربية عمودية بـRemotion بتسعة أساليب (منشور الورق، نبض العلامة، ختم الشعار، الكاتب الجريء، أرشيف القصة، واجهة حية، حكاية مصوّرة، عالم المنتج، عرض الهاتف)، بمكونات وخلفيات وأصوات React Bits ورسومات unDraw وعوالم three.js ثلاثية الأبعاد وشعارات حقيقية وأيقونات من m0usasvg (رابط فقط، بدون نسخ)، وكل المكونات من React Bits أولاً، مع الرجوع عند الحاجة إلى animdiagram كمصدر خارجي لمخططات تدفق SVG متحركة وتحويل الحركة إلى إطارات Remotion (بدون نسخ المستودع)، وخلفية بيضاء افتراضياً. يسأل عن الأسلوب كل مرة. معها قالب مشروع جاهز في `template/`، وأمثلة كاملة من فيديوهات سابقة في [`examples/`](examples/). |
-| [`techno-ly`](skills/techno-ly/SKILL.md) | فيديوهات قناة «تقني» على تيك توك: شروحات أدوات الذكاء الاصطناعي وقوائم الأدوات وفيديوهات الخدمات باللهجة الليبية، بنفس البداية والنهاية وشعار الـ«ت» والأسلوب الأبيض والأخضر، وكتابة سكربت الصوت، ودليل تنمية الحساب مع إحصائيات أول يوم. |
-| [`mascot-explainer-video`](skills/mascot-explainer-video/SKILL.md) | فيديو شرح بشخصية تقدّم (A-roll) ثم تنتقل لشاشات التطبيق مبنية كمكونات متحركة (B-roll)، مع كابشن حركي وكلمة ملونة في كل سطر، متزامن مع تعليق صوتي. |
+| [تحفة](skills/tuhfa/SKILL.md) | التوجيه، هوية القناة، اختيار المحرك، توقيت الكلمات وفحص الصوت والتصدير. |
+| [تقني](skills/techno-ly/SKILL.md) | الخلفية البيضاء، Kufam، Gemini Voice، الشاشات الحقيقية وزر المتابعة. |
+| [السرد الحركي](skills/motion-storytelling/SKILL.md) | تسعة أساليب عربية وRemotion وReact Bits. |
+| [Motion Reel](skills/motion-reel/SKILL.md) و[الشخصية](skills/mascot-explainer-video/SKILL.md) و[Stageshow](skills/stageshow/SKILL.md) | أفلام المنتجات والشخصيات والهاتف والواجهات. |
+| [Shotcraft](skills/video-shotcraft/SKILL.md) | وصفات اللقطات وحركة الكاميرا ومصادر تنفيذها. |
+| [HyperFrames](skills/hyperframes/SKILL.md) | تسع مهارات للمحرك وCLI والمكونات والوسائط، وخمس تقنيات للانتقالات والمؤشر والكابشن. |
+| [GSAP](skills/gsap-core/SKILL.md) | ثماني مهارات رسمية: أساسيات، timeline، SVG/plugins، React، أداء، أدوات وأطر وScrollTrigger. |
+| [Motion Design](skills/motion-design/SKILL.md) و[مبادئ الحركة](skills/design-motion-principles/SKILL.md) | إخراج الحركة والتسارع والتتابع ومراجعة الواجهات. |
+| [HTML Explainer](skills/html-explainer-video/SKILL.md) و[Anatomy](skills/anatomy/SKILL.md) | شرح متزامن مع الصوت ورسومات تقنية SVG/WebGL. |
 
-## التثبيت
+**المجموع: 6 مهاراتنا الأساسية + 27 وحدة مستوردة، وأداة فحص صوت مستقلة.**
+توجد كذلك مسارات إلى مهارات Remotion الرسمية المثبتة أو مصدرها عند الحاجة.
+اقرأ [دليل الاختيار](skills/tuhfa/references/toolkit-routing.md) و[متطلبات التشغيل](skills/tuhfa/references/runtime-adapters.md).
 
-**Claude Code — كإضافة (plugin):**
+## الاستخدام والتثبيت
+
+```text
+استخدم تحفة لتصميم فيديو لقناة تقني بنفس أسلوبنا المعتمد، واختر المهارات المناسبة لكل مشهد.
 ```
+
+في Claude Code:
+
+```text
 /plugin marketplace add Hadani0mar/skill
 /plugin install almutamakkin-skills@almutamakkin
 ```
 
-**Claude Code — نسخ مباشر:**
+أو انسخ مجلدات `skills/` معاً إلى `.claude/skills/` داخل مشروعك أو `~/.claude/skills/`؛ احتفظ
+بالمجلدات الشقيقة لأن «تحفة» تربط بينها. ويمكن استخدام `npx skills add Hadani0mar/skill` وتحديد
+المهارات المطلوبة. اقرأ [AGENTS.md](AGENTS.md) لأي وكيل يستخدم المستودع مباشرة.
+المستودع خاص ويتطلب صلاحية GitHub الحالية؛ لا تضع مفاتيح دخول في ملفات الفيديو أو المحادثة.
+
+المهارات ملفات إرشاد ومصدر؛ إضافتها لا تثبت جميع المحركات ولا تشغل نماذج أو خدمات مدفوعة.
+احتفظ بإصدارات المشروع المعتمدة وثبت ما يحتاجه المحرك المختار فقط. أمثلة المصدر لا تعني أن
+الفيديو النهائي صُيّر أو أن خدمة تجريبية نُشرت على خادم.
+
+## المصادر والرخص والتحقق
+
+راجع [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) و[toolkit-lock.json](toolkit-lock.json):
+إصدارات محددة، مسارات الملفات، بصمات SHA-256، الرخص والوسائط التجريبية غير المرفقة.
+ملفات المصادر المستوردة محفوظة مع رخصها؛ التكييف لهوية القناة موثق في تحفة وINTEGRATION.md.
+لم ننسخ الحزم التي تمنع إعادة التوزيع أو تقصر الاستخدام على غير التجاري.
+مهارات Remotion الرسمية مسار خارجي لأن مستودعها المستقل لا يعلن رخصة في الإصدار المسجل.
+
+المكتبات التنفيذية والأصول لها رخصها الخاصة. شعارات وأيقونات m0usasvg ومكونات React Bits
+وanimdiagram تُجلب انتقائياً من مصادرها عند الحاجة. بعض عروض Shotcraft والصور والأصوات والخطوط
+التجريبية غير مرفقة؛ عوّضها بأصول المشروع. حزمة مؤثرات HTML Explainer المرخصة MIT مرفقة.
+
 ```bash
-git clone https://github.com/Hadani0mar/skill
-cp -r skill/skills/* ~/.claude/skills/        # لكل المشاريع
-# أو: cp -r skill/skills/* <project>/.claude/skills/
+python3 scripts/validate_toolkit.py
+python3 -m unittest discover -s tests
+python3 scripts/smoke_toolkit.py
 ```
-
-**أي وكيل يدعم Agent Skills (عبر skills CLI):**
-```bash
-npx skills add Hadani0mar/skill
-```
-
-**وكلاء بدون دعم للمهارات (Codex، Cursor، Aider…):** انسخ المستودع داخل مشروعك (أو كـ git submodule)؛
-ملف [`AGENTS.md`](AGENTS.md) يخبر الوكيل متى يقرأ أي `SKILL.md`.
-
-> المستودع خاص: الوكيل يحتاج صلاحية قراءة عليه (حساب GitHub أو توكن).
-
-## المتطلبات (لمهارات الفيديو)
-Node 18+، Python 3 مع `numpy` و`playwright` (Chromium)، و`ffmpeg`. لو كان npm محجوباً، المهارة تشرح البناء من مصدر Remotion على GitHub (القسم 10).
-
-## الرخص
-- خطوط IBM Plex Sans Arabic في القالب: SIL OFL (`template/public/fonts/OFL.txt`).
-- أيقونات Fluent UI System Icons: MIT.
-- مكونات وأصوات React Bits **غير مضمّنة** هنا (رخصتها MIT + Commons Clause تمنع إعادة توزيعها)؛ المهارة تشرح جلبها من مستودعها الرسمي وتحويلها.
-- الشخصية `character.png` وشعار `brand-mark.png` ملك لصاحب المستودع.

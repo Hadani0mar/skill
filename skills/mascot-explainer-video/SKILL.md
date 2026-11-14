@@ -3,6 +3,9 @@ name: "mascot-explainer-video"
 description: "Make a character-hosted product explainer: a mascot presents (A-roll), cuts away to app UI rebuilt as animated components (B-roll), kinetic captions highlight one word per line, synced to an uploaded voice-over."
 ---
 
+> **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.
+
+
 # Mascot Explainer Video — فيديو شرح بشخصية + شاشات تطبيق
 
 A short vertical (or wide) explainer where ONE character talks to camera, then the picture cuts away to the product's

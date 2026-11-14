@@ -5,6 +5,9 @@ metadata:
   version: 1.1.0
 ---
 
+> **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.
+
+
 # Stageshow
 
 Miniature product UI: a believable interface, framed in its space, as one still or a short animation in which one thing happens. The viewer recognizes the screen and sees the thing happen.
@@ -150,3 +153,4 @@ Copy `kit/` into the project and import from `kit/index.ts`. React, react-dom an
 ## The references
 
 `references/framing.md`: the framing rules and the layout table. `references/craft.md`: the still frame (restraint, type, spacing, icons, color, chrome). `references/motion.md`: story, loops, pace, the cursor and drags. `references/verify.md`: the checklist with a you-see / you-do table. `references/rehearse.md`: how to film, and the film lines that are never intentional.
+

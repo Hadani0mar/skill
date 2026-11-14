@@ -1,23 +1,31 @@
-# AGENTS.md — skills index
+# Agent Skills — shared motion toolkit
 
-This repository holds Agent Skills. Each skill is a folder under `skills/` with a `SKILL.md`
-(YAML front matter `name` + `description`, then instructions) and supporting files.
+Read `skills/tuhfa/SKILL.md` completely for combined motion/design tasks. Read the chosen lead
+SKILL.md and referenced source files before building. Load only what the film needs. Preserve existing
+approved examples and templates. The current user brief takes precedence, followed by the current
+Tuhfa channel profile, chosen lead workflow, and imported technique. Do not repeat resolved questions.
 
-How to use them (any agent):
-1. When a request matches a skill's description below, read that skill's `SKILL.md` **in full, to its last line,
-   before** asking questions or writing code. Skills are long: if your reader truncates, page with offset/limit until
-   the end. motion-storytelling ends with `END OF SKILL — motion-storytelling` and a check word you must quote in
-   a short "reading receipt" (its Step 0) — no receipt, no code.
-   Then open the sources the skill names (product code, `examples/`, `template/`, libraries) before designing.
-2. Follow it step by step with the tools you have. Paths inside a skill are relative to its folder
-   (e.g. `template/` in motion-storytelling).
-3. If a step needs a tool you do not have, say what is missing instead of skipping silently.
-
-| Skill | Use when |
+| Entry | Purpose |
 |---|---|
-| `skills/motion-storytelling/SKILL.md` | Arabic vertical motion videos in Remotion: app explainers, brand reels, logo stings, typographic reels, researched story/news reels, modern launch films, illustrated stories, 3D product worlds, phone feature demos. Real logos and all UI icons from m0usasvg (Hadani0mar/m0usasvg); every visual component ported from React Bits first; when describing verified ordered system flow, read upstream praveenvijayan/animdiagram on demand (do not vendor), and translate SVG timing into frame-driven Remotion. Always ask which of the nine styles first; white ground unless the style or user sets a colour. |
-| `skills/techno-ly/SKILL.md` | Videos for «تقني» @teqani.ly. Current approved reference (13 Nov 2026): example 06 and approved-edge-functions-style.md — pure white/Kufam/60 fps, MSA Gemini Voice, source-based UI, phone demo, restrained foley, channel identity and a simple follow button. Read SKILL.md + references/ in full (check word at the END line). |
-| `skills/mascot-explainer-video/SKILL.md` | A character/mascot presents a product, cutting away to animated app UI, with kinetic captions synced to a voice-over. |
-| `skills/motion-reel/SKILL.md` | App ad / reel made inside the real product: typed searches, items lifting into the brand container, lift onto the final screen, blade cut, closing line, handle mark, real foley, no music; brand-film variant in `template-brand/`. |
-| `skills/stageshow/SKILL.md` | Faux product UI that reads as real (benjitaylor/skills, MIT): windows, phones, cursor walkthroughs; restraint and anti-AI-look rules in `references/craft.md`, motion rules in `references/motion.md`, kit in `kit/`. |
+| `skills/tuhfa/SKILL.md` | Conductor, routing, current channel profile, engines, word timing and quality checks. |
+| `skills/techno-ly/SKILL.md` | تقني @teqani.ly; approved white/Kufam/MSA Gemini Voice/60 fps, real UI, follow ending. |
+| `skills/motion-storytelling/SKILL.md` | Nine Arabic video styles, React Bits, researched stories, product worlds. |
+| `skills/motion-reel/SKILL.md` | In-product app ads and brand films. |
+| `skills/mascot-explainer-video/SKILL.md` | Character presenter and animated UI B-roll. |
+| `skills/stageshow/SKILL.md` | Source-based phones, windows, UI and cursor choreography. |
 
+The 27 imported modules are catalogued in `skills/tuhfa/references/toolkit-routing.md` and pinned in
+`toolkit-lock.json`: Shotcraft, Anatomy, html-explainer-video, Lottie motion-design, design-motion-principles,
+eight official GSAP guides, nine HyperFrames public skills and five optional upstream-internal seam/
+cursor/caption techniques. Read each selected module's INTEGRATION.md and SKILL.md in full. Imported
+default palettes/providers/music/approval gates never supersede the actual request or channel profile.
+
+Use m0usasvg for real logos/UI icons. Inspect React Bits first for suitable components. Read animdiagram
+on demand for verified ordered animated flows; do not vendor it. Use installed official Remotion guides
+or inspect their pinned upstream source on demand; they are external routes, not redistributed files.
+Resolve optional installed skills by their actual names; don't assume khaam-motion/video-making exists.
+
+For changes to this toolkit, preserve copyright notices and source files, update the lock, run
+`python3 scripts/validate_toolkit.py`, `python3 -m unittest discover -s tests` and
+`python3 scripts/smoke_toolkit.py`. Distinguish static checks from a real rendered-film review. No automatic social posting,
+gallery publishing, paid generation, broad dependency installation, or runtime upgrades on import.

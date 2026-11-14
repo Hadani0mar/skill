@@ -3,6 +3,9 @@ name: techno-ly
 description: Make vertical Arabic motion-graphics videos for the TikTok channel «تقني» @teqani.ly — AI-tool explainers, tool lists, service promos — benefit-first hooks with an honest reason to finish (no logo intro), its ت logo as a corner mark, white/green house style, real product UI rebuilt in Stageshow windows/phones, React Bits motion and sounds, restrained action-timed foley and Gemini Voice narration, following the approved 13 Nov 2026 white/Kufam/60-fps reference. Also covers writing the TTS script and growing the TikTok account. Read this whole file and its references before writing anything.
 ---
 
+> **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.
+
+
 # techno-ly — فيديوهات قناة «تقني»
 
 This skill reproduces, step by step, the videos made for the TikTok channel **«تقني» (@teqani.ly)** on 3 Nov 2026
@@ -141,4 +144,5 @@ duotone icon tiles, chips, StarBorder) are kept for reference only; where they c
 - MP4 + one-line creative angle + weakest shot + posting advice.
 
 END OF SKILL — techno-ly · check word: «بكسل-أخضر»
+
 

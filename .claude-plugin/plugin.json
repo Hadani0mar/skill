@@ -1,6 +1,8 @@
 {
   "name": "almutamakkin-skills",
-  "version": "1.0.0",
-  "description": "Arabic motion-video skills: motion-storytelling (Remotion, five styles, React Bits) and mascot-explainer-video.",
-  "author": { "name": "Hadani0mar" }
+  "version": "2.0.0",
+  "description": "Tuhfa unified Arabic motion toolkit: channel identity, Stageshow, Remotion routing, Shotcraft, HyperFrames, GSAP, motion design, word timing and audio checks.",
+  "author": {
+    "name": "Hadani0mar"
+  }
 }

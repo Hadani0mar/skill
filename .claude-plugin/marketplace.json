@@ -1,11 +1,13 @@
 {
   "name": "almutamakkin",
-  "owner": { "name": "Hadani0mar" },
+  "owner": {
+    "name": "Hadani0mar"
+  },
   "plugins": [
     {
       "name": "almutamakkin-skills",
       "source": "./",
-      "description": "مهارات المتمكن: موشن السرد القصصي (Remotion + React Bits) وفيديو الشرح بشخصية."
+      "description": "تحفة ومهارات التصميم والموشن: تقني، السرد، الهاتف، Shotcraft وHyperFrames وGSAP وتوقيت الصوت."
     }
   ]
 }

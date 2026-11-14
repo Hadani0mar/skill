@@ -3,6 +3,9 @@ name: motion-reel
 description: Make a motion ad for an app or store from its real screens and real product photos, or a brand film from a brand's own films, logos and claims (an airline, a bank, a car), rendered from code in Remotion with real foley sound and an optional voice. Use when the user asks for an app ad, a product reel, a launch video, a spec ad for a brand, or "an ad like the ones in the motion guide".
 ---
 
+> **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.
+
+
 # Motion reel: an app ad from the real product
 
 The ad happens inside the real app: someone searches, the product lifts out of its own tile, it goes into a bag
@@ -124,3 +127,4 @@ in their words, before anything you'd prefer to fix. Details and the checklist: 
 `out/final.mp4`, `out/final_short.mp4`, both contact sheets, and a short log of each review round:
 what the user said and what changed. If it is a spec ad, say in the post that it is a personal concept, and do not
 ship the brand's assets to anyone.
+
