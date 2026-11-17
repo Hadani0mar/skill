@@ -1,0 +1,52 @@
+name: Render Taqni Binary (Remotion)
+
+on:
+  push:
+    branches:
+      - video/taqni-binary-remotion-20261117
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: skills/techno-ly/examples/07-binary-remotion
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned Remotion
+        run: npm install --no-audit --no-fund
+      - name: Derive voice timings and mouth movement from WAV
+        run: python3 prepare_audio.py
+      - name: Render the video with the real Remotion renderer
+        run: |
+          mkdir -p exports
+          npx remotion render src/index.tsx Binary exports/taqni-binary-voice.mp4 \
+            --codec h264 --crf 20 --concurrency 3 --browser-executable /usr/bin/google-chrome
+      - name: Verify 60fps, portrait, decoded video and audio
+        run: |
+          ffprobe -v error -show_streams -show_format -of json exports/taqni-binary-voice.mp4 > exports/ffprobe.json
+          python3 -c "import json;p=json.load(open('exports/ffprobe.json'));v=next(s for s in p['streams'] if s['codec_type']=='video');a=next(s for s in p['streams'] if s['codec_type']=='audio');assert (v['width'],v['height'],v['r_frame_rate'])==(1080,1920,'60/1');print('audio',a['codec_name'],'duration',p['format']['duration'])"
+          ffmpeg -v error -i exports/taqni-binary-voice.mp4 -f null -
+      - name: Deliver actual render, timings, metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: taqni-binary-remotion-voiced
+          retention-days: 14
+          path: |
+            skills/techno-ly/examples/07-binary-remotion/exports/taqni-binary-voice.mp4
+            skills/techno-ly/examples/07-binary-remotion/exports/ffprobe.json
+            skills/techno-ly/examples/07-binary-remotion/voice-timing.json
