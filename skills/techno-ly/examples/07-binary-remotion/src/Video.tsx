@@ -115,7 +115,7 @@ function SwitchPanel({frame,start}:{frame:number,start:number}){
 
 function BitPanel({frame,from,phase}:{frame:number,from:number,phase:number}){
   const enters=pop(frame,from);
-  const p=phase===5?bound((frame-from)/155):(phase>=5?1:0);
+  const p=phase===5?bound((frame-segs[5].start)/Math.max(100,segs[5].duration*0.72)):0;
   const states=[0,p>=0.23?1:0,0,p>=0.46?1:0];
   const values=[8,4,2,1];
   return <div style={{position:'absolute',top:622,left:91,width:898,height:435,
