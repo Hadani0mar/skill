@@ -33,7 +33,7 @@ function TitleWords({index,frame,segment}:{index:number,frame:number,segment:Seg
   const text=largeCaption[index]||'';
   const entered=frame-segment.start;
   const words=text.split(' ');
-  return <div dir="rtl" style={{position:'absolute',top:280,left:98,width:880,textAlign:'center',
+  return <div dir={index===3||index===5?'ltr':'rtl'} style={{position:'absolute',top:280,left:98,width:880,textAlign:'center',
     fontFamily,fontWeight:750,color:INK,fontSize:index===3?70:67,lineHeight:1.45}}>
     {words.map((w,i)=>{
       const t=entered-i*4;
