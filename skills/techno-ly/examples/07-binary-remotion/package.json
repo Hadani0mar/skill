@@ -1,0 +1,16 @@
+{
+  "name": "taqni-binary-remotion",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "studio": "remotion studio src/index.tsx",
+    "render": "remotion render src/index.tsx Binary exports/taqni-binary-voice.mp4 --codec h264 --crf 19"
+  },
+  "dependencies": {
+    "remotion": "4.0.373",
+    "@remotion/cli": "4.0.373",
+    "@remotion/google-fonts": "4.0.373",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  }
+}
