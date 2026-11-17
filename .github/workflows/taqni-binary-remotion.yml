@@ -36,12 +36,15 @@ jobs:
           mkdir -p exports
           npx remotion render src/index.tsx Binary exports/taqni-binary-voice.mp4 \
             --codec h264 --crf 20 --concurrency 2 --browser-executable /usr/bin/google-chrome
+      - name: Install FFmpeg for postrender verification
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Verify 60fps, portrait, decoded video and audio
         run: |
           ffprobe -v error -show_streams -show_format -of json exports/taqni-binary-voice.mp4 > exports/ffprobe.json
           python3 -c "import json;p=json.load(open('exports/ffprobe.json'));v=next(s for s in p['streams'] if s['codec_type']=='video');a=next(s for s in p['streams'] if s['codec_type']=='audio');assert (v['width'],v['height'],v['r_frame_rate'])==(1080,1920,'60/1');print('audio',a['codec_name'],'duration',p['format']['duration'])"
           ffmpeg -v error -i exports/taqni-binary-voice.mp4 -f null -
       - name: Deliver actual render, timings, metadata
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: taqni-binary-remotion-voiced
