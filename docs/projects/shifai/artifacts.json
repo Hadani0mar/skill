@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "project": "Shifai investor film",
+  "delivered_date": "2026-11-17",
+  "documented_date": "2026-11-18",
+  "timezone": "Africa/Tripoli",
+  "product_repository": "https://github.com/rashaalobiedy8/shifai",
+  "product_revision": "51ede1e0ae526084354d0efee2f4548db325372c",
+  "channel_repository": "https://github.com/Hadani0mar/skill",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "frames": 6060,
+    "duration_seconds": 101,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000
+  },
+  "audio_preservation": {
+    "v2_uses_v1_audio": true,
+    "mix_wav_sha256": "5a3812284abe3f49e2c4e2be57afba861767d55b529cbdd7ace68fda68a6cee6",
+    "encoded_aac_packets_sha256": "1d69e7c197f802630dacf75cee9765061d2779fd3cea3b3d85859ba7098d3a74",
+    "evidence": "V2 source archive research/qa-report-v2.json and production comparison"
+  },
+  "hosting": {
+    "provider": "Catbox",
+    "purpose": "User-authorized public download sharing",
+    "social_posting_performed": false,
+    "permanent_availability_guaranteed": false,
+    "initial_full_download_and_sha256_verification_date": "2026-11-17",
+    "latest_full_download_and_sha256_verification_date": "2026-11-18"
+  },
+  "artifacts": [
+    {
+      "version": "V1",
+      "kind": "video",
+      "filename": "Shifai_Investor_Film.mp4",
+      "url": "https://files.catbox.moe/hlxpvi.mp4",
+      "size_bytes": 13659837,
+      "sha256": "e4d7804888bad552aa050104369a6ce95be34892d22a0bb47b9e4652d8548781",
+      "library_file_id": "libfile_d74746277e608191b52342836207feb0"
+    },
+    {
+      "version": "V2",
+      "kind": "video",
+      "filename": "Shifai_Investor_Film_V2.mp4",
+      "url": "https://files.catbox.moe/u4jm6n.mp4",
+      "size_bytes": 10923384,
+      "sha256": "845fb1e9f213635fa385adcd1cb0e8db69a00faa2f3a9fe6e7739b0796037e41",
+      "library_file_id": "libfile_9b040c0ce494819189fbaf73517756a5"
+    },
+    {
+      "version": "V1",
+      "kind": "video_and_source_archive",
+      "filename": "Shifai_V1_Video_and_Code.zip",
+      "url": "https://files.catbox.moe/rwblej.zip",
+      "size_bytes": 26595117,
+      "sha256": "3af88ea3719944673c19a0b13fcb0e325c14909f9f03d18da86ba17b62bb9fcc",
+      "library_file_id": "libfile_da4479f9b1bc8191aefd865e294fa40d",
+      "source_directory": "Shifai_Investor_Film/",
+      "includes": [
+        "MP4",
+        "source code",
+        "audio",
+        "images",
+        "fonts and licenses",
+        "START_HERE.txt"
+      ]
+    },
+    {
+      "version": "V2",
+      "kind": "video_and_source_archive",
+      "filename": "Shifai_V2_Video_and_Code.zip",
+      "url": "https://files.catbox.moe/abcuc5.zip",
+      "size_bytes": 23860886,
+      "sha256": "ef16789491f6839eb562d2ba8df7d0bda769a4121d91696b5a0259043462b814",
+      "library_file_id": "libfile_35446661e37081919e06aa23244f0417",
+      "source_directory": "Shifai_Investor_V2/",
+      "includes": [
+        "MP4",
+        "source code",
+        "audio",
+        "images",
+        "fonts and licenses",
+        "START_HERE.txt"
+      ]
+    }
+  ],
+  "source_only_archives": [
+    {
+      "version": "V1",
+      "filename": "Shifai_Investor_Source.zip",
+      "library_file_id": "libfile_cefb640cd4808191a96c790b5bc1c7b3",
+      "inspected_for_documentation_date": "2026-11-18"
+    },
+    {
+      "version": "V2",
+      "filename": "Shifai_Investor_Source_V2.zip",
+      "library_file_id": "libfile_07432d6744b081919d61be4a683b71e8",
+      "inspected_for_documentation_date": "2026-11-18"
+    }
+  ]
+}

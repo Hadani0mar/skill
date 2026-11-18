@@ -1,5 +1,11 @@
 # Agent Skills — shared motion toolkit
 
+For channel work, read [MEMORY.md](MEMORY.md) before planning, then open the relevant entry in
+[the feedback ledger](docs/channel/feedback-ledger.md). These record the owner's explicit feedback
+through 18 Nov 2026. Apply each preference only within its documented scope. The current brief wins;
+newer explicit feedback supplements the 13 Nov channel profile. Do not infer approval from delivery,
+an upload request, or an internal review score. Keep investor commissions separate from channel defaults.
+
 Read `skills/tuhfa/SKILL.md` completely for combined motion/design tasks. Read the chosen lead
 SKILL.md and referenced source files before building. Load only what the film needs. Preserve existing
 approved examples and templates. The current user brief takes precedence, followed by the current
@@ -29,3 +35,4 @@ For changes to this toolkit, preserve copyright notices and source files, update
 `python3 scripts/validate_toolkit.py`, `python3 -m unittest discover -s tests` and
 `python3 scripts/smoke_toolkit.py`. Distinguish static checks from a real rendered-film review. No automatic social posting,
 gallery publishing, paid generation, broad dependency installation, or runtime upgrades on import.
+

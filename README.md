@@ -3,6 +3,14 @@
 حزمة موحدة لـClaude Code وCodex والوكلاء الداعمة لـAgent Skills. ابدأ بـ**تحفة**؛ تختار مهاراتنا
 الحالية والتقنيات الإضافية حسب المشهد، وتحافظ على هوية «تقني» وطريقة الفيديوهات المعتمدة.
 
+## ذاكرة القناة وتوثيق الإنتاج — 18 نوفمبر 2026
+
+ابدأ من [ذاكرة العمل](MEMORY.md) و[فهرس التوثيق](docs/channel/README.md) قبل أي فيديو جديد.
+يوثّق [سجل الملاحظات](docs/channel/feedback-ledger.md) ما أعجب صاحب القناة وما طلب تغييره، مع
+نطاق كل طلب وحالة تنفيذه. راجع [سجل المشاريع](docs/channel/project-log.md) و[طريقة الإنتاج والتسليم](docs/channel/workflow.md).
+فيلما [شفائي للمستثمرين](docs/projects/shifai/README.md) موثقان بنسختيهما، وروابط تنزيل الفيديوهات
+وحزم الفيديو والكود وبصماتها في [بيان الملفات](docs/projects/shifai/artifacts.json).
+
 | المجموعة | ما تحتويه |
 |---|---|
 | [تحفة](skills/tuhfa/SKILL.md) | التوجيه، هوية القناة، اختيار المحرك، توقيت الكلمات وفحص الصوت والتصدير. |
@@ -59,3 +67,4 @@ python3 scripts/validate_toolkit.py
 python3 -m unittest discover -s tests
 python3 scripts/smoke_toolkit.py
 ```
+
