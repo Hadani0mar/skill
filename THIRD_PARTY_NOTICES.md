@@ -15,8 +15,11 @@ Revisions and file-level SHA-256 hashes are recorded in `toolkit-lock.json`.
 | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft/tree/6700db2ba80572ebc777b99d72049679fed9840c) | `6700db2ba805` | Apache-2.0 | video-shotcraft |
 | [iart-ai/javascript-animation-skills](https://github.com/iart-ai/javascript-animation-skills/tree/060f7467a6e5ae5b57c90c9cb1b3508c13b88e49) | `060f7467a6e5` | MIT | sync-check.mjs only |
 | [remotion-dev/skills](https://github.com/remotion-dev/skills/tree/7e541aa4d7361dfaca0780a565a47307eb7bdfbb) | `7e541aa4d736` | not-declared-in-standalone-repository | External reference only; no copied files |
+| [Melvynx/video-agent-skills](https://github.com/Melvynx/video-agent-skills/tree/f4542923f7f796a1fa0e544cbfc1109d5eec87d8) | `f4542923f7f7` | MIT | Original studio-script and 8 Markdown references, no editing engine or media |
 
 ## Retained notices and adaptation boundaries
+
+- Studio Script: Copyright (c) 2026 Melvyn Malherbe (MIT), source license stored in `skills/studio-script/LICENSE.upstream`; only the 9 original Markdown files were imported, along with a separately authored `INTEGRATION.md`.
 
 - Each imported skill includes LICENSE or LICENSE.upstream. HyperFrames/Shotcraft Apache-2.0 notices remain in their source files; local INTEGRATION.md explains adaptation.
 - The MIT earshot sound kit bundled with html-explainer-video is Copyright (c) 2026 Leon Lin. Its original sounds/LICENSE.txt and kit.json are included. Channel routing uses restrained click/key/slide cues; bells/pop/riser files are not default creative choices.

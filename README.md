@@ -15,6 +15,7 @@
 |---|---|
 | [تحفة](skills/tuhfa/SKILL.md) | التوجيه، هوية القناة، اختيار المحرك، توقيت الكلمات وفحص الصوت والتصدير. |
 | [تقني](skills/techno-ly/SKILL.md) | الخلفية البيضاء، Kufam، Gemini Voice، الشاشات الحقيقية وزر المتابعة. |
+| [Studio Script — الهوكات](skills/studio-script/SKILL.md) | صياغة 3 هوكات مختلفة وتقييمها وكتابة سيناريو قصير مع Re-hook؛ [قواعد الدمج مع القناة](skills/studio-script/INTEGRATION.md). |
 | [السرد الحركي](skills/motion-storytelling/SKILL.md) | تسعة أساليب عربية وRemotion وReact Bits. |
 | [Motion Reel](skills/motion-reel/SKILL.md) و[الشخصية](skills/mascot-explainer-video/SKILL.md) و[Stageshow](skills/stageshow/SKILL.md) | أفلام المنتجات والشخصيات والهاتف والواجهات. |
 | [Shotcraft](skills/video-shotcraft/SKILL.md) | وصفات اللقطات وحركة الكاميرا ومصادر تنفيذها. |
@@ -23,7 +24,7 @@
 | [Motion Design](skills/motion-design/SKILL.md) و[مبادئ الحركة](skills/design-motion-principles/SKILL.md) | إخراج الحركة والتسارع والتتابع ومراجعة الواجهات. |
 | [HTML Explainer](skills/html-explainer-video/SKILL.md) و[Anatomy](skills/anatomy/SKILL.md) | شرح متزامن مع الصوت ورسومات تقنية SVG/WebGL. |
 
-**المجموع: 6 مهاراتنا الأساسية + 27 وحدة مستوردة، وأداة فحص صوت مستقلة.**
+**المجموع: 6 مهاراتنا الأساسية + 28 وحدة مستوردة، وأداة فحص صوت مستقلة.**
 توجد كذلك مسارات إلى مهارات Remotion الرسمية المثبتة أو مصدرها عند الحاجة.
 اقرأ [دليل الاختيار](skills/tuhfa/references/toolkit-routing.md) و[متطلبات التشغيل](skills/tuhfa/references/runtime-adapters.md).
 

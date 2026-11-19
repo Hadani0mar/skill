@@ -15,12 +15,13 @@ Tuhfa channel profile, chosen lead workflow, and imported technique. Do not repe
 |---|---|
 | `skills/tuhfa/SKILL.md` | Conductor, routing, current channel profile, engines, word timing and quality checks. |
 | `skills/techno-ly/SKILL.md` | تقني @teqani.ly; approved white/Kufam/MSA Gemini Voice/60 fps, real UI, follow ending. |
+| `skills/studio-script/SKILL.md` | Short-form hooks, script quality and re-hooks; read the local `INTEGRATION.md` before applying. |
 | `skills/motion-storytelling/SKILL.md` | Nine Arabic video styles, React Bits, researched stories, product worlds. |
 | `skills/motion-reel/SKILL.md` | In-product app ads and brand films. |
 | `skills/mascot-explainer-video/SKILL.md` | Character presenter and animated UI B-roll. |
 | `skills/stageshow/SKILL.md` | Source-based phones, windows, UI and cursor choreography. |
 
-The 27 imported modules are catalogued in `skills/tuhfa/references/toolkit-routing.md` and pinned in
+The 28 imported modules are catalogued in `skills/tuhfa/references/toolkit-routing.md` and pinned in
 `toolkit-lock.json`: Shotcraft, Anatomy, html-explainer-video, Lottie motion-design, design-motion-principles,
 eight official GSAP guides, nine HyperFrames public skills and five optional upstream-internal seam/
 cursor/caption techniques. Read each selected module's INTEGRATION.md and SKILL.md in full. Imported

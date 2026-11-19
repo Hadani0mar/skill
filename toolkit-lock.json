@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-11-14",
+  "date": "2026-11-19",
   "sources": {
     "gsap": {
       "repository": "greensock/gsap-skills",
@@ -7447,6 +7447,70 @@
         "remotion-docs",
         "remotion-upgrade",
         "remotion-license"
+      ]
+    },
+    "studio_script": {
+      "repository": "Melvynx/video-agent-skills",
+      "revision": "f4542923f7f796a1fa0e544cbfc1109d5eec87d8",
+      "license": "MIT",
+      "modules": [
+        {
+          "name": "studio-script",
+          "upstream": "skills/studio-script",
+          "local": "skills/studio-script"
+        }
+      ],
+      "files": [
+        {
+          "upstream": "skills/studio-script/SKILL.md",
+          "local": "skills/studio-script/SKILL.md",
+          "sha256": "c44586f146348a8ea7d1323f65ed2bf28d5bf93872dcdfdf4ec1cba5ee8b0d56"
+        },
+        {
+          "upstream": "skills/studio-script/references/ai-tells.md",
+          "local": "skills/studio-script/references/ai-tells.md",
+          "sha256": "5201a2573e1f832cd29211129dd30ed39ec0d48bb84eddd4656d8f50277f6993"
+        },
+        {
+          "upstream": "skills/studio-script/references/funnel.md",
+          "local": "skills/studio-script/references/funnel.md",
+          "sha256": "4df7d19a2f96df70eb8d77a4445d077b4f59efec71357c6d254957d49f4ef098"
+        },
+        {
+          "upstream": "skills/studio-script/references/hooks.md",
+          "local": "skills/studio-script/references/hooks.md",
+          "sha256": "8f9c64d17131ff5a8aaee266317ce69bef85fd55e662e15d77793da7f39f256f"
+        },
+        {
+          "upstream": "skills/studio-script/references/humanize.md",
+          "local": "skills/studio-script/references/humanize.md",
+          "sha256": "8774fb38ce39011e3ae7238cd08e7a58b172b5552e0805208d0fcd9f8ed324bc"
+        },
+        {
+          "upstream": "skills/studio-script/references/making-of.md",
+          "local": "skills/studio-script/references/making-of.md",
+          "sha256": "1f8b3b4b54d217388fa801f1d719ee8fe057fbf7bde0103ba5499c282d7d2252"
+        },
+        {
+          "upstream": "skills/studio-script/references/script-rules.md",
+          "local": "skills/studio-script/references/script-rules.md",
+          "sha256": "eb0beaf782e979e31d26ca82c68d7a9df739ac612e7e34d38ddce9ed30e6c53c"
+        },
+        {
+          "upstream": "skills/studio-script/references/viral-research.md",
+          "local": "skills/studio-script/references/viral-research.md",
+          "sha256": "98f55112e5b2b6d585176007b91900058c175738ca178f32c3e0079420f33fc3"
+        },
+        {
+          "upstream": "skills/studio-script/references/viral.md",
+          "local": "skills/studio-script/references/viral.md",
+          "sha256": "edbe5b888a1ad1a9d493b7068592fa3404fac058fc37b40df08f62653c17888a"
+        },
+        {
+          "upstream": "LICENSE",
+          "local": "skills/studio-script/LICENSE.upstream",
+          "sha256": "8954db8e00ded3d5a4716d66e9409c4007e458a7bb1c028cd6a254033011cc2b"
+        }
       ]
     }
   },

@@ -8,6 +8,7 @@ instructions and notices; Tuhfa's current channel profile resolves aesthetic/pro
 |---|---|---|
 | Arabic narrative, launch, phone presentation | `motion-storytelling/SKILL.md` | Existing nine styles; use the established style when already approved. |
 | Channel identity, current film reference | `techno-ly/SKILL.md` + approved Edge Functions reference | Existing source-based UI, voice and ending take precedence. |
+| TikTok hooks, short scripts and re-hooks | `studio-script/SKILL.md`, `INTEGRATION.md` and `references/hooks.md`, `references/script-rules.md` | Original MIT skill from Melvynx/video-agent-skills. Three scored alternatives; Taqni identity, honest payoff and approved voice override the external defaults. |
 | Product / brand film | `motion-reel/SKILL.md` | Keep templates and review workflow; select shot techniques below. |
 | Presenter / mascot | `mascot-explainer-video/SKILL.md` | Existing character poses, B-roll and voice workflow. |
 | Phone, Window, UI, cursor | `stageshow/SKILL.md` + kit | Reuse actual kit geometry and readable native-size text. |

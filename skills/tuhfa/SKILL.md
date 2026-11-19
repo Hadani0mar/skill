@@ -36,8 +36,11 @@ video-making exists: use it only after resolving and reading its actual SKILL.md
 
 1. Research current facts, real product screens and source code. List concrete claims and their
    sources in project notes. Treat supplied screens as references; preserve real labels and geometry.
-2. Write one result-first hook, the spoken script, scene intervals, main visual and visible action
-   per beat. Choose an engine the environment can actually run. Keep the approved renderer and voice
+2. For TikTok/Reels/Shorts, first read `../studio-script/SKILL.md` and its `INTEGRATION.md`,
+   with `references/hooks.md` and `references/script-rules.md`. Draft three distinct,
+   editorially scored hooks and a useful re-hook; current channel identity overrides
+   upstream voice/setup/publishing defaults. Write the spoken script, scene intervals,
+   main visual and visible action per beat. Choose an engine the environment can actually run. Keep the approved renderer and voice
    for edits unless the requested change requires replacing them.
 3. Get the real narration. Import real word timestamps with `scripts/word_clock.py`; if no aligner
    is available, place and review phrase boundaries against the audio and label timing approximate.

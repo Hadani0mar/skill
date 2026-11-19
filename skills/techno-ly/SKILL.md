@@ -83,6 +83,9 @@ keep example-data and implementation explanations in the project README.
 ## 3. Opening — benefit first and a reason to finish (updated 6 Nov 2026)
 Read **`references/hooks-and-retention.md`** before scripting every new video; it takes precedence over older
 recap-first scripts and instructions to postpone the principal benefit.
+For topic-based TikTok explainers, also route script preproduction through `../studio-script/SKILL.md`
+and its `INTEGRATION.md` to compare three distinct scored hooks and plan a useful mid-video re-hook.
+Do not adopt the imported skill's voice, paid accounts, split-screen style or extra setup gates.
 - **Frame 0 is already the story:** show the real result, product screen or relevant action with a readable hook.
   No logo build, recap, title card or empty first second.
 - State the strongest verified viewer benefit in the first spoken sentence and within the first **2–3 seconds**.
