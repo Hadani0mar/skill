@@ -1,0 +1,36 @@
+name: Publish Obsidian Film MP4
+on:
+  push:
+    paths:
+      - 'videos/obsidian-ai/.chunks/**'
+      - '.github/workflows/publish-obsidian-film.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble, verify, publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          parts=(videos/obsidian-ai/.chunks/part_*.part)
+          if (( ${#parts[@]} == 0 )); then
+            echo "File already assembled; nothing to do."
+            exit 0
+          fi
+          target="videos/obsidian-ai/obsidian_teqani_1080x1920_60fps_NO_AUDIO.mp4"
+          cat "${parts[@]}" > "$target"
+          printf '%s  %s\n' 'af3ad1322ab8d042f2fe201afa1d38df45c360e80667fd81d1a1f27604f302ae' "$target" | sha256sum -c -
+          test "$(stat -c %s "$target")" = "5939938"
+          rm -rf videos/obsidian-ai/.chunks
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A videos/obsidian-ai/.chunks
+          git add -f "$target"
+          git diff --cached --quiet || git commit -m "video: assemble and publish Obsidian 1080x1920 60fps"
+          git push origin HEAD:main
