@@ -6,6 +6,8 @@ description: Make vertical Arabic motion-graphics videos for the TikTok channel 
 > **Shared toolkit (14 Nov 2026):** For a combined motion/design task, read `../tuhfa/SKILL.md` and its `references/toolkit-routing.md` to select the additional modules. For @teqani.ly, the current user brief and `../tuhfa/references/channel-profile.md` take precedence over older house styles, voices, endings and repeated confirmation gates below. Preserve the approved template and accepted voice for edits.
 
 
+> **Presenter (26 Nov 2026):** the owner adopted the animated character of `../teqani-presenter/SKILL.md` as the channel's main host. Use it whenever a video needs a presenter; the current brief still wins.
+
 # techno-ly — فيديوهات قناة «تقني»
 
 This skill reproduces, step by step, the videos made for the TikTok channel **«تقني» (@teqani.ly)** on 3 Nov 2026

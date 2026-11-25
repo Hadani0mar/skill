@@ -17,6 +17,7 @@
 | [تقني](skills/techno-ly/SKILL.md) | الخلفية البيضاء، Kufam، Gemini Voice، الشاشات الحقيقية وزر المتابعة. |
 | [Studio Script — الهوكات](skills/studio-script/SKILL.md) | صياغة 3 هوكات مختلفة وتقييمها وكتابة سيناريو قصير مع Re-hook؛ [قواعد الدمج مع القناة](skills/studio-script/INTEGRATION.md). |
 | [السرد الحركي](skills/motion-storytelling/SKILL.md) | تسعة أساليب عربية وRemotion وReact Bits. |
+| [مقدّم قناة تقني الأساسي](skills/teqani-presenter/SKILL.md) | الشخصية المعتمدة كمقدّم أساسي (26 نوفمبر 2026): تحريك LivePortrait، وClawd يتحول لشاشة، وصوت ليبي، ومؤثرات. |
 | [Motion Reel](skills/motion-reel/SKILL.md) و[الشخصية](skills/mascot-explainer-video/SKILL.md) و[Stageshow](skills/stageshow/SKILL.md) | أفلام المنتجات والشخصيات والهاتف والواجهات. |
 | [Shotcraft](skills/video-shotcraft/SKILL.md) | وصفات اللقطات وحركة الكاميرا ومصادر تنفيذها. |
 | [HyperFrames](skills/hyperframes/SKILL.md) | تسع مهارات للمحرك وCLI والمكونات والوسائط، وخمس تقنيات للانتقالات والمؤشر والكابشن. |

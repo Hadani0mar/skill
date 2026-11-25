@@ -18,6 +18,7 @@ Tuhfa channel profile, chosen lead workflow, and imported technique. Do not repe
 | `skills/studio-script/SKILL.md` | Short-form hooks, script quality and re-hooks; read the local `INTEGRATION.md` before applying. |
 | `skills/motion-storytelling/SKILL.md` | Nine Arabic video styles, React Bits, researched stories, product worlds. |
 | `skills/motion-reel/SKILL.md` | In-product app ads and brand films. |
+| `skills/teqani-presenter/SKILL.md` | **Default تقني host** (26 Nov 2026): animated character + Clawd → screen, Libyan voice, SFX. |
 | `skills/mascot-explainer-video/SKILL.md` | Character presenter and animated UI B-roll. |
 | `skills/stageshow/SKILL.md` | Source-based phones, windows, UI and cursor choreography. |
 

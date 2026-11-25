@@ -28,7 +28,8 @@ video-making exists: use it only after resolving and reading its actual SKILL.md
 | تقني tool explainer / phone demo | `../techno-ly/SKILL.md` and its approved Edge Functions reference | Stageshow, Shotcraft, real word clock, engine guide |
 | Arabic story, news, typography, launch or product world | `../motion-storytelling/SKILL.md` | Stageshow, React Bits, diagram or 3D techniques |
 | App ad / brand film | `../motion-reel/SKILL.md` | Shotcraft cards, motion principles |
-| Character presenter | `../mascot-explainer-video/SKILL.md` | Stageshow B-roll and word-timed captions |
+| تقني host / any channel video with a presenter (default since 26 Nov 2026) | `../teqani-presenter/SKILL.md` | its pose bank, Clawd→screen transition, Libyan Gemini voice, SFX |
+| Other character presenter | `../mascot-explainer-video/SKILL.md` | Stageshow B-roll and word-timed captions |
 | Web UI motion / hero loop | `../stageshow/SKILL.md` | GSAP and design-motion-principles |
 | HyperFrames film | `../hyperframes/SKILL.md`, `../motion-doctrine/SKILL.md` | CLI, registry, selected transition and caption modules |
 

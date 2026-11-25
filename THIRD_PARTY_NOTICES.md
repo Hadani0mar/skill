@@ -41,3 +41,13 @@ Revisions and file-level SHA-256 hashes are recorded in `toolkit-lock.json`.
 Review a new upstream revision, permissions and dependency changes before replacing files. Update the lock and
 notices together, then run scripts/validate_toolkit.py and the relevant smoke tests. Do not auto-upgrade a
 film project to match new skill documentation. No upstream code executes merely by importing these files.
+
+## teqani-presenter assets (26 Nov 2026)
+
+| Source | Licence | Used as |
+|---|---|---|
+| [abderrahimghazali/clawd-pet](https://github.com/abderrahimghazali/clawd-pet) `static-base` grid | MIT (`skills/teqani-presenter/assets/LICENSE-clawd-pet.txt`) | Clawd redrawn procedurally in `scripts/clawd.py`; Clawd is Anthropic's Claude Code mascot (fan-art use) |
+| [KwaiVGI/LivePortrait](https://github.com/KwaiVGI/LivePortrait) | see upstream | not vendored; used offline to render `assets/posebank` from the owner's character |
+| Lalezar, Vazirmatn (Google Fonts) | OFL-1.1 (licences in `assets/fonts`) | captions and UI text |
+| ElevenLabs sound effects | ElevenLabs terms for the owner's account | `assets/sfx`, generated for the channel |
+| m0usasvg (Claude, Apple marks) | owner's repository | `assets/icons` |
