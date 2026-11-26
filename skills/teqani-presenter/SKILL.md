@@ -1,6 +1,6 @@
 ---
 name: teqani-presenter
-description: The default on-screen presenter of the TikTok channel «تقني» @teqani.ly — a 3D cartoon host (glasses, moustache, orange jacket, laptop) animated with LivePortrait from a pre-rendered pose bank (gaze camera/laptop/up, mouth shapes, blinks, smile), lip-moved from the voice-over, with Clawd (pixel Claude mascot) on his shoulder who hops up and unfolds into the floating laptop screen for the practical part. Covers the vertical layout, the calm Clawd→screen transition, word-timed Arabic captions, a designed Libyan Gemini voice, word timing, ElevenLabs SFX and the render/mix pipeline. Use for any channel video that needs a host talking to the viewer.
+description: The default on-screen presenter of the TikTok channel «تقني» @teqani.ly — a 3D cartoon host (glasses, moustache, orange jacket) in two saved looks, holding a laptop or a phone, animated with LivePortrait from a pre-rendered pose bank (gaze camera/laptop/up, mouth shapes, blinks, smile), lip-moved from the voice-over, with Clawd (pixel Claude mascot) on his shoulder who hops up and unfolds into the floating laptop screen for the practical part. Covers the vertical layout, the calm Clawd→screen transition, word-timed Arabic captions, a designed Libyan Gemini voice, word timing, ElevenLabs SFX and the render/mix pipeline. Use for any channel video that needs a host talking to the viewer.
 ---
 
 # teqani-presenter — الشخصية الأساسية لقناة «تقني»
@@ -11,6 +11,18 @@ video needs a host. The current brief still wins (e.g. a request for two new hum
 Worked example: [`examples/install-as-app`](examples/install-as-app/README.md).
 
 Read this whole file, then the example README, before building.
+
+## 0. Two looks — choose per film (`PRESENTER_VARIANT`)
+
+| Variant | Use when the film is about | Files | Notes |
+|---|---|---|---|
+| `laptop` (default) | desktop apps, coding, anything on a computer | `assets/character.jpg`, `assets/posebank/` | eyes sit behind reflective glasses → gaze reads mainly from the head tilt |
+| `phone` | mobile apps, WhatsApp/TikTok/phone features | `assets/character-phone.jpg`, `assets/posebank-phone/` | made 26 Nov 2026 by editing the original with gemini-3-pro-image (ElevenLabs); blinks and pupils read clearly; the phone region is protected from LivePortrait (`protect` in `scripts/paths.py`) |
+
+Set `PRESENTER_VARIANT=phone` for every script (render, posebank, lp). "Look down" (`L…` poses) means at the
+laptop or at the phone; "look up" (`U…`) means at the floating screen. Each variant has its own face crop and
+Clawd shoulder position in `scripts/paths.py`. With the phone look, the floating screen can be a phone-shaped
+frame (portrait) so it mirrors what he holds.
 
 ## 1. What the owner asked for (keep these)
 
@@ -30,8 +42,10 @@ Read this whole file, then the example README, before building.
 ## 2. Files
 
 ```
-assets/character.jpg          source image (736×736, owner's character)
-assets/posebank/*.jpg         155 LivePortrait poses (see names below)
+assets/character.jpg          source image, laptop look (736×736, owner's character)
+assets/character-phone.jpg    same host holding a phone (736×736)
+assets/posebank/*.jpg         LivePortrait poses, laptop look (see names below)
+assets/posebank-phone/*.jpg   the same pose set for the phone look
 assets/sfx/*.mp3              impact, whoosh, typing, click, pop, counter (ElevenLabs, generated for the channel)
 assets/fonts/                 Lalezar (captions), Vazirmatn (Latin/UI) + OFL licences
 assets/icons/                 Claude + Apple marks copied from m0usasvg

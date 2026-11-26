@@ -122,7 +122,7 @@ def block_mask(p):
     return np.asarray(m)
 
 # ---------- Clawd placement ----------
-CLX, CLY = 250, CY0 + int(438 * SC) + CL.PAD   # feet on the shoulder
+CLX, CLY = int(CLAWD_FEET[0] * SC), CY0 + int(CLAWD_FEET[1] * SC) + CL.PAD   # feet on the shoulder (per variant)
 SCX, SCY = SX + SW / 2, SY + SH / 2
 def clawd_at(img, t, cx, cy, s, alpha=1.0):
     c = CL.frame(t)

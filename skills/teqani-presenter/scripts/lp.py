@@ -2,14 +2,14 @@
 Expression offsets follow ComfyUI-AdvancedLivePortrait's calc_fe."""
 import os, sys, numpy as np, cv2, torch
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from paths import LIVEPORTRAIT, CHAR, WORK
+from paths import LIVEPORTRAIT, CHAR, WORK, FACE_CROP, PROTECT
 sys.path.insert(0, LIVEPORTRAIT)
 from src.config.inference_config import InferenceConfig
 from src.live_portrait_wrapper import LivePortraitWrapper
 from src.utils.camera import get_rotation_matrix
 
 torch.set_num_threads(2)
-CROP = (148, 70, 588, 510)            # x0, y0, x1, y1 in the 736px source
+CROP = FACE_CROP                      # x0, y0, x1, y1 in the 736px source (per variant)
 
 
 class Face:
@@ -23,10 +23,12 @@ class Face:
         self.f_s = self.w.extract_feature_3d(I)
         self.info = self.w.get_kp_info(I)
         self.x_s = self.w.transform_keypoint(self.info)
-        n = x1 - x0
-        m = np.zeros((n, n), np.float32)
-        b = int(n * .1); cv2.rectangle(m, (b, b), (n - b, n - b), 1, -1)
-        self.mask = cv2.GaussianBlur(m, (0, 0), n * .05)[..., None]
+        n = x1 - x0; nh = y1 - y0
+        m = np.zeros((nh, n), np.float32)
+        b = int(n * .1); cv2.rectangle(m, (b, b), (n - b, nh - b), 1, -1)
+        for (a, b, c, d) in PROTECT:                       # keep these source regions (e.g. the phone) untouched
+            cv2.rectangle(m, (a - x0 - 8, b - y0 - 8), (c - x0 + 8, d - y0 + 8), 0, -1)
+        self.mask = cv2.GaussianBlur(m, (0, 0), n * .03)[..., None]
 
     @staticmethod
     def fe(e, eyes=0, pupil_x=0, pupil_y=0, mouth=0, eee=0, woo=0, smile=0, eyebrow=0):
