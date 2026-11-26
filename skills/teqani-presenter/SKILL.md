@@ -112,4 +112,25 @@ Python: numpy, opencv-python, Pillow with libraqm, ffmpeg. Screen capture: Node 
 base_models + retargeting_models) at `$LIVEPORTRAIT`; ≈8 s per pose on 2 CPUs. LivePortrait and its weights
 are not vendored here.
 
+## 8. Performance of v4 and rules for the next film (read before scripting)
+
+TikTok Accounts API, 26 Nov 2026 07:17 Tripoli, ~6 h after posting at 01:33 (early, overnight):
+173 views · avg watch 10.4 s of 44.7 s · full watch 6.6 % · likes 16 (9.2 %) · saves 8 · shares 4 ·
+comments 0 · new followers 1 · profile visits 0 · For You 90 % · followers 36 % of viewers.
+Retention: 100 % → 82 % @1 s → 56 % @2 s → 41 % @3 s → 30 % @5 s → 20 % @10 s → 15 % @20 s → 14 % @30 s →
+13 % @35 s → 7 % @44 s. 66 % of likes landed in the first 3 s, 24 % at 40–42 s. Owner-facing score 5.5/10.
+
+What this means, applied to the next film made with this skill:
+1. **Voice pace:** pauses ≤ 0.15 s and normal speed. The "natural relaxed pace" style plus long tags made
+   the 3–5 s drop (0.7 s silence after «جهازك», slow «مش موقع… مش صفحة…»). Aim at ≈ 35 s, not 44.
+   When joining TTS parts, also trim inner silences longer than 0.25 s.
+2. **Hook frame:** don't leave the top half dark while he talks. Show one small result element that is not
+   the screen (e.g. the «RAM 91 %» menu-bar pill popping up on «برنامج بأيقونته…»). The owner still wants
+   no full screen at the start.
+3. **Keep:** the practical part and the calm Clawd→screen transition lost almost nobody (20 % → 13 % over
+   25 s); re-hooks neither lost nor added viewers — keep them short.
+4. **Ending:** 13 % → 7 % over the last 8 s and 0 comments. After the comment question, add the channel
+   ending (ت + TikTok + follow button) and suggest a pinned comment question.
+5. **Posting:** not after midnight; re-read the post after 24 h (countries/reach arrive with 24–48 h delay).
+
 END — teqani-presenter

@@ -47,7 +47,7 @@
 
 | العمل | المطلوب وما تغير | ما يمكن إثباته الآن |
 |---|---|---|
-| Install as app (v1–v4) | تحريك الشخصية وClawd، شاشة فوقها، صوت بـElevenLabs ثم Gemini، هوك عن الميزة بمثال مراقب الجهاز | v4: 44.7ث، 1080×1920، 30fps، صوت «Teqani Libyan» ومؤثرات. المصدر والأصول في [المثال](../../skills/teqani-presenter/examples/install-as-app/README.md). لم يُنشر على TikTok ضمن الأدلة |
+| Install as app (v1–v4) | تحريك الشخصية وClawd، شاشة فوقها، صوت بـElevenLabs ثم Gemini، هوك عن الميزة بمثال مراقب الجهاز | v4: 44.7ث، 1080×1920، 30fps، صوت «Teqani Libyan» ومؤثرات. المصدر والأصول في [المثال](../../skills/teqani-presenter/examples/install-as-app/README.md). نُشر 26 نوفمبر حوالي 01:33؛ بعد 6 ساعات: 173 مشاهدة، متوسط 10.4ث، الباقون 41% عند 3ث و20% عند 10ث، إعجاب 9.2%، صفر تعليقات، متابع واحد. الدروس في [§8 من المهارة](../../skills/teqani-presenter/SKILL.md) |
 
 ## حالة القياس
 

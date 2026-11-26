@@ -27,3 +27,6 @@ PRESENTER_WORK=/tmp/pw python3 scripts/mix.py
 ffmpeg -i /tmp/pw/mix_raw.wav -af loudnorm=I=-14:TP=-1.5:LRA=11 /tmp/pw/mix.wav
 ffmpeg -framerate 30 -i /tmp/frames/%04d.jpg -i /tmp/pw/mix.wav -c:v libx264 -crf 21 -pix_fmt yuv420p -c:a aac -b:a 192k -shortest out.mp4
 ```
+
+**First stats (26 Nov 07:17, ~6 h, posted 01:33):** 173 views, 10.4 s avg watch, 6.6 % full watch, 9.2 % likes,
+0 comments, 1 follower; retention 41 % @3 s, 20 % @10 s, flat to 13 % @35 s. Lessons in SKILL.md §8.
